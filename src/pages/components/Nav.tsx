@@ -8,7 +8,7 @@ export default function Nav() {
   return (
     <header className="flex flex-wrap w-full py-5 px-6">
       <nav className="w-full flex items-center justify-between">
-        <span className="flex-none size-8 bg-stone-800 rounded-full"></span>
+        <span className="flex-none size-8 bg-stone-800 rounded-full z-50"></span>
 
         {/* mobile menu */}
         {!matches && (
@@ -74,13 +74,19 @@ export default function Nav() {
         {toggled && (
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 8 }}
-            className="fixed flex bg-stone-200 bottom-0 left-0 w-full h-screen items-center justify-center sm:invisible"
+            initial={{ opacity: 0, y: 12 }}
+            className="fixed flex flex-col bg-stone-200 bottom-0 left-0 w-full h-screen items-center justify-center text-center"
           >
-            <div className="flex flex-col gap-12">
+            <div className="fixed top-52 flex flex-col gap-24">
               <a href="/">Home</a>
               <a href="/writing">Writing</a>
               <a href="/projects">Projects</a>
+            </div>
+            <div className="fixed bottom-24 h-52 flex flex-col gap-5">
+              <a href="/">tine@muzunza.com</a>
+              <a href="/">Resume</a>
+              <a href="/">Github</a>
+              <a href="/">Linkedin</a>
             </div>
           </motion.div>
         )}
