@@ -71,18 +71,18 @@ export default function Nav() {
           </div>
         )}
 
-        {toggled && (
+        {!matches && toggled && (
           <motion.div
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 12 }}
-            className="fixed flex flex-col bg-stone-200 bottom-0 left-0 w-full h-screen items-center justify-center text-center"
+            className="fixed flex flex-col bg-stone-200 bottom-0 left-0 w-full h-screen items-center justify-center text-center justify-between"
           >
-            <div className="fixed top-52 flex flex-col gap-24">
+            <div className="flex flex-col mt-[28vh] gap-[10vh]">
               <a href="/">Home</a>
               <a href="/writing">Writing</a>
               <a href="/projects">Projects</a>
             </div>
-            <div className="fixed bottom-24 h-52 flex flex-col gap-5">
+            <div className="flex flex-col mb-[5vh] gap-[1.5vh]">
               <a href="/">tine@muzunza.com</a>
               <a href="/">Resume</a>
               <a href="/">Github</a>
