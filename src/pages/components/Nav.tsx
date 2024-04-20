@@ -14,8 +14,8 @@ export default function Nav() {
         {!matches && (
           <div
             onClick={() => setToggled((prevToggle) => !prevToggle)}
-            className={`flex flex-row gap-[5px] pl-2 py-2 cursor-pointer sm:gap-3 sm:pointer-events-none z-50 ${
-              toggled && "gap-3"
+            className={`flex flex-row gap-[5px] pl-2 py-2 cursor-pointer sm:pointer-events-none z-50 ${
+              toggled && "gap-5"
             }`}
           >
             <motion.span
