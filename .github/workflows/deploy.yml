@@ -3,7 +3,7 @@ name: Deploy Website
 on:
   push:
     branches:
-      - prod
+      - live
 
 jobs:
   deploy:
