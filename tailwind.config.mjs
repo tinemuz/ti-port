@@ -8,7 +8,12 @@ export default {
 			sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
 			'sans-italic': ['DM Sans Italic', ...defaultTheme.fontFamily.sans],
 		},
-		extend: {},
+		extend: {
+			aspectRatio: {
+				'2/1': '2 / 1',
+				'3/1': '3 / 1',
+			},
+		},
 	},
 	plugins: [],
 }
