@@ -77,7 +77,7 @@ export default function Nav() {
             initial={{ opacity: 0, y: 12 }}
             className="fixed flex flex-col bg-stone-200 bottom-0 left-0 w-full h-screen items-center justify-center text-center justify-between"
           >
-            <div className="flex flex-col mt-[30vh] gap-[10vh]">
+            <div className="flex flex-col mt-[28vh] gap-[10vh]">
               <a href="/">Home</a>
               <a href="/writing">Writing</a>
               <a href="/projects">Projects</a>
