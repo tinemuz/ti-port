@@ -3,16 +3,65 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'DM Sans';
-    src: url('../public/fonts/DMSans-VariableFont_opsz,wght.ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "DM Sans";
+  src: url("../public/fonts/DMSans-VariableFont_opsz,wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: "DM Sans Italic";
-    src: url('../public/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
+  font-family: "DM Sans Italic";
+  src: url("../public/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer utilities {
+  .mask1 {
+    @apply backdrop-blur-[1px];
+    /* -webkit-mask-image: linear-gradient(to bottom, white 10%, transparent 80%); */
+    mask-image: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(255, 255, 255) 12.5%,
+      rgb(255, 255, 255) 37.5%,
+      rgba(255, 255, 255, 0) 50%
+    );
+  }
+  .mask2 {
+    @apply backdrop-blur-[2px];
+    mask-image: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 12.5%,
+      rgb(255, 255, 255) 37.5%,
+      rgb(255, 255, 255) 50%,
+      rgba(255, 255, 255, 0) 62.5%
+    );
+  }
+
+  .mask3 {
+    @apply backdrop-blur-[4px];
+    mask-image: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0) 37.5%,
+      rgb(255, 255, 255) 50%,
+      rgb(255, 255, 255) 62.5%,
+      rgba(255, 255, 255, 0) 75%
+    );
+  }
+
+  .mask4 {
+    @apply backdrop-blur-[10px];
+    /* background-color: blue; */
+    mask-image: linear-gradient(
+      to bottom,
+      black,
+      black 30%, 
+      transparent 80%
+      
+
+      
+    );
+  }
 }
