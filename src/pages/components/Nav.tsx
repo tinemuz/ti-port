@@ -7,11 +7,11 @@ export default function Nav() {
   const matches = useMediaQuery("(min-width: 768px)");
   return (
     <header className="fixed z-[100] flex w-full flex-wrap">
-      <div className="absolute w-full flex left- z-5 pointer-events-none h-full">
+      <div className="absolute w-full flex left- z-5 pointer-events-none h-24">
         <div className="absolute w-full mask1 h-full"></div>
         <div className="absolute w-full mask2 h-full"></div>
         <div className="absolute w-full mask3 h-full"></div>
-        <div className="absolute w-full mask4 h-full"></div>
+        <div className="absolute w-full mask4 top-[-10px] h-full"></div>
       </div>
       <nav className="flex w-full items-center justify-between px-6 py-5">
         
