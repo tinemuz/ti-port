@@ -4,7 +4,7 @@ import { useMediaQuery } from "../../util/useMediaQuery";
 
 export default function Slider() {
   return (
-    <div className="mx-6">
+    <div className="mr-6">
       <div className="bg-stone-200 pb-3 pt-16"></div>
       <div className="">
         {/* Section One */}

@@ -7,15 +7,16 @@ export default function Nav() {
   const matches = useMediaQuery("(min-width: 768px)");
   return (
     <header className="fixed z-[100] flex w-full flex-wrap">
-      <div className="absolute w-full flex left- z-5 pointer-events-none h-24">
-        <div className="absolute w-full mask1 h-full"></div>
-        <div className="absolute w-full mask2 h-full"></div>
-        <div className="absolute w-full mask3 h-full"></div>
-        <div className="absolute w-full mask4 top-[-10px] h-full"></div>
+      <div className="z-5 absolute flex h-24 w-full">
+        <div className="mask1 absolute h-full w-full"></div>
+        <div className="mask2 absolute h-full w-full"></div>
+        <div className="mask3 absolute h-full w-full"></div>
+        <div className="mask4 absolute top-[-10px] h-full w-full"></div>
       </div>
-      <nav className="flex w-full items-center justify-between px-6 py-5">
-        
-        <span className="z-[100] size-8 flex-none rounded-full bg-stone-800"></span>
+      <nav className="z-[100] flex w-full items-center justify-between px-6 py-5 md:grid md:grid-cols-2">
+        <div className="">
+          <div className=" size-8 rounded-full bg-stone-800"></div>
+        </div>
 
         {/* mobile menu dot icons*/}
         {!matches && (
@@ -55,7 +56,7 @@ export default function Nav() {
           </div>
         )}
 
-        {/* menu exit */}
+        {/* mobile menu exit */}
         {!matches && toggled && (
           <div
             onClick={() => setToggled((prevToggle) => !prevToggle)}
@@ -79,6 +80,7 @@ export default function Nav() {
           </div>
         )}
 
+        {/* mobile menu contents */}
         {!matches && toggled && (
           <motion.div
             animate={{ opacity: 1, y: 0 }}
@@ -101,15 +103,19 @@ export default function Nav() {
 
         {/* main menu */}
         {matches && (
-          <div
-            onClick={() => setToggled((prevToggle) => !prevToggle)}
-            className={`z-50 flex flex-row gap-3 py-2 pl-2 `}
-          >
-            <span className={`size-[16px] rounded-full bg-blue-700`}></span>
-            <span className={`size-[16px] rounded-full bg-red-500`}></span>
-            <span
-              className={`h-[16px] w-[40px] rounded-full bg-stone-800`}
-            ></span>
+          <div className="z-50 md:flex md:justify-between">
+            <div className="flex gap-16">
+              <a href="/">Featured</a>
+              <a href="/">Projects</a>
+              <a href="/">Side-Quests</a>
+            </div>
+            <div className={`flex flex-row gap-3 py-2 pl-2`}>
+              <span className={`size-[16px] rounded-full bg-blue-700`}></span>
+              <span className={`size-[16px] rounded-full bg-red-500`}></span>
+              <span
+                className={`h-[16px] w-[40px] rounded-full bg-stone-800`}
+              ></span>
+            </div>
           </div>
         )}
       </nav>
