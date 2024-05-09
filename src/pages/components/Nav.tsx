@@ -4,7 +4,7 @@ import { useMediaQuery } from "../../util/useMediaQuery";
 
 export default function Nav() {
   const [toggled, setToggled] = useState(false);
-  const matches = useMediaQuery("(min-width: 768px)");
+  const matches = useMediaQuery("(min-width: 1024px)");
   return (
     <header className="fixed z-[100] flex w-full flex-wrap">
       <div className="z-5 absolute flex h-24 w-full">
@@ -13,7 +13,7 @@ export default function Nav() {
         <div className="mask3 absolute h-full w-full"></div>
         <div className="mask4 absolute top-[-10px] h-full w-full"></div>
       </div>
-      <nav className="z-[100] flex w-full items-center justify-between px-6 py-5 md:grid md:grid-cols-2">
+      <nav className="z-[100] flex w-full items-center justify-between px-6 py-5 lg:grid lg:grid-cols-2">
         <div className="">
           <div className=" size-8 rounded-full bg-stone-800"></div>
         </div>
@@ -31,7 +31,7 @@ export default function Nav() {
                 width: toggled ? "16px" : "6px",
                 height: toggled ? "16px" : "6px",
               }}
-              className={`size-[6px] rounded-full bg-blue-700  md:size-[16px] ${
+              className={`size-[6px] rounded-full bg-blue-700  lg:size-[16px] ${
                 toggled && "size-[16px]"
               }`}
             ></motion.span>
@@ -40,7 +40,7 @@ export default function Nav() {
                 width: toggled ? "16px" : "6px",
                 height: toggled ? "16px" : "6px",
               }}
-              className={`size-[6px] rounded-full bg-red-500  md:size-[16px] ${
+              className={`size-[6px] rounded-full bg-red-500  lg:size-[16px] ${
                 toggled && "size-[16px]"
               }`}
             ></motion.span>
@@ -49,7 +49,7 @@ export default function Nav() {
                 width: toggled ? "40px" : "6px",
                 height: toggled ? "16px" : "6px",
               }}
-              className={`size-[6px] rounded-full bg-stone-800 md:h-[16px]  md:w-[40px] ${
+              className={`size-[6px] rounded-full bg-stone-800 lg:h-[16px]  lg:w-[40px] ${
                 toggled && "h-[16px] w-[40px]"
               }`}
             ></motion.span>
@@ -103,10 +103,10 @@ export default function Nav() {
 
         {/* main menu */}
         {matches && (
-          <div className="z-50 md:flex md:justify-between">
-            <div className="flex gap-16">
+          <div className="z-50 lg:flex lg:justify-between">
+            <div className="flex gap-12 items-center">
               <a href="/">Featured</a>
-              <a href="/">Projects</a>
+              <a href="/">Writing</a>
               <a href="/">Side-Quests</a>
             </div>
             <div className={`flex flex-row gap-3 py-2 pl-2`}>
