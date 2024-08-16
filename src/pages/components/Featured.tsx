@@ -21,7 +21,7 @@ export default function Featured() {
           <div className="border-l border-l-mgray"></div>
           <div className="border-l border-l-mgray"></div>
         </div>
-        <div className="aspect-3/1 grid grid-cols-3 border border-b-0 border-t-0 border-mgray">
+        <div className="aspect-3/1 grid grid-cols-3 border border-t-0 border-mgray">
           <div className=""></div>
           <div className="border-l border-l-mgray"></div>
           <div className="border-l border-l-mgray"></div>
