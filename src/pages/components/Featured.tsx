@@ -1,7 +1,3 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { useMediaQuery } from "../../util/useMediaQuery";
-
 export default function Featured() {
   return (
     <div className="">
