@@ -1,20 +1,36 @@
 ---
-import Slider from "./Slider";
+import Featured from "./Featured";
 ---
 
-<div class="">
-  <div class="relative mx-6 pt-36 md:fixed md:max-w-[50vw]">
-    <h2 class="text-lg font-bold">Tine Muzunza</h2>
-    <h2 class="text-lg font-bold pb-4">Software Engineer</h2>
-    <p class="">
-      Mauris iaculis, turpis ac scelerisque scelerisque, nibh mauris vestibulum
-      sapien, id accumsan dui leo nec enim. Suspendisse potenti. Integer
-      tincidunt, mauris eget cursus tristiqua scelerisque eros, website and
-      linked accounts.
-    </p>
-  </div>
-  <div class="md:pt-36 md:right-[50vw] md:pl-[50vw]">
-    <Slider />
+<div class="flex flex-col min-h-screen pl-6 pr-6 text-lg text-mtext">
+  <div class="flex-grow flex flex-col items-center justify-center">
+    <!-- Mini nav bar sort of -->
+    <div class="md:max-w-[1100px] w-full">
+      <div class="flex gap-24 pt-60 justify-end">
+        <a href="/">Featured</a>
+        <a href="/writing">Writing</a>
+        <a href="/projects">Side Quests</a>
+      </div>
+    </div>
+
+    <div class="md:max-w-[1100px] w-full pt-6 pb-10">
+      <h2 class="text-xl font-bold">Tine Muzunza</h2>
+      <h2 class="text-xl font-bold pb-4">Software Engineer</h2>
+      <p class="text-justify">
+        Java developer with experience contributing to large-scale applications.
+        Passionate about 3D art, focusing on hard surface modeling and
+        sci-fi-inspired environment design. Explore my featured projects below
+        to see how I blend technical skills with creative thinking across both
+        domains.
+      </p>
+    </div>
+    <div class="flex-grow w-full md:max-w-[1100px]">
+      <Featured />
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-32 pb-10 flex items-center justify-center w-full">
+      <p class="text-sm">© MMXXIV Tinetariro Muzunzandare</p>
+    </footer>
   </div>
 </div>
-

@@ -14,6 +14,11 @@ export default {
 				'3/1': '3 / 1',
 			},
 		},
+		colors: {
+			'mgray': '#A6A6A6',
+			'back': '#BEBEBE',
+			'mtext': '#222222',
+		},
 	},
 	plugins: [],
 }

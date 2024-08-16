@@ -1,6 +1,5 @@
 ---
 const { title } = Astro.props
-import Nav from "../pages/components/Nav"
 import '../../src/styles/global.css'
 ---
 
@@ -11,9 +10,8 @@ import '../../src/styles/global.css'
         <meta name="description" content="Tine's portfolio" />
         <meta title={title} />
     </head>
-    <body>
+    <body class="bg-back">
         <main>
-            <Nav client:load/>
             <slot />
             <!-- All the different pages to be rendered -->
         </main>
