@@ -1,7 +1,3 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { useMediaQuery } from "../../util/useMediaQuery";
-
 export default function Nav() {
   return (
     <header className="flex flex-grow flex-col items-center justify-center z-[100] text-sm text-mtext">
