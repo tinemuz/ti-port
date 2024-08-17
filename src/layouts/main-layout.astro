@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props
+import Nav from "../pages/components/Nav"
 import '../../src/styles/global.css'
 import '@fontsource/dm-mono';
 ---
@@ -13,6 +14,7 @@ import '@fontsource/dm-mono';
     </head>
     <body class="bg-back">
         <main>
+            <Nav client:load/>
             <slot />
             <!-- All the different pages to be rendered -->
         </main>
