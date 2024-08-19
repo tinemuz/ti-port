@@ -2,8 +2,10 @@
 import MainLayout from "../layouts/main-layout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { formatDate } from "../util/utils";
 
-const allPosts: CollectionEntry<"posts">[] = await getCollection("posts");
+const allPosts: CollectionEntry<"posts">[] = (await getCollection("posts"))
+.sort((a:CollectionEntry<'posts'>, b:CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <MainLayout>
@@ -23,14 +25,21 @@ const allPosts: CollectionEntry<"posts">[] = await getCollection("posts");
       <div class="w-full flex-grow md:max-w-[812px]">
         {
           allPosts.map((post) => (
-            <div class="grid grid-cols-[30%,70%] h-20">
+            <div class="grid grid-cols-[25%,75%] gap-6 pb-7">
               <div>
-                <p>{post.data.pubDate}</p>
+                <p>{formatDate(post.data.pubDate)}</p>
               </div>
               <div>
                 <a href={"/posts/" + post.slug}>
                   {post.data.title} - {post.data.description}
                 </a>
+                <div class="flex flex-wrap gap-3 pt-2">
+                  {post.data.tags.map((tag: string) => (
+                    <span class="rounded-full bg-mgray px-2 py-[3px] text-xs">
+                      <a href={"/posts/tag/" + tag}>{tag}</a>
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))
