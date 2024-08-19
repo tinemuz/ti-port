@@ -1,5 +1,7 @@
 {
-    "typescript.tsserver.watchOptions": {
-        
-    }
+  "typescript.tsserver.watchOptions": {},
+  "editor.codeActionsOnSave": {},
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }

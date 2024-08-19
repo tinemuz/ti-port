@@ -1,5 +1,9 @@
 ---
 import MainLayout from "../layouts/main-layout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const allPosts: CollectionEntry<"posts">[] = await getCollection("posts");
 ---
 
 <MainLayout>
@@ -7,17 +11,31 @@ import MainLayout from "../layouts/main-layout.astro";
     class="flex min-h-[calc(100vh-240px)] flex-col pl-6 pr-6 text-mtext md:text-sm"
   >
     <div class="flex flex-grow flex-col items-center justify-center">
-      <div class="w-full pb-8 pt-6 md:max-w-[812px]">
+      <div class="w-full border-b border-b-mgray pb-8 pt-6 md:max-w-[812px]">
         <h2 class="pb-4 text-lg font-bold">Writing</h2>
         <p class="text-justify">
-          Java developer with experience contributing to large-scale
-          applications. Passionate about 3D art, focusing on hard surface
-          modeling and sci-fi-inspired environment design. Explore my featured
-          projects below to see how I blend technical skills with creative
-          thinking across both domains.
+          I write about projects I have worked on and anything I find
+          interesting and meaningfull.
         </p>
       </div>
-      <div class="w-full flex-grow md:max-w-[812px]"></div>
+      <div class="pt-8"></div>
+
+      <div class="w-full flex-grow md:max-w-[812px]">
+        {
+          allPosts.map((post) => (
+            <div class="grid grid-cols-[30%,70%] h-20">
+              <div>
+                <p>{post.data.pubDate}</p>
+              </div>
+              <div>
+                <a href={"/posts/" + post.slug}>
+                  {post.data.title} - {post.data.description}
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
 
       <!-- Footer -->
       <footer class="flex w-full items-center justify-center pb-10 pt-32">
