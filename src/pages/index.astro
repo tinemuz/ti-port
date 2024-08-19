@@ -1,9 +1,32 @@
 ---
 import MainLayout from "../layouts/main-layout.astro";
-import Featured from "./components/Intro.astro";
+import Featured from "../components/Featured.tsx";
 ---
 
 <MainLayout title="Tine's portfolio">
-    <Featured />
-</MainLayout>
+  <div
+    class="flex min-h-[calc(100vh-240px)] flex-col pl-6 pr-6 text-mtext md:text-sm"
+  >
+    <div class="flex flex-grow flex-col items-center justify-center">
+      <div class="w-full pb-8 pt-6 md:max-w-[812px]">
+        <h2 class="text-lg font-bold">Tine Muzunza</h2>
+        <h2 class="pb-4 text-lg font-bold">Software Engineer</h2>
+        <p class="text-justify">
+          Java developer with experience contributing to large-scale
+          applications. Passionate about 3D art, focusing on hard surface
+          modeling and sci-fi-inspired environment design. Explore my featured
+          projects below to see how I blend technical skills with creative
+          thinking across both domains.
+        </p>
+      </div>
+      <div class="w-full flex-grow md:max-w-[812px]">
+        <Featured />
+      </div>
 
+      <!-- Footer -->
+      <footer class="flex w-full items-center justify-center pb-10 pt-32">
+        <p class="font text-xs">© MMXXIV TINETARIRO MUZUNZANDARE</p>
+      </footer>
+    </div>
+  </div>
+</MainLayout>

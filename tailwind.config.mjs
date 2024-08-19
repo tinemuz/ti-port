@@ -18,6 +18,7 @@ export default {
 			'mgray': '#A6A6A6',
 			'back': '#BEBEBE',
 			'mtext': '#222222',
+			'mred': '#F14E3A',
 		},
 	},
 	plugins: [],
