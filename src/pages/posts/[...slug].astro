@@ -2,6 +2,7 @@
 import MainLayout from "../../layouts/main-layout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import Footer from "../../components/Footer";
 
 export async function getStaticPaths() {
   const allPosts: CollectionEntry<"posts">[] = await getCollection("posts");
