@@ -52,8 +52,10 @@ const { Content } = await entry.render();
         Uploaded on {formatDate(entry.data.pubDate)}
       </p>
     </div>
-
-    <div class="pt-8 md:max-w-[812px]">
+    <div class="py-6 md:max-w-[812px]">
+      <img src={"/images/" + entry.data.image.path} alt={entry.data.image.alt} class="rounded-md" />
+    </div>
+    <div class="md:max-w-[812px]">
       <Content />
     </div>
   </div>
@@ -61,15 +63,22 @@ const { Content } = await entry.render();
 
 <style is:global>
   ol {
-    padding:20px 0px 20px 40px;
-    list-style-type: decimal; /* This line remains unchanged */
+    padding: 15px 0px 15px 25px;
+    list-style-type: decimal;
   }
 
   li {
-
-    margin-top: 10px;
-    padding-left: 15px;
+    padding-left: 5px;
   }
 
+  @media (min-width: 768px) {
+    ol {
+      padding: 25px 0px 25px 45px;
+    }
 
+    li {
+      margin-top: 12px;
+      padding-left: 18px;
+    }
+  }
 </style>
