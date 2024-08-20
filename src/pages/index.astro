@@ -1,11 +1,12 @@
 ---
 import MainLayout from "../layouts/main-layout.astro";
 import Featured from "../components/Featured.tsx";
+import Footer from "../components/Footer";
 ---
 
 <MainLayout title="Tine's portfolio">
   <div
-    class="flex min-h-[calc(100vh-240px)] flex-col pl-6 pr-6 text-mtext md:text-sm"
+    class="flex flex-col text-mtext md:text-sm"
   >
     <div class="flex flex-grow flex-col items-center justify-center">
       <div class="w-full pb-8 pt-6 md:max-w-[812px]">
@@ -23,10 +24,7 @@ import Featured from "../components/Featured.tsx";
         <Featured />
       </div>
 
-      <!-- Footer -->
-      <footer class="flex w-full items-center justify-center pb-10 pt-32">
-        <p class="font text-xs">© MMXXIV TINETARIRO MUZUNZANDARE</p>
-      </footer>
+      
     </div>
   </div>
 </MainLayout>
