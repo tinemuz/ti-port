@@ -4,9 +4,9 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const allPosts: CollectionEntry<"posts">[] = await getCollection("posts");
+  const allWriting: CollectionEntry<"writing">[] = await getCollection("writing");
 
-  return allPosts.map((entry) => ({
+  return allWriting.map((entry) => ({
     params: {
       slug: entry.slug,
     },
