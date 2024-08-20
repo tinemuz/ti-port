@@ -15,7 +15,7 @@ const allPosts: CollectionEntry<"posts">[] = (
 
 <MainLayout title="Writing">
   <div
-    class="flex flex-col pl-6 pr-6 text-mtext md:text-sm"
+    class="flex flex-col text-mtext md:text-sm"
   >
     <div class="flex flex-grow flex-col items-center justify-center">
       <div class="w-full border-b border-b-mgray pb-8 pt-6 md:max-w-[812px]">
@@ -30,7 +30,7 @@ const allPosts: CollectionEntry<"posts">[] = (
       <div class="w-full flex-grow md:max-w-[812px]">
         {
           allPosts.map((post) => (
-            <div class="grid grid-cols-[25%,75%] gap-6 pb-7">
+            <div class="grid grid-cols-[25%,70%] justify-between pb-7">
               <div>
                 <p>{formatDate(post.data.pubDate)}</p>
               </div>
