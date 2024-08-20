@@ -3,6 +3,12 @@ import MainLayout from "../../layouts/main-layout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
+const {slug} = Astro.params;
+
+if(slug === undefined) {
+  throw new Error('Slug is required');
+}
+
 export async function getStaticPaths() {
   const allWriting: CollectionEntry<"writing">[] = await getCollection("writing");
 
@@ -15,6 +21,11 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+
+if (entry === undefined){
+  return Astro.redirect('/404');
+}
+
 ---
 
 <MainLayout title={entry.data.title}>
