@@ -5,17 +5,17 @@ import type { CollectionEntry } from "astro:content";
 import { formatDate } from "../util/utils";
 import Footer from "../components/Footer";
 
-const allPosts: CollectionEntry<"posts">[] = (
-  await getCollection("posts")
+const allWriting: CollectionEntry<"writing">[] = (
+  await getCollection("writing")
 ).sort(
-  (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
+  (a: CollectionEntry<"writing">, b: CollectionEntry<"writing">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <MainLayout title="Writing">
   <div
-    class="flex flex-col text-mtext md:text-sm"
+    class="flex flex-col text-mtext"
   >
     <div class="flex flex-grow flex-col items-center justify-center">
       <div class="w-full border-b border-b-mgray pb-8 pt-6 md:max-w-[812px]">
@@ -29,19 +29,19 @@ const allPosts: CollectionEntry<"posts">[] = (
 
       <div class="w-full flex-grow md:max-w-[812px]">
         {
-          allPosts.map((post) => (
+          allWriting.map((writing) => (
             <div class="grid grid-cols-[25%,70%] justify-between pb-7">
               <div>
-                <p>{formatDate(post.data.pubDate)}</p>
+                <p>{formatDate(writing.data.pubDate)}</p>
               </div>
               <div>
-                <a href={"/posts/" + post.slug}>
-                  {post.data.title} - {post.data.description}
+                <a href={"/writing/" + writing.slug}>
+                  {writing.data.title} - {writing.data.description}
                 </a>
                 <div class="flex flex-wrap gap-3 pt-2">
-                  {post.data.tags.map((tag: string) => (
+                  {writing.data.tags.map((tag: string) => (
                     <span class="rounded-full bg-mgray px-2 py-[3px] text-xs">
-                      <a href={"/posts/tag/" + tag}>{tag}</a>
+                      <a href={"/writing/tag/" + tag}>{tag}</a>
                     </span>
                   ))}
                 </div>

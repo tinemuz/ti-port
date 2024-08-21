@@ -1,0 +1,31 @@
+---
+title: 'Deploying a Static Website Using S3, CloudFront, and Cloudflare DNS'
+description: 'How to use your cloudflare domains in your AWS environment'
+pubDate: 2024-08-01T22:21:00
+author: 'Tinetariro Muzunzandare'
+images:
+    - path: '../../../src/assets/deploying-a-static-website-using-s3-cloudfront-and-cloudflare-dns/bucket-paint.jpg'
+      alt: 'A bucket of white paint.'
+tags: ["aws", "couldflare"]
+slug: deploying-a-static-website-using-s3-cloudfront-and-cloudflare-dns
+---
+
+Having already set up my domains with Cloudflare, I decided to leverage AWS S3's robust static web hosting capabilities while minimizing costs. Instead of transferring my domain to Route53, which would have cost $14, I opted for a cheaper solution by sticking with Cloudflare where I have my domain for $9. Here’s how you can achieve this setup:
+
+1. **Create an S3 Bucket:**
+
+   - First, create an S3 bucket with your domain name as the bucket name. Enable the S3 website hosting and configure appropriate bucket policies to allow public access if needed.
+
+2. **Use CloudFront for Content Delivery:**
+
+   - Deploy a CloudFront distribution to deliver static content stored in S3. This step involves setting up a CloudFront distribution and pointing it to your S3 bucket. CloudFront acts as a content delivery network (CDN) that caches your static files, reducing latency and improving the speed of delivering content to users globally.
+
+3. **Cloudflare SSL/TLS Configuration:**
+
+   - To secure the content delivered from S3 through CloudFront using Cloudflare, generate an SSL certificate in AWS Certificate Manager. Type your domain name and click "Create certificate." This process might show a pending status initially, accompanied by CNAME names and values. Update your DNS records on Cloudflare accordingly: add these CNAME entries to ensure the validation of your SSL certificate. After some time, the pending status should change to indicate successful validation.
+   - Obtain your Cloudflare domain name and add a CNAME record pointing from this domain to your primary domain. This setup ensures secure communication between Cloudflare and users accessing your website.
+
+4. **CloudFront Alternative Domain Name Setup:**
+   - After creating the CloudFront distribution, you can add an alternative domain name (CNAME) to it. In this case, add your domain name and attach the SSL certificate that you generated and validated earlier via a CNAME record in CloudFront. This configuration ensures secure and efficient delivery of your static website content through Cloudflare’s global network.
+
+By following these steps, you can efficiently deploy a static website using AWS S3 for storage, Amazon CloudFront for distribution, and Cloudflare for domain management and SSL/TLS termination.

@@ -1,0 +1,25 @@
+---
+import MainLayout from "../layouts/main-layout.astro";
+import Featured from "../components/Featured.tsx";
+import Footer from "../components/Footer";
+---
+
+<MainLayout title="Tine's portfolio">
+  <div class="flex flex-col text-mtext md:text-sm">
+    <div class="flex flex-grow flex-col items-center justify-center">
+      <div class="w-full flex-grow pt-6 md:max-w-[812px]">
+        <h2 class="text-lg font-bold">This page doesn't exist :(</h2>
+        <div class="text-mgray">
+          <svg class="fill-mred" viewBox="0 0 35 18">
+            <text
+              x="50%"
+              y="65%"
+              dominant-baseline="middle"
+              text-anchor="middle">404</text
+            >
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>
