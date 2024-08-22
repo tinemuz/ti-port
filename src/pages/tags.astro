@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import TagsList from "../components/TagsList.astro";
+import MainLayout from "../layouts/main-layout.astro";
+
+const allWriting = await getCollection("writing");
+
+// Extract all tags from all posts
+const allTags = allWriting.flatMap((post) => post.data.tags);
+
+// Create a Set to get unique tags, then convert back to an array
+const uniqueTags = [...new Set(allTags)];
+
+// Sort tags alphabetically
+uniqueTags.sort((a, b) => a.localeCompare(b));
+---
+
+<MainLayout title="Writing">
+  <div class="flex flex-col text-mtext">
+    <div class="flex flex-grow flex-col items-center justify-center">
+      <div class="w-full border-b border-b-mgray pb-8 pt-6 md:max-w-[812px]">
+        <h2 class="pb-4 text-lg font-bold">Tags</h2>
+        <p class="text-justify">
+          A list of all the tags accross projects and written content site wide.
+        </p>
+      </div>
+      <div class="pt-8"></div>
+
+      <div class="w-full flex-grow md:max-w-[812px]">
+        <TagsList tags={uniqueTags} />
+      </div>
+    </div>
+  </div>
+</MainLayout>

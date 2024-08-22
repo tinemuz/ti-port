@@ -1,0 +1,21 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import { formatDate } from "../util/utils";
+import Tags from "./TagsList.astro";
+
+type Writing = CollectionEntry<"writing">;
+
+const { writing } = Astro.props as { writing: Writing };
+---
+
+<div class="grid grid-cols-[25%,70%] justify-between pb-7">
+  <div>
+    <p>{formatDate(writing.data.pubDate)}</p>
+  </div>
+  <div>
+    <a href={"/writing/" + writing.slug}>
+      {writing.data.title} - {writing.data.description}
+    </a>
+    <Tags tags={writing.data.tags} />
+  </div>
+</div>

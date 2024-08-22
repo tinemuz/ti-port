@@ -1,3 +1,5 @@
+import TimeDisplay from "./TimeDisplay";
+
 export default function Footer() {
   return (
     <footer className=" flex h-[270px] justify-center pb-4 pt-12 md:h-[220px]">
@@ -5,18 +7,27 @@ export default function Footer() {
         <div className="grid w-full grid-cols-2 gap-y-5 md:grid-cols-3">
           <div className="flex flex-col items-start space-y-1">
             <a href="mailto:tine@muzunza.com">tine@muzunza.com</a>
-            <a href="https://www.linkedin.com">Linkedin</a>
-            <a href="https://www.instagram.com">Instagram</a>
+            <a
+              href="https://www.linkedin.com/in/tinetariro-muzunzandare"
+              target="_blank"
+            >
+              Linkedin
+            </a>
+            <a href="https://www.instagram.com/ti.drw/" target="_blank">
+              Instagram
+            </a>
           </div>
           <div className="flex flex-col items-start space-y-1">
             <a href="/">Featured</a>
             <a href="/writing">Writing</a>
-            <a href="/projects">Side Quests</a>
+            <a href="/tags">Tags</a>
           </div>
           <div className="flex flex-col items-start space-y-1">
-            <a href="https://github.com">GitHub</a>
+            <a href="https://github.com/tinemuz" target="_blank">
+              GitHub
+            </a>
             <div>UK . 2024</div>
-            <div>18:55 BST - 19:55 WAN</div>
+            <TimeDisplay />
           </div>
         </div>
         <div className="h-full"></div>

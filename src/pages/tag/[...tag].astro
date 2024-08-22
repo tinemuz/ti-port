@@ -1,0 +1,52 @@
+---
+import MainLayout from "../../layouts/main-layout.astro";
+
+import { getCollection, type CollectionEntry } from "astro:content";
+import WritingGrid from "../../components/WritingGrid.astro";
+
+const { tag } = Astro.props;
+
+export async function getAllTags() {
+  const collection = await getCollection("writing");
+  const allTags = new Set<string>();
+
+  collection.forEach((item) => {
+    item.data.tags?.forEach((tag) => allTags.add(tag));
+  });
+
+  return Array.from(allTags);
+}
+
+// Generate static paths for tags
+export async function getStaticPaths() {
+  const tags = await getAllTags();
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag },
+  }));
+}
+
+const allWriting: CollectionEntry<"writing">[] = (
+  await getCollection("writing")
+).sort(
+  (a: CollectionEntry<"writing">, b: CollectionEntry<"writing">) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const tagWriting = allWriting.filter((writing) =>
+  writing.data.tags.includes(tag)
+);
+---
+
+<MainLayout title="#" {tag}>
+  <div class="flex flex-col text-mtext">
+    <div class="flex flex-grow flex-col items-center justify-center">
+      <div class="mb-8 w-full border-b border-b-mgray pt-6 md:max-w-[812px]">
+        <h2 class="pb-8 text-lg font-bold"># {tag}</h2>
+      </div>
+      <div class="w-full flex-grow md:max-w-[812px]">
+        {tagWriting.map((writing) => <WritingGrid writing={writing} />)}
+      </div>
+    </div>
+  </div>
+</MainLayout>
