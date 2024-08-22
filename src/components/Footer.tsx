@@ -1,3 +1,5 @@
+import TimeDisplay from "./TimeDisplay";
+
 export default function Footer() {
   return (
     <footer className=" flex h-[270px] justify-center pb-4 pt-12 md:h-[220px]">
@@ -14,9 +16,9 @@ export default function Footer() {
             <a href="/tags">Tags</a>
           </div>
           <div className="flex flex-col items-start space-y-1">
-            <a href="https://github.com">GitHub</a>
+            <a href="https://github.com/tinemuz" target="_blank">GitHub</a>
             <div>UK . 2024</div>
-            <div>18:55 BST - 19:55 WAN</div>
+            <TimeDisplay/>
           </div>
         </div>
         <div className="h-full"></div>
