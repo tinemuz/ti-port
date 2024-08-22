@@ -7,8 +7,15 @@ export default function Footer() {
         <div className="grid w-full grid-cols-2 gap-y-5 md:grid-cols-3">
           <div className="flex flex-col items-start space-y-1">
             <a href="mailto:tine@muzunza.com">tine@muzunza.com</a>
-            <a href="https://www.linkedin.com">Linkedin</a>
-            <a href="https://www.instagram.com">Instagram</a>
+            <a
+              href="https://www.linkedin.com/in/tinetariro-muzunzandare"
+              target="_blank"
+            >
+              Linkedin
+            </a>
+            <a href="https://www.instagram.com/ti.drw/" target="_blank">
+              Instagram
+            </a>
           </div>
           <div className="flex flex-col items-start space-y-1">
             <a href="/">Featured</a>
@@ -16,9 +23,11 @@ export default function Footer() {
             <a href="/tags">Tags</a>
           </div>
           <div className="flex flex-col items-start space-y-1">
-            <a href="https://github.com/tinemuz" target="_blank">GitHub</a>
+            <a href="https://github.com/tinemuz" target="_blank">
+              GitHub
+            </a>
             <div>UK . 2024</div>
-            <TimeDisplay/>
+            <TimeDisplay />
           </div>
         </div>
         <div className="h-full"></div>
