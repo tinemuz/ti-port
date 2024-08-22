@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { formatDate } from "../util/utils";
 import Footer from "../components/Footer";
+import Tags from "../components/Tags.astro";
 
 const allWriting: CollectionEntry<"writing">[] = (
   await getCollection("writing")
@@ -38,13 +39,7 @@ const allWriting: CollectionEntry<"writing">[] = (
                 <a href={"/writing/" + writing.slug}>
                   {writing.data.title} - {writing.data.description}
                 </a>
-                <div class="flex flex-wrap gap-3 pt-2">
-                  {writing.data.tags.map((tag: string) => (
-                    <span class="rounded-full bg-mgray px-2 py-[3px] text-xs">
-                      <a href={"/writing/tag/" + tag}>{tag}</a>
-                    </span>
-                  ))}
-                </div>
+                <Tags tags={writing.data.tags}/>
               </div>
             </div>
           ))
