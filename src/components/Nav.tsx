@@ -9,7 +9,7 @@ export default function Nav() {
         <div className="flex gap-6">
           <a href="/">Featured</a>
           <a href="/writing">Writing</a>
-          <a href="/projects">Side Quests</a>
+          <a href="/tags">Tags</a>
         </div>
       </div>
     </nav>

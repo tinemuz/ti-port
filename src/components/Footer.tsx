@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex flex-col items-start space-y-1">
             <a href="/">Featured</a>
             <a href="/writing">Writing</a>
-            <a href="/projects">Side Quests</a>
+            <a href="/tags">Tags</a>
           </div>
           <div className="flex flex-col items-start space-y-1">
             <a href="https://github.com">GitHub</a>
