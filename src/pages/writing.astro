@@ -1,10 +1,8 @@
 ---
-import MainLayout from "../layouts/main-layout.astro";
-import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { formatDate } from "../util/utils";
-import Footer from "../components/Footer";
-import Tags from "../components/Tags.astro";
+import { getCollection } from "astro:content";
+import WritingGrid from "../components/WritingGrid.astro";
+import MainLayout from "../layouts/main-layout.astro";
 
 const allWriting: CollectionEntry<"writing">[] = (
   await getCollection("writing")
@@ -15,9 +13,7 @@ const allWriting: CollectionEntry<"writing">[] = (
 ---
 
 <MainLayout title="Writing">
-  <div
-    class="flex flex-col text-mtext"
-  >
+  <div class="flex flex-col text-mtext">
     <div class="flex flex-grow flex-col items-center justify-center">
       <div class="w-full border-b border-b-mgray pb-8 pt-6 md:max-w-[812px]">
         <h2 class="pb-4 text-lg font-bold">Writing</h2>
@@ -29,23 +25,8 @@ const allWriting: CollectionEntry<"writing">[] = (
       <div class="pt-8"></div>
 
       <div class="w-full flex-grow md:max-w-[812px]">
-        {
-          allWriting.map((writing) => (
-            <div class="grid grid-cols-[25%,70%] justify-between pb-7">
-              <div>
-                <p>{formatDate(writing.data.pubDate)}</p>
-              </div>
-              <div>
-                <a href={"/writing/" + writing.slug}>
-                  {writing.data.title} - {writing.data.description}
-                </a>
-                <Tags tags={writing.data.tags}/>
-              </div>
-            </div>
-          ))
-        }
+        {allWriting.map((writing) => <WritingGrid writing={writing} />)}
       </div>
-
     </div>
   </div>
 </MainLayout>
