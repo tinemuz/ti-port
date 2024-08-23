@@ -1,7 +1,6 @@
 ---
+import Featured from "../components/Featured.tsx";
 import MainLayout from "../layouts/main-layout.astro";
-import Featured from "../components/Featured.astro";
-import Footer from "../components/Footer";
 ---
 
 <MainLayout title="Tine's portfolio">
@@ -21,7 +20,7 @@ import Footer from "../components/Footer";
         </p>
       </div>
       <div class="w-full flex-grow md:max-w-[812px]">
-        <Featured />
+        <Featured client:load/>
       </div>
 
       
