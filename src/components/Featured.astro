@@ -13,11 +13,6 @@ const tagWriting = allWriting.filter((writing) =>
   writing.data.tags.includes("featured")
 );
 
-// This function generates a random index (0, 1, or 2)
-function getRandomIndex() {
-  return Math.floor(Math.random() * 3);
-}
-
 // Define the type for the previousIndex parameter
 function getUniqueIndex(previousIndex: number): number {
   // Array of possible indices
@@ -55,7 +50,14 @@ function getUniqueIndex(previousIndex: number): number {
             >
               {[0, 1, 2].map((index) => (
                 <div class={`border-mgray ${index === 2 ? "" : "border-r"}`}>
-                  <div class="h-5 border-b border-mgray" />
+                  <div class="h-5  border-b border-mgray">
+                    {index === currentIndex ? (
+                      <div class="mx-1 flex h-full items-center justify-between text-xs">
+                        <p>{truncateTitle(writing.data.title)}</p>
+                        <p>{formatDate(writing.data.pubDate)}</p>
+                      </div>
+                    ) : null}
+                  </div>
                   <div class="aspect-square">
                     <div class="relative w-full pb-[100%]">
                       {index === currentIndex ? (
