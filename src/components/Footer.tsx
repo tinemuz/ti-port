@@ -2,7 +2,7 @@ import { BSTTimeDisplay, LocalTimeDisplay } from "./TimeDisplay";
 
 export default function Footer() {
   return (
-    <footer className=" flex h-[270px] justify-center pb-4 pt-10 md:h-[220px]">
+    <footer className=" flex h-[320px] justify-center pb-4 pt-10 md:h-[220px]">
       <div className=" flex w-full flex-col border-t border-t-mgray pt-10 text-xs md:max-w-[812px]">
         <div className="grid w-full grid-cols-2 gap-y-5 md:grid-cols-3">
           <div className="flex flex-col items-start space-y-2">

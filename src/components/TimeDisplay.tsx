@@ -1,48 +1,55 @@
 import React, { useState, useEffect } from "react";
-import { formatTime, getTimeZoneAbbreviation } from "../util/utils";
+import { formatTime } from "../util/utils";
 
-const BSTTimeDisplay: React.FC = () => {
+// Custom hook for managing time updates
+const useCurrentTime = (updateInterval: number = 1000) => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date());
-    }, 500); // Update time every second
+    }, updateInterval);
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  }, [updateInterval]);
 
-  // Calculate BST time
-  const bstTimeZone = "Europe/London";
-  const bstTime = formatTime(currentTime, bstTimeZone);
-  const bstAbbreviation = getTimeZoneAbbreviation(currentTime, bstTimeZone);
+  return currentTime;
+};
 
-  return (
-    <div>
-      {bstTime} {bstAbbreviation}
-    </div>
-  );
+const BSTTimeDisplay: React.FC = () => {
+  const currentTime = useCurrentTime();
+
+  const formattedBstTime = currentTime
+    .toLocaleTimeString("en-GB", {
+      timeZone: "Europe/London",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      timeZoneName: "short",
+      hour12: false,
+    })
+    .replace(/^24:/, "00:");
+
+  return <div>{formattedBstTime}</div>;
 };
 
 const LocalTimeDisplay: React.FC = () => {
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const currentTime = useCurrentTime();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000); // Update time every second
+  const userLocale = navigator.language;
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  const timeZoneName = new Intl.DateTimeFormat(userLocale, {
+    timeZoneName: "short",
+  })
+    .format(currentTime)
+    .split(" ")
+    .pop();
 
-  // Get user's local time and time zone
-  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const localTime = formatTime(currentTime, userTimeZone);
-  const localAbbreviation = getTimeZoneAbbreviation(currentTime, userTimeZone);
+  const formattedLocalTime = formatTime(currentTime);
 
   return (
     <div>
-      {localTime} {localAbbreviation}
+      {formattedLocalTime} {timeZoneName}
     </div>
   );
 };
