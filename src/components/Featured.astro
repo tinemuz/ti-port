@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { formatDate, truncateTitle } from "../util/utils";
 
 const allWriting: CollectionEntry<"writing">[] = (
   await getCollection("writing")
@@ -11,48 +12,69 @@ const allWriting: CollectionEntry<"writing">[] = (
 const tagWriting = allWriting.filter((writing) =>
   writing.data.tags.includes("featured")
 );
+
+// This function generates a random index (0, 1, or 2)
+function getRandomIndex() {
+  return Math.floor(Math.random() * 3);
+}
+
+// Define the type for the previousIndex parameter
+function getUniqueIndex(previousIndex: number): number {
+  // Array of possible indices
+  const indices: number[] = [0, 1, 2];
+  // Remove the previous index from the possible choices
+  const remainingIndices = indices.filter((index) => index !== previousIndex);
+  // Randomly select one of the remaining indices
+  const randomIndex =
+    remainingIndices[Math.floor(Math.random() * remainingIndices.length)];
+  return randomIndex;
+}
 ---
 
 <div class="">
   <div class="w-full flex-grow md:max-w-[812px]">
     {
-      tagWriting.map((writing) => (
-        <div class="grid grid-cols-3 border border-mgray">
-          <div class="border-r border-mgray">
-            <div class="h-5 border-b border-mgray" />
-            <div class="aspect-square ">
-              <a href={"/writing/" + writing.slug}>
-                <Image
-                  src={writing.data.images[0].path}
-                  alt={writing.data.images[0].alt}
-                />
-              </a>
+      (() => {
+        // To keep track of the last used index
+        let lastIndex: number | null = null;
+        let isFirstItem = true;
+
+        return tagWriting.map((writing, index) => {
+          const currentIndex = getUniqueIndex(
+            lastIndex !== null ? lastIndex : -1
+          );
+          lastIndex = currentIndex; // Update lastIndex for the next iteration
+
+          // Determine if we should add the top border
+          const borderTopClass = isFirstItem ? "" : "border-t-0";
+          isFirstItem = false; // Set to false after processing the first item
+
+          return (
+            <div
+              class={`grid grid-cols-3 border border-mgray ${borderTopClass}`}
+            >
+              {[0, 1, 2].map((index) => (
+                <div class={`border-mgray ${index === 2 ? "" : "border-r"}`}>
+                  <div class="h-5 border-b border-mgray" />
+                  <div class="aspect-square">
+                    <div class="relative w-full pb-[100%]">
+                      {index === currentIndex ? (
+                        <a href={"/writing/" + writing.slug}>
+                          <Image
+                            class="absolute inset-0 h-full w-full object-cover"
+                            src={writing.data.images[0].path}
+                            alt={writing.data.images[0].alt}
+                          />
+                        </a>
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-          <div class="border-r border-mgray">
-            <div class="h-5 border-b border-mgray" />
-            <div class="aspect-square ">
-              <a href={"/writing/" + writing.slug}>
-                <Image
-                  src={writing.data.images[0].path}
-                  alt={writing.data.images[0].alt}
-                />
-              </a>
-            </div>
-          </div>
-          <div class="border-r border-mgray">
-            <div class="h-5 border-b border-mgray" />
-            <div class="aspect-square ">
-              <a href={"/writing/" + writing.slug}>
-                <Image
-                  src={writing.data.images[0].path}
-                  alt={writing.data.images[0].alt}
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      ))
+          );
+        });
+      })()
     }
   </div>
 </div>
