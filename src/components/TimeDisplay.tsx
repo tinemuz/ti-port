@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { formatTime } from "../util/utils";
+import React, { useEffect, useState } from "react";
 
 // Custom hook for managing time updates
 const useCurrentTime = (updateInterval: number = 1000) => {
@@ -28,30 +27,25 @@ const BSTTimeDisplay: React.FC = () => {
       timeZoneName: "short",
       hour12: false,
     })
-    .replace(/^24:/, "00:");
+    .replace(/^24:/, "00:")
+    .split(" ")
+    .shift();
 
   return <div>{formattedBstTime}</div>;
 };
 
-const LocalTimeDisplay: React.FC = () => {
+const BSTTimeZone: React.FC = () => {
   const currentTime = useCurrentTime();
 
-  const userLocale = navigator.language;
+  const bstTime = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London",
+    timeZoneName: "long",
+  }).format(new Date());
 
-  const timeZoneName = new Intl.DateTimeFormat(userLocale, {
-    timeZoneName: "short",
-  })
-    .format(currentTime)
-    .split(" ")
-    .pop();
+  const bstTimeZone = bstTime.split(", ").pop();
 
-  const formattedLocalTime = formatTime(currentTime);
-
-  return (
-    <div>
-      {formattedLocalTime} {timeZoneName}
-    </div>
-  );
+  return <div>{bstTimeZone}</div>;
 };
 
-export { BSTTimeDisplay, LocalTimeDisplay };
+export { BSTTimeDisplay, BSTTimeZone };
+

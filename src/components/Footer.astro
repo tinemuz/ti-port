@@ -1,5 +1,5 @@
 ---
-import { BSTTimeDisplay, LocalTimeDisplay } from "./TimeDisplay";
+import { BSTTimeDisplay, BSTTimeZone } from "./TimeDisplay";
 ---
 
 <footer class="flex h-[320px] justify-center pb-4 pt-10 md:h-[220px]">
@@ -26,8 +26,9 @@ import { BSTTimeDisplay, LocalTimeDisplay } from "./TimeDisplay";
       </div>
       <div class="flex flex-col items-start space-y-2">
         <a href="https://github.com/tinemuz" target="_blank"> GitHub </a>
-        <BSTTimeDisplay client:only />
-        <LocalTimeDisplay client:only />
+        <div><BSTTimeDisplay client:only /></div>
+        
+        <div><BSTTimeZone client:only/></div>
       </div>
     </div>
     <div class="h-full"></div>
