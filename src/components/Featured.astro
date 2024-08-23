@@ -24,25 +24,33 @@ function getUniqueIndex(previousIndex: number): number {
     remainingIndices[Math.floor(Math.random() * remainingIndices.length)];
   return randomIndex;
 }
+
+function shuffleArray<T>(array: T[]): T[] {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+const shuffledTagWriting = shuffleArray(tagWriting);
 ---
 
 <div class="">
   <div class="w-full flex-grow md:max-w-[812px]">
     {
       (() => {
-        // To keep track of the last used index
         let lastIndex: number | null = null;
         let isFirstItem = true;
 
-        return tagWriting.map((writing, index) => {
+        return shuffledTagWriting.map((writing, index) => {
           const currentIndex = getUniqueIndex(
             lastIndex !== null ? lastIndex : -1
           );
-          lastIndex = currentIndex; // Update lastIndex for the next iteration
+          lastIndex = currentIndex;
 
-          // Determine if we should add the top border
           const borderTopClass = isFirstItem ? "" : "border-t-0";
-          isFirstItem = false; // Set to false after processing the first item
+          isFirstItem = false;
 
           return (
             <div
