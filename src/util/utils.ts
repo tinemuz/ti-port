@@ -18,4 +18,11 @@ const getTimeZoneAbbreviation = (date: Date, timeZone: string) => {
   );
 };
 
-export { formatDate, formatTime, getTimeZoneAbbreviation };
+function truncateTitle(str: string, length: number = 13): string {
+  if (str.length > length) {
+    return str.slice(0, length) + "...";
+  }
+  return str;
+}
+
+export { formatDate, formatTime, getTimeZoneAbbreviation, truncateTitle };

@@ -6,7 +6,7 @@ export default function Nav() {
       <div className="w-full flex flex-row justify-between md:max-w-[812px] items-center">
         <div className="size-5 rounded-full bg-mred"></div>
 
-        <div className="flex gap-6">
+        <div className="flex gap-8">
           <a href="/">Featured</a>
           <a href="/writing">Writing</a>
           <a href="/tags">Tags</a>

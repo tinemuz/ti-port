@@ -4,7 +4,8 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { formatDate } from "../../util/utils";
 import { Image } from "astro:assets";
-import Tags from "../../components/TagsList.astro";
+import Tags
+ from "../../components/TagsList.astro";
 
 const { slug } = Astro.params;
 
@@ -39,7 +40,7 @@ const { Content } = await entry.render();
       <h2 class="pb-4 text-lg font-bold">{entry.data.title}</h2>
       <p class="">{entry.data.description}</p>
 
-      <Tags tags={entry.data.tags} />
+        <Tags tags={entry.data.tags}/>
 
       <p class="pt-2">
         Uploaded on {formatDate(entry.data.pubDate)}
