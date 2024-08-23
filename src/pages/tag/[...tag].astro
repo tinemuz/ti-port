@@ -2,6 +2,7 @@
 import MainLayout from "../../layouts/main-layout.astro";
 
 import { getCollection, type CollectionEntry } from "astro:content";
+
 import WritingGrid from "../../components/WritingGrid.astro";
 
 const { tag } = Astro.props;
@@ -24,6 +25,10 @@ export async function getStaticPaths() {
     params: { tag },
     props: { tag },
   }));
+}
+
+if (tag === "featured") {
+  return Astro.redirect('/')
 }
 
 const allWriting: CollectionEntry<"writing">[] = (
