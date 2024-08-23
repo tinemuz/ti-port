@@ -10,7 +10,7 @@ export async function getAllTags() {
   const collection = await getCollection("writing");
   const allTags = new Set<string>();
 
-  collection.forEach((item) => {
+  collection.forEach((item: { data: { tags: any[]; }; }) => {
     item.data.tags?.forEach((tag) => allTags.add(tag));
   });
 
@@ -24,10 +24,6 @@ export async function getStaticPaths() {
     params: { tag },
     props: { tag },
   }));
-}
-
-if (tag === "featured") {
-  return Astro.redirect('/')
 }
 
 const allWriting: CollectionEntry<"writing">[] = (

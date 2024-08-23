@@ -6,13 +6,12 @@ import MainLayout from "../layouts/main-layout.astro";
 const allWriting = await getCollection("writing");
 
 // Extract all tags from all posts
-const allTags = allWriting.flatMap((post) => post.data.tags);
+const allTags = allWriting.flatMap((post: { data: { tags: any; }; }) => post.data.tags);
 
 // Create a Set to get unique tags, then convert back to an array
 const uniqueTags = [...new Set(allTags)];
 
-// Sort tags alphabetically
-uniqueTags.sort((a, b) => a.localeCompare(b));
+
 ---
 
 <MainLayout title="Writing">
