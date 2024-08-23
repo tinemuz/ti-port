@@ -63,6 +63,7 @@ function getUniqueIndex(previousIndex: number): number {
                       {index === currentIndex ? (
                         <a href={"/writing/" + writing.slug}>
                           <Image
+                            transition:name={writing.data.images[0].path.src}
                             class="absolute inset-0 h-full w-full object-cover"
                             src={writing.data.images[0].path}
                             alt={writing.data.images[0].alt}
