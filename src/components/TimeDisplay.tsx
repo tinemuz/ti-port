@@ -1,50 +1,51 @@
-import React, { useState, useEffect } from "react";
-import { formatTime, getTimeZoneAbbreviation } from "../util/utils";
+import React, { useEffect, useState } from "react";
+
+// Custom hook for managing time updates
+const useCurrentTime = (updateInterval: number = 1000) => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, updateInterval);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [updateInterval]);
+
+  return currentTime;
+};
 
 const BSTTimeDisplay: React.FC = () => {
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const currentTime = useCurrentTime();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 500); // Update time every second
+  const formattedBstTime = currentTime
+    .toLocaleTimeString("en-GB", {
+      timeZone: "Europe/London",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      timeZoneName: "short",
+      hour12: false,
+    })
+    .replace(/^24:/, "00:")
+    .split(" ")
+    .shift();
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
-
-  // Calculate BST time
-  const bstTimeZone = "Europe/London";
-  const bstTime = formatTime(currentTime, bstTimeZone);
-  const bstAbbreviation = getTimeZoneAbbreviation(currentTime, bstTimeZone);
-
-  return (
-    <div>
-      {bstTime} {bstAbbreviation}
-    </div>
-  );
+  return <div>{formattedBstTime}</div>;
 };
 
-const LocalTimeDisplay: React.FC = () => {
-  const [currentTime, setCurrentTime] = useState(new Date());
+const BSTTimeZone: React.FC = () => {
+  const currentTime = useCurrentTime();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000); // Update time every second
+  const bstTime = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London",
+    timeZoneName: "long",
+  }).format(new Date());
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  const bstTimeZone = bstTime.split(", ").pop();
 
-  // Get user's local time and time zone
-  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const localTime = formatTime(currentTime, userTimeZone);
-  const localAbbreviation = getTimeZoneAbbreviation(currentTime, userTimeZone);
-
-  return (
-    <div>
-      {localTime} {localAbbreviation}
-    </div>
-  );
+  return <div>{bstTimeZone}</div>;
 };
 
-export { BSTTimeDisplay, LocalTimeDisplay };
+export { BSTTimeDisplay, BSTTimeZone };
+

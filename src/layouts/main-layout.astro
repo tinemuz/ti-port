@@ -1,9 +1,10 @@
 ---
 const { title } = Astro.props;
-import Nav from "../components/Nav";
+import Nav from "../components/Nav.astro";
 import "../../src/styles/global.css";
 import "@fontsource/dm-mono";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <html lang="en">
@@ -13,11 +14,12 @@ import Footer from "../components/Footer";
     <meta name="description" content="Tine's portfolio" />
     <title title={title}></title>
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <ViewTransitions />
   </head>
   <body class="bg-back px-6 text-xs md:text-sm">
     <main>
       <Nav client:load />
-      <div class="min-h-[calc(100vh-510px)] md:min-h-[calc(100vh-460px)]">
+      <div class="min-h-[calc(100vh-560px)] md:min-h-[calc(100vh-460px)]">
         <slot />
         <!-- All the different pages to be rendered -->
       </div>
