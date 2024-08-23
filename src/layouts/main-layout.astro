@@ -1,9 +1,9 @@
 ---
 const { title } = Astro.props;
-import Nav from "../components/Nav";
+import Nav from "../components/Nav.astro";
 import "../../src/styles/global.css";
 import "@fontsource/dm-mono";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -22,7 +22,7 @@ import Footer from "../components/Footer";
         <!-- All the different pages to be rendered -->
       </div>
 
-      <Footer client:only="react"/>
+      <Footer />
     </main>
   </body>
 </html>
