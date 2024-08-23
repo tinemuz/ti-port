@@ -1,31 +1,51 @@
-import React, { useState, useEffect } from "react";
-import { formatTime, getTimeZoneAbbreviation } from "../util/utils";
+import React, { useEffect, useState } from "react";
 
-const TimeDisplay: React.FC = () => {
+// Custom hook for managing time updates
+const useCurrentTime = (updateInterval: number = 1000) => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date());
-    }, 1000); // Update time every second
+    }, updateInterval);
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  }, [updateInterval]);
 
-  // Format BST time
-  const bstTime = formatTime(currentTime, "Europe/London");
-  const bstAbbreviation = getTimeZoneAbbreviation(currentTime, "Europe/London");
-
-  // Format user's local time
-  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const localTime = formatTime(currentTime, userTimeZone);
-  const localAbbreviation = getTimeZoneAbbreviation(currentTime, userTimeZone);
-
-  return (
-    <div>
-      {bstTime} {bstAbbreviation} - {localTime} {localAbbreviation}
-    </div>
-  );
+  return currentTime;
 };
 
-export default TimeDisplay;
+const BSTTimeDisplay: React.FC = () => {
+  const currentTime = useCurrentTime();
+
+  const formattedBstTime = currentTime
+    .toLocaleTimeString("en-GB", {
+      timeZone: "Europe/London",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      timeZoneName: "short",
+      hour12: false,
+    })
+    .replace(/^24:/, "00:")
+    .split(" ")
+    .shift();
+
+  return <div>{formattedBstTime}</div>;
+};
+
+const BSTTimeZone: React.FC = () => {
+  const currentTime = useCurrentTime();
+
+  const bstTime = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London",
+    timeZoneName: "long",
+  }).format(new Date());
+
+  const bstTimeZone = bstTime.split(", ").pop();
+
+  return <div>{bstTimeZone}</div>;
+};
+
+export { BSTTimeDisplay, BSTTimeZone };
+
