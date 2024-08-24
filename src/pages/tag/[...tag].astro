@@ -10,7 +10,7 @@ export async function getAllTags() {
   const collection = await getCollection("writing");
   const allTags = new Set<string>();
 
-  collection.forEach((item: { data: { tags: any[]; }; }) => {
+  collection.forEach((item: { data: { tags: any[] } }) => {
     item.data.tags?.forEach((tag) => allTags.add(tag));
   });
 
@@ -38,7 +38,7 @@ const tagWriting = allWriting.filter((writing) =>
 );
 ---
 
-<MainLayout title="#" {tag}>
+<MainLayout title={`# ${tag}`}>
   <div class="flex flex-col text-mtext">
     <div class="flex flex-grow flex-col items-center justify-center">
       <div class="mb-8 w-full border-b border-b-mgray pt-6 md:max-w-[812px]">
