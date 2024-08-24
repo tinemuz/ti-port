@@ -6,15 +6,15 @@ import MainLayout from "../layouts/main-layout.astro";
 const allWriting = await getCollection("writing");
 
 // Extract all tags from all posts
-const allTags = allWriting.flatMap((post: { data: { tags: any; }; }) => post.data.tags);
+const allTags = allWriting.flatMap(
+  (post: { data: { tags: any } }) => post.data.tags
+);
 
 // Create a Set to get unique tags, then convert back to an array
 const uniqueTags = [...new Set(allTags)];
-
-
 ---
 
-<MainLayout title="Writing">
+<MainLayout title="All Content Tags | Navigate my Portfolio by Topic">
   <div class="flex flex-col text-mtext">
     <div class="flex flex-grow flex-col items-center justify-center">
       <div class="w-full border-b border-b-mgray pb-8 pt-6 md:max-w-[812px]">
