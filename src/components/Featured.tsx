@@ -45,7 +45,7 @@ export default function Featured() {
         {tagWriting.map((writing, itemIndex) => (
           <div
             key={writing.slug} // Ensure unique keys
-            className={`grid grid-cols-3 border-t border-skin-border ${itemIndex === 0 ? "" : "border-t-0"}`}
+            className="grid grid-cols-3"
           >
             {[0, 1, 2].map((index) => (
               <div key={index}>
@@ -71,7 +71,7 @@ export default function Featured() {
                 </a>
                 <a href={"/writing/" + writing.slug}>
                   <div className="aspect-square">
-                    <div className="relative w-full overflow-hidden pb-[100%]">
+                    <div className="relative w-full overflow-hidden rounded-xl pb-[100%]">
                       {index === positions[itemIndex] ? (
                         <img
                           className="absolute inset-0 h-full w-full transform object-cover grayscale transition-all

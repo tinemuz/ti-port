@@ -36,8 +36,10 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout title={entry.data.title}>
-  <div class="flex flex-grow flex-col items-center text-skin-base">
-    <div class="w-full border-b border-b-skin-border pb-8 pt-6 md:max-w-[812px]">
+  <div class="text-skin-text flex flex-grow flex-col items-center">
+    <div
+      class="border-b-skin-bg-sub w-full border-b pb-8 pt-6 md:max-w-[812px]"
+    >
       <h2 class="pb-4 text-lg font-bold">{entry.data.title}</h2>
       <p class="">{entry.data.description}</p>
 
@@ -55,7 +57,7 @@ const { Content } = await entry.render();
               transition:name={image.path.src}
               src={image.path}
               alt={image.alt}
-              class="rounded-md"
+              class="rounded-xl"
             />
           ))
         }

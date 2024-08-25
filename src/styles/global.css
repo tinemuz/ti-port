@@ -12,76 +12,78 @@
 }
 
 @keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @layer base {
-  :root{
-    --color-text-base: 36, 36, 36;
-    --color-fill-acent: 241, 78, 58;
-    --color-background: 234, 234, 234;
-    --color-fill-border: 216, 216, 216;
+  :root {
+    --color-text: 36, 36, 36;
+    --color-accent: 241, 78, 58;
+    --color-bg: 234, 234, 234;
+    --color-bg-sub: 216, 216, 216;
   }
   .theme-base {
-    --color-text-base: 36, 36, 36;
-    --color-fill-acent: 241, 78, 58;
-    --color-background: 234, 234, 234;
-    --color-fill-border: 216, 216, 216;
-  }
-  .theme-darkstar {
-    --color-text-base: 128, 133, 131;
-    --color-fill-acent: 44, 255, 111;
-    --color-background: 10, 10, 10;
-    --color-fill-border: 17, 19, 19;
+    --color-text: 36, 36, 36;
+    --color-accent: 241, 78, 58;
+    --color-bg: 234, 234, 234;
+    --color-bg-sub: 216, 216, 216;
   }
 
-  /* Darkstar Theme */
+  /* Darkstar */
   .theme-darkstar {
-    --color-text-base: 128, 133, 131;
-    --color-fill-acent: 44, 255, 111;
-    --color-background: 10, 10, 10;
-    --color-fill-border: 17, 19, 19;
+    --color-text: 255, 255, 255;
+    --color-text-sub: 245, 240, 164; /* #f5f0a4 */
+    --color-accent: 222, 222, 0; /* #dede00 */
+    --color-bg: 24, 25, 28; /* #18191c */
+    --color-bg-sub: 42, 41, 32; /*  #2a2920 */
   }
 
-  /* Oceanic */
-  .theme-oceanic {
-    --color-text-base: 230, 245, 255;
-    --color-fill-acent: 3, 169, 244;
-    --color-background: 0, 30, 60;
-    --color-fill-border: 0, 43, 85;
+  /* Salmon */
+  .theme-salmon {
+    --color-text: 96, 103, 91;
+    --color-text-sub: 255, 50, 1;
+    --color-accent: 255, 50, 1;
+    --color-bg: 233,245,220;
+    --color-bg-sub: 214, 231, 202;
   }
 
   /* Sunset Glow */
   .theme-sunset-glow {
-    --color-text-base: 255, 245, 235;
-    --color-fill-acent: 255, 94, 77;
-    --color-background: 60, 15, 10;
-    --color-fill-border: 85, 20, 15;
+    --color-text: 255, 245, 235;
+    --color-accent: 255, 94, 77;
+    --color-bg: 60, 15, 10;
+    --color-bg-sub: 85, 20, 15;
   }
 
   /* Forest Mist */
   .theme-forest-mist {
-    --color-text-base: 240, 255, 244;
-    --color-fill-acent: 120, 190, 70;
-    --color-background: 20, 40, 20;
-    --color-fill-border: 30, 50, 30;
+    --color-text: 240, 255, 244;
+    --color-accent: 120, 190, 70;
+    --color-bg: 20, 40, 20;
+    --color-bg-sub: 30, 50, 30;
   }
 
   /* Solar Flare */
   .theme-solar-flare {
-    --color-text-base: 255, 238, 173;
-    --color-fill-acent: 255, 87, 34;
-    --color-background: 51, 25, 0;
-    --color-fill-border: 77, 38, 13;
+    --color-text: 255, 238, 173;
+    --color-accent: 255, 87, 34;
+    --color-bg: 51, 25, 0;
+    --color-bg-sub: 77, 38, 13;
   }
 
   /* Arctic Chill */
   .theme-arctic-chill {
-    --color-text-base: 220, 245, 255;
-    --color-fill-acent: 0, 174, 239;
-    --color-background: 0, 38, 58;
-    --color-fill-border: 0, 53, 81;
+    --color-text: 220, 245, 255;
+    --color-accent: 0, 174, 239;
+    --color-bg: 0, 38, 58;
+    --color-bg-sub: 0, 53, 81;
   }
 }
