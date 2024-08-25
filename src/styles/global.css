@@ -8,7 +8,7 @@
 
 .flicker .char {
   display: inline-block;
-  animation: flicker 0.1s 1s;
+  animation: flicker 0.1s 2s;
 }
 
 @keyframes flicker {
