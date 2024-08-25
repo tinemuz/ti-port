@@ -4,16 +4,6 @@ import FlickeringText from "./FlickeringText";
 import FlickerText from "./FlickeringText";
 
 
-interface Writing {
-  slug: string;
-  data: {
-    title: string;
-    pubDate: Date;
-    tags: string[];
-    images: { path: string; alt: string }[];
-  };
-}
-
 const allWriting: CollectionEntry<"writing">[] = (
   await getCollection("writing")
 ).sort(
@@ -59,13 +49,13 @@ export default function Featured() {
 
             return (
               <div
-                className={`grid grid-cols-3 border border-mgray ${borderTopclassName}`}
+                className={`grid grid-cols-3 border-t border-mgray ${borderTopclassName}`}
               >
                 {[0, 1, 2].map((index) => (
                   <div
-                    className={`border-mgray ${index === 2 ? "" : "border-r"}`}
+                    className=""
                   >
-                    <div className="h-5  border-b border-mgray">
+                    <div className="h-5  ">
                       {index === currentIndex ? (
                         <div className="mx-1 flex h-full items-center justify-between text-[6px] md:text-xs">
                           <p>
