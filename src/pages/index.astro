@@ -1,9 +1,9 @@
 ---
-import Featured from "../components/Featured.astro";
+import Featured from "../components/Featured.tsx"
 import MainLayout from "../layouts/main-layout.astro";
 ---
 
-<MainLayout title="Explore My Portfolio | Featured Projects and Insights">
+<MainLayout title="Tine Muzunza | Featured Projects and Insights">
   <div class="flex flex-col text-mtext md:text-sm">
     <div class="flex flex-grow flex-col items-center justify-center">
       <div class="w-full pb-8 pt-6 md:max-w-[812px]">
@@ -18,7 +18,7 @@ import MainLayout from "../layouts/main-layout.astro";
         </p>
       </div>
       <div class="w-full flex-grow md:max-w-[812px]">
-        <Featured />
+        <Featured client:only/>
       </div>
     </div>
   </div>
