@@ -11,7 +11,7 @@ const FlickeringText: React.FC<FlickeringTextProps> = ({ text }) => {
   const handleMouseLeave = () => setIsFlickering(false);
 
   // Function to generate a random delay
-  const getRandomDelay = () => `${Math.random() * 0.5}s`;
+  const getRandomDelay = () => `${Math.random() * .6}s`;
 
   return (
     <span
