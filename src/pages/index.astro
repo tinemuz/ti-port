@@ -1,5 +1,5 @@
 ---
-import Featured from "../components/Featured.astro";
+import Featured from "../components/Featured.tsx"
 import MainLayout from "../layouts/main-layout.astro";
 ---
 
@@ -18,7 +18,7 @@ import MainLayout from "../layouts/main-layout.astro";
         </p>
       </div>
       <div class="w-full flex-grow md:max-w-[812px]">
-        <Featured />
+        <Featured client:only/>
       </div>
     </div>
   </div>
