@@ -9,7 +9,7 @@ interface PageTransitionProps {
 const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }} // Start from bottom and invisible
+      initial={{ opacity: 0, y: 10 }} // Start from bottom and invisible
       animate={{ opacity: 1, y: 1 }} // 1px to reduce jitter
       transition={{ duration: 0.5, ease: "easeInOut" }} // Adjust duration and easing
     >

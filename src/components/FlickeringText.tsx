@@ -1,24 +1,18 @@
-import React, { useState } from "react";
+import React from "react"; // Ensure React is imported
 
 interface FlickeringTextProps {
   text: string;
+  isFlickering: boolean;
 }
 
-const FlickeringText: React.FC<FlickeringTextProps> = ({ text }) => {
-  const [isFlickering, setIsFlickering] = useState(false);
-
-  const handleMouseEnter = () => setIsFlickering(true);
-  const handleMouseLeave = () => setIsFlickering(false);
-
-  // Function to generate a random delay
-  const getRandomDelay = () => `${Math.random() * .6}s`;
+const FlickeringText: React.FC<FlickeringTextProps> = ({
+  text,
+  isFlickering,
+}) => {
+  const getRandomDelay = () => `${Math.random() * 0.6}s`;
 
   return (
-    <span
-      className={`flickering-text ${isFlickering ? "flicker" : ""}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <span className={`flickering-text ${isFlickering ? "flicker" : ""}`}>
       {text.split("").map((char, index) => (
         <span
           key={index}
