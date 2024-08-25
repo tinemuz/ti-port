@@ -71,14 +71,14 @@ export default function Featured() {
                 </a>
                 <a href={"/writing/" + writing.slug}>
                   <div className="aspect-square">
-                    <div className="relative w-full pb-[100%]">
+                    <div className="relative w-full overflow-hidden pb-[100%]">
                       {index === positions[itemIndex] ? (
                         <img
-                          className="absolute inset-0 h-full w-full object-cover"
-                          src={writing.data.images[0].path.src}
-                          alt={writing.data.images[0].alt}
+                          className="absolute inset-0 h-full w-full transform object-cover transition-transform duration-300 ease-in-out hover:scale-110"
                           onMouseEnter={() => handleMouseEnter(index)}
                           onMouseLeave={handleMouseLeave}
+                          src={writing.data.images[0].path.src}
+                          alt={writing.data.images[0].alt}
                         />
                       ) : null}
                     </div>
