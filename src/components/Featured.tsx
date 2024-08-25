@@ -71,7 +71,7 @@ export default function Featured() {
                 </a>
                 <a href={"/writing/" + writing.slug}>
                   <div className="aspect-square">
-                    <div className="relative w-full overflow-hidden pb-[100%]">
+                    <div className="relative w-full overflow-hidden rounded-xl pb-[100%]">
                       {index === positions[itemIndex] ? (
                         <img
                           className="absolute inset-0 h-full w-full transform object-cover grayscale transition-all

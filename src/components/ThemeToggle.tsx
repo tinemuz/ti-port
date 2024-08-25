@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 const themes = [
   "theme-base",
   "theme-darkstar",
-  "theme-oceanic",
+  "theme-salmon",
   "theme-sunset-glow",
   "theme-forest-mist",
   "theme-solar-flare",

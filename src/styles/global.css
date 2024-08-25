@@ -37,21 +37,22 @@
     --color-bg-sub: 216, 216, 216;
   }
 
-  /* Darkstar Theme */
+  /* Darkstar */
   .theme-darkstar {
-    --color-text: 255,255,255; 
+    --color-text: 255, 255, 255;
     --color-text-sub: 245, 240, 164; /* #f5f0a4 */
     --color-accent: 222, 222, 0; /* #dede00 */
     --color-bg: 24, 25, 28; /* #18191c */
     --color-bg-sub: 42, 41, 32; /*  #2a2920 */
   }
 
-  /* Oceanic */
-  .theme-oceanic {
-    --color-text: 230, 245, 255;
-    --color-accent: 3, 169, 244;
-    --color-bg: 0, 30, 60;
-    --color-bg-sub: 0, 43, 85;
+  /* Salmon */
+  .theme-salmon {
+    --color-text: 96, 103, 91;
+    --color-text-sub: 255, 50, 1;
+    --color-accent: 255, 50, 1;
+    --color-bg: 233,245,220;
+    --color-bg-sub: 214, 231, 202;
   }
 
   /* Sunset Glow */
