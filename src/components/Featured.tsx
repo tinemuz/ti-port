@@ -74,7 +74,8 @@ export default function Featured() {
                     <div className="relative w-full overflow-hidden pb-[100%]">
                       {index === positions[itemIndex] ? (
                         <img
-                          className="absolute inset-0 h-full w-full transform object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                          className="absolute inset-0 h-full w-full transform object-cover grayscale transition-all
+             duration-700 ease-in-out hover:scale-105 hover:grayscale-0"
                           onMouseEnter={() => handleMouseEnter(index)}
                           onMouseLeave={handleMouseLeave}
                           src={writing.data.images[0].path.src}
