@@ -21,34 +21,21 @@ export default {
         "2/1": "2 / 1",
         "3/1": "3 / 1",
       },
-      textColor: {
+      colors: {
         skin: {
-          base: withOpacity('--color-text-base'),
+          text: {
+            DEFAULT: withOpacity("--color-text"),
+            sub: withOpacity("--color-text-sub")
+          },
+          accent: {
+            DEFAULT: withOpacity("--color-accent"),
+          },
+          bg: {
+            DEFAULT: withOpacity("--color-bg"),
+            sub: withOpacity("--color-bg-sub"),
+          },
         },
       },
-      backgroundColor: {
-        skin: {
-          background: withOpacity('--color-background'),
-          acent: withOpacity('--color-fill-acent'),
-          border: withOpacity('--color-fill-border'),
-        },
-      },
-      borderColor: {
-        skin: {
-          border: withOpacity('--color-fill-border'),
-        },
-      },
-      fill: {
-        skin: {
-          acent: withOpacity('--color-fill-acent'),
-        },
-      },
-    },
-    colors: {
-      mgray: "#D8D8D8",
-      back: "#EAEAEA",
-      mtext: "#242424",
-      mred: "#F14E3A",
     },
   },
   plugins: [],

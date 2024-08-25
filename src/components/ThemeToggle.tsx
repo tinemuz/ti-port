@@ -44,7 +44,7 @@ const ThemeToggle = () => {
   return (
     <div
       onClick={toggleTheme}
-      className="size-5 cursor-pointer rounded-full bg-skin-acent   transition-all
+      className="bg-skin-accent size-5 cursor-pointer rounded-full   transition-all
              duration-300 ease-in-out hover:scale-110"
     ></div>
   );

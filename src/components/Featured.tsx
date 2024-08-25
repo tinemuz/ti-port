@@ -45,7 +45,7 @@ export default function Featured() {
         {tagWriting.map((writing, itemIndex) => (
           <div
             key={writing.slug} // Ensure unique keys
-            className={`grid grid-cols-3 border-t border-skin-border ${itemIndex === 0 ? "" : "border-t-0"}`}
+            className={`border-skin-bg-sub grid grid-cols-3 border-t ${itemIndex === 0 ? "" : "border-t-0"}`}
           >
             {[0, 1, 2].map((index) => (
               <div key={index}>

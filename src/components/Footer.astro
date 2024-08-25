@@ -2,9 +2,11 @@
 import { BSTTimeDisplay, BSTTimeZone } from "./TimeDisplay";
 ---
 
-<footer class="flex h-[320px] justify-center pb-4 pt-10 md:h-[220px] text-skin-base">
+<footer
+  class="text-skin-text flex h-[320px] justify-center pb-4 pt-10 md:h-[220px]"
+>
   <div
-    class="flex w-full flex-col border-t border-t-skin-border pt-10 text-xs md:max-w-[812px]"
+    class="border-t-skin-bg-sub flex w-full flex-col border-t pt-10 text-xs md:max-w-[812px]"
   >
     <div class="grid w-full grid-cols-2 gap-y-5 md:grid-cols-3">
       <div class="flex flex-col items-start space-y-2">
@@ -27,8 +29,8 @@ import { BSTTimeDisplay, BSTTimeZone } from "./TimeDisplay";
       <div class="flex flex-col items-start space-y-2">
         <a href="https://github.com/tinemuz" target="_blank"> GitHub </a>
         <div><BSTTimeDisplay client:load /></div>
-        
-        <div><BSTTimeZone client:load/></div>
+
+        <div><BSTTimeZone client:load /></div>
       </div>
     </div>
     <div class="h-full"></div>
