@@ -45,7 +45,7 @@
     --color-fill-border: 17, 19, 19;
   }
 
-  /* Theme 1: Oceanic */
+  /* Oceanic */
   .theme-oceanic {
     --color-text-base: 230, 245, 255;
     --color-fill-acent: 3, 169, 244;
@@ -53,7 +53,7 @@
     --color-fill-border: 0, 43, 85;
   }
 
-  /* Theme 2: Sunset Glow */
+  /* Sunset Glow */
   .theme-sunset-glow {
     --color-text-base: 255, 245, 235;
     --color-fill-acent: 255, 94, 77;
@@ -61,7 +61,7 @@
     --color-fill-border: 85, 20, 15;
   }
 
-  /* Theme 3: Forest Mist */
+  /* Forest Mist */
   .theme-forest-mist {
     --color-text-base: 240, 255, 244;
     --color-fill-acent: 120, 190, 70;
@@ -69,7 +69,7 @@
     --color-fill-border: 30, 50, 30;
   }
 
-  /* Theme 4: Solar Flare */
+  /* Solar Flare */
   .theme-solar-flare {
     --color-text-base: 255, 238, 173;
     --color-fill-acent: 255, 87, 34;
@@ -77,7 +77,7 @@
     --color-fill-border: 77, 38, 13;
   }
 
-  /* Theme 5: Arctic Chill */
+  /* Arctic Chill */
   .theme-arctic-chill {
     --color-text-base: 220, 245, 255;
     --color-fill-acent: 0, 174, 239;
