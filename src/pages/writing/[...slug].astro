@@ -31,6 +31,8 @@ if (entry === undefined) {
 }
 
 const { Content } = await entry.render();
+
+
 ---
 
 <MainLayout title={entry.data.title}>
@@ -48,10 +50,9 @@ const { Content } = await entry.render();
     <div class="py-6 md:max-w-[812px]">
       <div class="flex flex-wrap gap-3 pt-2">
         {
-          entry.data.images.map((image) => (
+          entry.data.images.map((image: any) => (
             <Image
               transition:name={image.path.src}
-              transition:name="headImg"
               src={image.path}
               alt={image.alt}
               class="rounded-md"
