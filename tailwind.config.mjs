@@ -24,15 +24,19 @@ export default {
       colors: {
         skin: {
           text: {
-            DEFAULT: withOpacity("--color-text"),
-            sub: withOpacity("--color-text-sub")
+            DEFAULT: "rgba(var(--color-text), <alpha-value>)",
+            sub: "rgba(var(--color-text-sub), <alpha-value>)"  
           },
           accent: {
-            DEFAULT: withOpacity("--color-accent"),
+            DEFAULT: "rgba(var(--color-accent), <alpha-value>)",
+            sub: "rgba(var(--color-accent-sub), <alpha-value>)"  
           },
           bg: {
-            DEFAULT: withOpacity("--color-bg"),
-            sub: withOpacity("--color-bg-sub"),
+            DEFAULT: "rgba(var(--color-bg), <alpha-value>)",
+            sub: "rgba(var(--color-bg-sub), <alpha-value>)"  
+          },
+          border: {
+            DEFAULT: "rgba(var(--color-border), <alpha-value>)",
           },
         },
       },
