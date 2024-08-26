@@ -5,12 +5,12 @@ import React, { useEffect } from "react";
 // Define the list of themes
 const themes = [
   "theme-base",
-  "theme-darkstar",
-  "theme-salmon",
-  "theme-sunset-glow",
-  "theme-forest-mist",
-  "theme-solar-flare",
-  "theme-arctic-chill",
+  "theme-light-one",
+  "theme-light-two",
+  "theme-light-three",
+  "theme-dark-one",
+  "theme-dark-two",
+  "theme-dark-three",
 ];
 
 const ThemeToggle = () => {
@@ -44,7 +44,7 @@ const ThemeToggle = () => {
   return (
     <div
       onClick={toggleTheme}
-      className="bg-skin-accent size-5 cursor-pointer rounded-full   transition-all
+      className="size-5 cursor-pointer rounded-full bg-skin-accent   transition-all
              duration-300 ease-in-out hover:scale-110"
     ></div>
   );

@@ -48,13 +48,13 @@ export default function Featured() {
             className="grid grid-cols-3"
           >
             {[0, 1, 2].map((index) => (
-              <div key={index}>
-                <a href={"/writing/" + writing.slug}>
-                  <div
-                    className="h-5"
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                  >
+              <div key={index} className="hover:text-skin-accent">
+                <div
+                  className="h-5"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <a href={"/writing/" + writing.slug}>
                     {index === positions[itemIndex] ? (
                       <div className="mx-1 flex h-full items-center justify-between text-[6px] md:text-xs">
                         <FlickeringText
@@ -67,12 +67,13 @@ export default function Featured() {
                         />
                       </div>
                     ) : null}
-                  </div>
-                </a>
-                <a href={"/writing/" + writing.slug}>
-                  <div className="aspect-square">
-                    <div className="relative w-full overflow-hidden rounded-xl pb-[100%]">
-                      {index === positions[itemIndex] ? (
+                  </a>
+                </div>
+
+                <div className="aspect-square">
+                  <a href={"/writing/" + writing.slug}>
+                    {index === positions[itemIndex] ? (
+                      <div className="border-skin-border border-opacity-50 relative w-full overflow-hidden rounded-xl border-2 pb-[100%]">
                         <img
                           className="absolute inset-0 h-full w-full transform object-cover grayscale transition-all
              duration-700 ease-in-out hover:scale-105 hover:grayscale-0"
@@ -81,10 +82,10 @@ export default function Featured() {
                           src={writing.data.images[0].path.src}
                           alt={writing.data.images[0].alt}
                         />
-                      ) : null}
-                    </div>
-                  </div>
-                </a>
+                      </div>
+                    ) : null}
+                  </a>
+                </div>
               </div>
             ))}
           </div>
