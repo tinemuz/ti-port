@@ -72,7 +72,7 @@ export default function Featured() {
 
                 <a href={"/writing/" + writing.slug}>
                   {index === positions[itemIndex] ? (
-                    <div className=" relative aspect-square w-full overflow-hidden rounded-[1.25rem] border border-skin-border border-opacity-10">
+                    <div className=" relative aspect-square w-full overflow-hidden rounded-lg border border-skin-border border-opacity-10">
                       <img
                         className="absolute inset-0 h-full w-full transform object-cover grayscale transition-all
              duration-700 ease-in-out hover:scale-105 hover:grayscale-0"
