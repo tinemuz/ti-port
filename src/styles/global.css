@@ -23,6 +23,27 @@
   }
 }
 
+/* Example CSS animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-load {
+  opacity: 0; /* Start with hidden state */
+}
+
+.animate-on-load.start-animation {
+  animation: fadeIn 500ms ease forwards; /* Fade-in animation */
+}
+
+
 @layer base {
   :root {
     --color-text: 36, 36, 36;
@@ -40,7 +61,7 @@
     --color-accent-sub: 241, 78, 58;
     --color-bg: 234, 234, 234;
     --color-bg-sub: 216, 216, 216;
-    --color-border: 59, 71, 68;
+    --color-border: 34, 34, 34;
   }
 
   /* Light One */
@@ -51,7 +72,7 @@
     --color-accent-sub: 241, 58, 65;
     --color-bg: 220,245,241;
     --color-bg-sub: 183, 220, 213;
-    --color-border: 59, 71, 68;
+    --color-border: 34, 34, 34;
   }
 
   /* Light Two */
@@ -62,7 +83,7 @@
     --color-accent-sub: 50, 1, 255;
     --color-bg: 233, 245, 220;
     --color-bg-sub: 202, 220, 183;
-    --color-border: 46, 43, 43;
+    --color-border: 34, 34, 34;
   }
 
   /* Light Three */
@@ -73,7 +94,7 @@
     --color-accent-sub: 81, 69, 147;
     --color-bg: 220, 245, 229;
     --color-bg-sub: 183, 220, 195;
-    --color-border: 46, 43, 43;
+    --color-border: 34, 34, 34;
   }
 
   /* Dark One */
@@ -84,7 +105,7 @@
     --color-accent-sub: 58, 221, 241;
     --color-bg: 31, 29, 29;
     --color-bg-sub: 42, 39, 39;
-    --color-border: 46, 43, 43;
+    --color-border: 190, 190, 190;
   }
 
   /* Dark Two */
@@ -95,7 +116,7 @@
     --color-accent-sub: 241, 58, 62;
     --color-bg: 29, 31, 29;
     --color-bg-sub: 39, 42, 39;
-    --color-border: 46, 43, 43;
+    --color-border: 190, 190, 190;
   }
 
   /* Dark Three */
@@ -106,6 +127,6 @@
     --color-accent-sub: 153, 241, 58;
     --color-bg: 29, 31, 31;
     --color-bg-sub: 36, 38, 38;
-    --color-border: 46, 43, 43;
+    --color-border: 190, 190, 190;
   }
 }

@@ -70,22 +70,20 @@ export default function Featured() {
                   </a>
                 </div>
 
-                <div className="aspect-square">
-                  <a href={"/writing/" + writing.slug}>
-                    {index === positions[itemIndex] ? (
-                      <div className="border-skin-border border-opacity-50 relative w-full overflow-hidden rounded-xl border-2 pb-[100%]">
-                        <img
-                          className="absolute inset-0 h-full w-full transform object-cover grayscale transition-all
+                <a href={"/writing/" + writing.slug}>
+                  {index === positions[itemIndex] ? (
+                    <div className="relative aspect-square w-full overflow-hidden rounded-xl border-2 border-skin-border border-opacity-35">
+                      <img
+                        className="absolute inset-0 h-full w-full transform object-cover grayscale transition-all
              duration-700 ease-in-out hover:scale-105 hover:grayscale-0"
-                          onMouseEnter={() => handleMouseEnter(index)}
-                          onMouseLeave={handleMouseLeave}
-                          src={writing.data.images[0].path.src}
-                          alt={writing.data.images[0].alt}
-                        />
-                      </div>
-                    ) : null}
-                  </a>
-                </div>
+                        onMouseEnter={() => handleMouseEnter(index)}
+                        onMouseLeave={handleMouseLeave}
+                        src={writing.data.images[0].path.src}
+                        alt={writing.data.images[0].alt}
+                      />
+                    </div>
+                  ) : null}
+                </a>
               </div>
             ))}
           </div>
