@@ -119,14 +119,14 @@
     --color-border: 190, 190, 190;
   }
 
-  /* Dark Three */
+  /* Tokyo Night */
   .theme-dark-three {
-    --color-text: 190, 190, 190;
-    --color-text-sub: 58, 153, 241;
-    --color-accent: 58, 153, 241;
-    --color-accent-sub: 153, 241, 58;
-    --color-bg: 29, 31, 31;
-    --color-bg-sub: 36, 38, 38;
+    --color-text: 192,202,245;
+    --color-text-sub: 79,214,190;
+    --color-accent: 255,117,127;
+    --color-accent-sub: 255,199,119;
+    --color-bg: 31,35,53;
+    --color-bg-sub: 41,46,66;
     --color-border: 190, 190, 190;
   }
 }
