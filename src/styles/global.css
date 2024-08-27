@@ -26,15 +26,21 @@
 @layer base {
   :root {
     --color-text: 36, 36, 36;
+    --color-text-sub: 241, 78, 58;
     --color-accent: 241, 78, 58;
+    --color-accent-sub: 241, 78, 58;
     --color-bg: 234, 234, 234;
     --color-bg-sub: 216, 216, 216;
+    --color-border: 59, 71, 68;
   }
   .theme-base {
     --color-text: 36, 36, 36;
+    --color-text-sub: 241, 78, 58;
     --color-accent: 241, 78, 58;
+    --color-accent-sub: 241, 78, 58;
     --color-bg: 234, 234, 234;
     --color-bg-sub: 216, 216, 216;
+    --color-border: 59, 71, 68;
   }
 
   /* Light One */
