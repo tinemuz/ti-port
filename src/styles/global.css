@@ -52,7 +52,7 @@
     --color-accent-sub: 241, 78, 58;
     --color-bg: 234, 234, 234;
     --color-bg-sub: 216, 216, 216;
-    --color-border: 59, 71, 68;
+    --color-border: 34, 34, 34;
   }
   .theme-base {
     --color-text: 36, 36, 36;
@@ -111,11 +111,11 @@
   /* Dark Two */
   .theme-dark-two {
     --color-text: 190, 190, 190;
-    --color-text-sub: 62, 241, 58;
-    --color-accent: 62, 241, 58;
-    --color-accent-sub: 241, 58, 62;
-    --color-bg: 29, 31, 29;
-    --color-bg-sub: 39, 42, 39;
+    --color-text-sub: 219, 254, 1;
+    --color-accent: 219, 254, 1;
+    --color-accent-sub: 219, 254, 1;
+    --color-bg: 18, 20, 20;
+    --color-bg-sub: 29, 32, 27;
     --color-border: 190, 190, 190;
   }
 
