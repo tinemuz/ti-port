@@ -39,12 +39,12 @@ const tagWriting = allWriting.filter((writing) =>
 ---
 
 <MainLayout title={`# ${tag}`}>
-  <div class="text-skin-text flex flex-col">
+  <div class="flex flex-col text-skin-text">
     <div class="flex flex-grow flex-col items-center justify-center">
       <div
-        class="border-b-skin-bg-sub mb-8 w-full border-b pt-6 md:max-w-[812px]"
+        class="mb-8 w-full border-b border-b-skin-bg-sub pt-6 md:max-w-[812px]"
       >
-        <h2 class="pb-8 text-lg font-bold"># {tag}</h2>
+        <h2 class="pb-8 text-lg font-medium"># {tag}</h2>
       </div>
       <div class="w-full flex-grow md:max-w-[812px]">
         {tagWriting.map((writing) => <WritingGrid writing={writing} />)}
