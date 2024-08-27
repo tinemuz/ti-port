@@ -1,11 +1,12 @@
 ---
 // src/layouts/MainLayout.astro
-import PageTransition from "../components/PageTransition.tsx";
+import { ViewTransitions } from "astro:transitions";
 const { title } = Astro.props;
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import "../../src/styles/global.css";
 import "@fontsource/dm-mono";
+import { imageConfig } from "astro:assets";
 ---
 
 <html lang="en">
@@ -18,7 +19,7 @@ import "@fontsource/dm-mono";
     />
     <title>{title}</title>
     <link rel="sitemap" href="/sitemap-index.xml" />
-
+    <ViewTransitions />
     <script>
       (function () {
         const themes = [
@@ -34,16 +35,31 @@ import "@fontsource/dm-mono";
         document.documentElement.classList.add(savedTheme);
       })();
     </script>
+    <script>
+      document.addEventListener("astro:page-load", () => {
+        console.log(sessionStorage);
+        sessionStorage.setItem("hasRunInitialAnimation", "false");
+        if (sessionStorage.getItem("hasRunInitialAnimation")) {
+          // This runs only on the first page load
+          const element =
+            document.querySelector<HTMLElement>(".animate-on-load");
+          if (element) {
+            element.classList.add("start-animation");
+          }
+
+          // Store the flag in sessionStorage
+          sessionStorage.setItem("hasRunInitialAnimation", "true");
+        }
+      });
+    </script>
   </head>
-  <body class="bg-skin-bg px-6 text-xs md:text-sm">
-    <PageTransition client:only="react">
-      <main>
-        <Nav />
-        <div class="min-h-[calc(100vh-560px)] md:min-h-[calc(100vh-460px)]">
-          <slot />
-        </div>
-        <Footer />
-      </main>
-    </PageTransition>
+  <body class="animate-on-load bg-skin-bg px-6 text-xs md:text-sm">
+    <main>
+      <Nav />
+      <div class="min-h-[calc(100vh-559px)] md:min-h-[calc(100vh-459px)]">
+        <slot />
+      </div>
+      <Footer />
+    </main>
   </body>
 </html>

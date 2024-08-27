@@ -23,6 +23,27 @@
   }
 }
 
+/* Example CSS animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-load {
+  opacity: 0; /* Start with hidden state */
+}
+
+.animate-on-load.start-animation {
+  animation: fadeIn 500ms ease forwards; /* Fade-in animation */
+}
+
+
 @layer base {
   :root {
     --color-text: 36, 36, 36;
