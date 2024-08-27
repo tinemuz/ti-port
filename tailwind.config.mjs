@@ -25,15 +25,15 @@ export default {
         skin: {
           text: {
             DEFAULT: "rgba(var(--color-text), <alpha-value>)",
-            sub: "rgba(var(--color-text-sub), <alpha-value>)"  
+            sub: "rgba(var(--color-text-sub), <alpha-value>)",
           },
           accent: {
             DEFAULT: "rgba(var(--color-accent), <alpha-value>)",
-            sub: "rgba(var(--color-accent-sub), <alpha-value>)"  
+            sub: "rgba(var(--color-accent-sub), <alpha-value>)",
           },
           bg: {
             DEFAULT: "rgba(var(--color-bg), <alpha-value>)",
-            sub: "rgba(var(--color-bg-sub), <alpha-value>)"  
+            sub: "rgba(var(--color-bg-sub), <alpha-value>)"
           },
           border: {
             DEFAULT: "rgba(var(--color-border), <alpha-value>)",
