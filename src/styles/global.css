@@ -45,6 +45,12 @@
 
 
 @layer base {
+
+  h1 {
+    @apply text-3xl md:text-[2.986rem] md:leading-[3rem] font-light;
+  }
+
+  
   :root {
     --color-text: 36, 36, 36;
     --color-text-sub: 241, 78, 58;
