@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.animate-on-load {
-  opacity: 0; /* Start with hidden state */
-}
-
-.animate-on-load.start-animation {
-  animation: fadeIn 500ms ease forwards; /* Fade-in animation */
-}
-
 @layer base {
   h1 {
     @apply text-3xl font-light md:text-[2.986rem] md:leading-[3rem];

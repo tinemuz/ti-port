@@ -29,26 +29,9 @@ const { title } = Astro.props;
         document.documentElement.classList.add(savedTheme);
       })();
     </script>
-    <script>
-      document.addEventListener("astro:page-load", () => {
-        console.log(sessionStorage)
-        sessionStorage.setItem("hasRunInitialAnimation", "");
-        if (!sessionStorage.getItem("hasRunInitialAnimation")) {
-          // This runs only on the first page load
-          const element =
-            document.querySelector<HTMLElement>(".animate-on-load");
-          if (element) {
-            element.classList.add("start-animation");
-          }
-
-          // Store the flag in sessionStorage
-          sessionStorage.setItem("hasRunInitialAnimation", "true");
-        }
-      });
-    </script>
   </head>
   <body
-    class="animate-on-load bg-skin-bg px-6 text-xs selection:bg-skin-bg-sub selection:bg-opacity-50 selection:text-skin-accent-sub md:text-sm"
+    class="bg-skin-bg px-6 text-xs selection:bg-skin-bg-sub selection:bg-opacity-50 selection:text-skin-accent-sub md:text-sm"
   >
     <main>
       <Nav />
