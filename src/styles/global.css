@@ -43,96 +43,44 @@
   animation: fadeIn 500ms ease forwards; /* Fade-in animation */
 }
 
-
 @layer base {
-
   h1 {
-    @apply text-3xl md:text-[2.986rem] md:leading-[3rem] font-light;
+    @apply text-3xl font-light md:text-[2.986rem] md:leading-[3rem];
   }
 
-  
   :root {
-    --color-text: 36, 36, 36;
+    --color-text: 34, 34, 34;
     --color-text-sub: 241, 78, 58;
     --color-accent: 241, 78, 58;
     --color-accent-sub: 241, 78, 58;
     --color-bg: 234, 234, 234;
-    --color-bg-sub: 216, 216, 216;
-    --color-border: 34, 34, 34;
+    --color-bg-sub: 221, 221, 221;
+    --color-bg-sub2: 215, 215, 215;
+    --color-bg-sub3: 193, 193, 193;
+    --color-border: 154, 147, 147;
   }
   .theme-base {
-    --color-text: 36, 36, 36;
+    --color-text: 34, 34, 34;
     --color-text-sub: 241, 78, 58;
     --color-accent: 241, 78, 58;
     --color-accent-sub: 241, 78, 58;
     --color-bg: 234, 234, 234;
-    --color-bg-sub: 216, 216, 216;
-    --color-border: 34, 34, 34;
-  }
-
-  /* Light One */
-  .theme-light-one {
-    --color-text: 34,34,34;
-    --color-text-sub: 58,65,241;
-    --color-accent: 58,65,241;
-    --color-accent-sub: 241, 58, 65;
-    --color-bg: 220,245,241;
-    --color-bg-sub: 183, 220, 213;
-    --color-border: 34, 34, 34;
-  }
-
-  /* Light Two */
-  .theme-light-two {
-    --color-text: 34,34,34;
-    --color-text-sub: 255, 50, 1;
-    --color-accent: 255, 50, 1;
-    --color-accent-sub: 50, 1, 255;
-    --color-bg: 233, 245, 220;
-    --color-bg-sub: 202, 220, 183;
-    --color-border: 34, 34, 34;
-  }
-
-  /* Light Three */
-  .theme-light-three {
-    --color-text: 34,34,34;
-    --color-text-sub: 69, 147, 81;
-    --color-accent: 69, 147, 81;
-    --color-accent-sub: 81, 69, 147;
-    --color-bg: 220, 245, 229;
-    --color-bg-sub: 183, 220, 195;
-    --color-border: 34, 34, 34;
-  }
-
-  /* Dark One */
-  .theme-dark-one {
-    --color-text: 190, 190, 190;
-    --color-text-sub: 241, 78, 58;
-    --color-accent: 241, 78, 58;
-    --color-accent-sub: 58, 221, 241;
-    --color-bg: 31, 29, 29;
-    --color-bg-sub: 42, 39, 39;
-    --color-border: 190, 190, 190;
+    --color-bg-sub: 221, 221, 221;
+    --color-bg-sub2: 215, 215, 215;
+    --color-bg-sub3: 193, 193, 193;
+    --color-border: 154, 147, 147;
   }
 
   /* Dark Two */
-  .theme-dark-two {
+  .theme-dark {
     --color-text: 190, 190, 190;
     --color-text-sub: 219, 254, 1;
     --color-accent: 219, 254, 1;
     --color-accent-sub: 219, 254, 1;
-    --color-bg: 18, 20, 20;
+    --color-bg: 18, 22, 24;
     --color-bg-sub: 29, 32, 27;
-    --color-border: 190, 190, 190;
-  }
-
-  /* Tokyo Night */
-  .theme-dark-three {
-    --color-text: 192,202,245;
-    --color-text-sub: 79,214,190;
-    --color-accent: 255,117,127;
-    --color-accent-sub: 255,199,119;
-    --color-bg: 31,35,53;
-    --color-bg-sub: 41,46,66;
-    --color-border: 190, 190, 190;
+    --color-bg-sub2: 24, 26, 27;
+    --color-bg-sub3: 32, 35, 36;
+    --color-border: 49, 46, 46;
   }
 }

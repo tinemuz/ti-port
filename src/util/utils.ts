@@ -2,7 +2,7 @@ function formatDate(date: Date): string {
   return new Date(date).toISOString().split("T")[0];
 }
 
-function truncateTitle(str: string, length: number = 13): string {
+function truncateTitle(str: string, length: number = 60): string {
   if (str.length > length) {
     return str.slice(0, length) + "...";
   }

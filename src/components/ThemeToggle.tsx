@@ -5,12 +5,7 @@ import React, { useEffect } from "react";
 // Define the list of themes
 const themes = [
   "theme-base",
-  "theme-light-one",
-  "theme-light-two",
-  "theme-light-three",
-  "theme-dark-one",
-  "theme-dark-two",
-  "theme-dark-three",
+  "theme-dark"
 ];
 
 const ThemeToggle = () => {

@@ -1,0 +1,17 @@
+---
+const { tags } = Astro.props;
+
+interface props {
+  tags: string[];
+}
+---
+
+<div class="">
+  {
+    tags.map((tag: string) => (
+      <span class="rounded-full bg-skin-bg-sub3 px-2 py-[3px] text-[8px] md:text-xs text-skin-accent-sub">
+        <a href={"/tag/" + tag}>#{tag}</a>
+      </span>
+    ))
+  }
+</div>

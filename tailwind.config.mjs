@@ -33,7 +33,9 @@ export default {
           },
           bg: {
             DEFAULT: "rgba(var(--color-bg), <alpha-value>)",
-            sub: "rgba(var(--color-bg-sub), <alpha-value>)"
+            sub: "rgba(var(--color-bg-sub), <alpha-value>)",
+            sub2: "rgba(var(--color-bg-sub2), <alpha-value>)",
+            sub3: "rgba(var(--color-bg-sub3), <alpha-value>)",
           },
           border: {
             DEFAULT: "rgba(var(--color-border), <alpha-value>)",
