@@ -1,6 +1,6 @@
 // src/components/ThemeToggle.jsx
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 // Define the list of themes
 const themes = [

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  opacity: 1;
+}
 
 .animate-on-load {
   opacity: 0; /* Start with hidden state */

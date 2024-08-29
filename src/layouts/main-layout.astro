@@ -1,12 +1,11 @@
 ---
 // src/layouts/MainLayout.astro
-import { ViewTransitions } from "astro:transitions";
-const { title } = Astro.props;
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
-import "../../src/styles/global.css";
 import "@fontsource/dm-mono";
-import { imageConfig } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
+import "../../src/styles/global.css";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+const { title } = Astro.props;
 ---
 
 <html lang="en">
@@ -61,8 +60,3 @@ import { imageConfig } from "astro:assets";
   </body>
 </html>
 
-<svg style="display:none;">
-  <filter id="grainy">
-    <feTurbulence type="turbulence" baseFrequency="0.65"></feTurbulence>
-  </filter>
-</svg>
