@@ -64,7 +64,7 @@ const shuffledTagWriting = shuffleArray(tagWriting);
                   <div class="relative aspect-square w-full">
                     {index === currentIndex ? (
                       <div class="bg-skin-bg-sub2 h-full flex-col rounded-[0.8rem] border border-skin-border border-opacity-50 p-1 md:rounded-[1.3rem] md:p-2">
-                        <div class="h-[70%] overflow-hidden rounded-[0.55rem] border border-skin-border border-opacity-50 md:rounded-[0.85rem]">
+                        <div class="h-[58%] md:h-[70%] overflow-hidden rounded-[0.55rem] border border-skin-border border-opacity-50 md:rounded-[0.85rem]">
                           <a href={"/writing/" + writing.slug}>
                             <Image
                               transition:name={writing.data.images[0].path.src}
@@ -75,8 +75,8 @@ const shuffledTagWriting = shuffleArray(tagWriting);
                           </a>
                         </div>
 
-                        <div class=" mx-1 pt-1 text-[6px] md:text-[0.75rem]">
-                          <div class="flex h-[1.1rem] items-center justify-between md:h-8">
+                        <div class=" mx-1 pt-0.5 md:pt-1 text-[6px] md:text-[0.75rem]">
+                          <div class="flex h-[1rem] items-center justify-between md:h-8">
                             <p>{formatDate(writing.data.pubDate)}</p>
                             <div class=" mx-1">
                               <Tag tags={writing.data.tags.slice(0, 1)} />
