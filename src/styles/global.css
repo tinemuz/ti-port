@@ -4,7 +4,7 @@
 
 
 .animate-on-load {
-  opacity: 0.1; /* Start with hidden state */
+  opacity: 0; /* Start with hidden state */
 }
 
 .animate-on-load.start-animation {
