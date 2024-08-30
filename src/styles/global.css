@@ -2,23 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.fade-in {
-  animation: fadeInAnimation ease-in-out 500ms;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-
 @layer base {
   h1 {
     @apply text-3xl font-light md:text-[2.986rem] md:leading-[3rem];
