@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.animate-on-load {
-  opacity: 0; /* Start with hidden state */
+.fade-in {
+  animation: fadeInAnimation ease-in-out 500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-.animate-on-load.start-animation {
-  animation: fadeIn 500ms ease-in-out forwards; /* Fade-in animation with ease-in-out */
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 
