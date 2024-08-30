@@ -4,11 +4,7 @@ import { Image } from "astro:assets";
 import { formatDate, truncateTitle } from "../util/utils";
 import Tag from "./Tag_Featured.astro";
 
-const { tags } = Astro.props;
 
-interface props {
-  tags: string[];
-}
 
 const allWriting: CollectionEntry<"writing">[] = (
   await getCollection("writing")

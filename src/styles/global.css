@@ -7,7 +7,7 @@
 }
 
 .animate-on-load.start-animation {
-  animation: fadeIn 500ms ease forwards; /* Fade-in animation */
+  animation: fadeIn 500ms ease-in-out forwards; /* Fade-in animation with ease-in-out */
 }
 
 
