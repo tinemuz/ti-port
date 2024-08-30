@@ -43,7 +43,7 @@ function shuffleArray<T>(array: T[]): T[] {
 const shuffledTagWriting = shuffleArray(tagWriting);
 ---
 
-<div class="">
+<div class="animate-on-load">
   <div class="w-full flex-grow md:max-w-[812px]">
     {
       (() => {
@@ -103,3 +103,20 @@ const shuffledTagWriting = shuffleArray(tagWriting);
     }
   </div>
 </div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    console.log(sessionStorage);
+    sessionStorage.setItem("hasRunInitialAnimation", "");
+    if (!sessionStorage.getItem("hasRunInitialAnimation")) {
+      // This runs only on the first page load
+      const element = document.querySelector<HTMLElement>(".animate-on-load");
+      if (element) {
+        element.classList.add("start-animation");
+      }
+
+      // Store the flag in sessionStorage
+      sessionStorage.setItem("hasRunInitialAnimation", "true");
+    }
+  });
+</script>

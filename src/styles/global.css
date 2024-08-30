@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.animate-on-load {
+  opacity: 0.1; /* Start with hidden state */
+}
+
+.animate-on-load.start-animation {
+  animation: fadeIn 500ms ease forwards; /* Fade-in animation */
+}
+
+
 @layer base {
   h1 {
     @apply text-3xl font-light md:text-[2.986rem] md:leading-[3rem];
@@ -14,8 +23,8 @@
     --color-accent-sub: 241, 78, 58;
     --color-bg: 234, 234, 234;
     --color-bg-sub: 221, 221, 221;
-    --color-bg-sub2: 215, 215, 215;
-    --color-bg-sub3: 193, 193, 193;
+    --color-bg-sub2: 227, 227, 227;
+    --color-bg-sub3: 205, 205, 205;
     --color-border: 154, 147, 147;
   }
   .theme-base {
@@ -25,8 +34,8 @@
     --color-accent-sub: 241, 78, 58;
     --color-bg: 234, 234, 234;
     --color-bg-sub: 221, 221, 221;
-    --color-bg-sub2: 215, 215, 215;
-    --color-bg-sub3: 193, 193, 193;
+    --color-bg-sub2: 227, 227, 227;
+    --color-bg-sub3: 205, 205, 205;
     --color-border: 154, 147, 147;
   }
 
