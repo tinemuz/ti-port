@@ -27,10 +27,8 @@ function getUniqueIndex(previousIndex: number): number {
 }
 ---
 
-<div
-  class="fade-in"
->
-  <div class="w-full flex-grow md:max-w-[812px]">
+<div class="fade-in">
+  <div class="w-full flex-grow sm:max-w-[812px]">
     {
       (() => {
         let lastIndex: number | null = null;
@@ -47,12 +45,12 @@ function getUniqueIndex(previousIndex: number): number {
                 <div class=" rounded-lg ">
                   <div class="relative aspect-square w-full">
                     {index === currentIndex ? (
-                      <div class="h-full flex-col rounded-[0.8rem] border border-skin-border border-opacity-50 bg-skin-bg-sub2 p-1 md:rounded-[1.3rem] md:p-2">
-                        <div class="h-[50%] overflow-hidden rounded-[0.55rem] border border-skin-border border-opacity-50 md:h-[70%] md:rounded-[0.85rem]">
+                      <div class="h-full flex-col rounded-[0.8rem] border border-skin-border border-opacity-50 bg-skin-bg-sub2 p-1 sm:rounded-[1.3rem] sm:p-2">
+                        <div class=" h-[79%] overflow-hidden rounded-[0.55rem] sm:rounded-[0.85rem]">
                           <a href={"/writing/" + writing.slug}>
                             <Image
                               transition:name={writing.data.images[0].path.src}
-                              class="h-full w-full rounded-[0.55rem] object-cover transition-transform duration-200 ease-in-out hover:scale-105 md:rounded-[0.85rem]"
+                              class="h-full w-full rounded-[0.55rem] object-cover transition-transform duration-200 ease-in-out hover:scale-105 sm:rounded-[0.85rem]"
                               src={writing.data.images[0].path}
                               alt={writing.data.images[0].alt}
                               loading="eager"
@@ -60,14 +58,13 @@ function getUniqueIndex(previousIndex: number): number {
                           </a>
                         </div>
 
-                        <div class=" mx-1 pt-0.5 text-[6px] md:pt-1 md:text-[0.75rem]">
-                          <div class="flex h-[1.4rem] items-center justify-between md:h-8">
+                        <div class="mx-1  py-0.5 text-[0.4rem] leading-[0.1rem] sm:text-[0.6rem] sm:leading-[0.4rem] md:leading-normal md:text-[0.75rem]">
+                          <div class="flex h-[1.4rem] items-center justify-between sm:h-8">
                             <p>{formatDate(writing.data.pubDate)}</p>
-                            <div class=" mx-1">
-                              <Tag tags={writing.data.tags.slice(0, 1)} />
-                            </div>
+
+                            <Tag tags={writing.data.tags.slice(0, 1)} />
                           </div>
-                          <p class="pt-[0.1rem] leading-[9px] md:leading-normal">
+                          <p class="">
                             {truncateTitle(
                               writing.data.title.concat(
                                 " - ",
