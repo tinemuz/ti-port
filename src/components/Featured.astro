@@ -32,15 +32,6 @@ function getUniqueIndex(previousIndex: number): number {
   return randomIndex;
 }
 
-function shuffleArray<T>(array: T[]): T[] {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-const shuffledTagWriting = shuffleArray(tagWriting);
 ---
 
 <div class="animate-on-load">
@@ -48,9 +39,8 @@ const shuffledTagWriting = shuffleArray(tagWriting);
     {
       (() => {
         let lastIndex: number | null = null;
-        let isFirstItem = true;
-
-        return shuffledTagWriting.map((writing, index) => {
+        
+        return tagWriting.map((writing) => {
           const currentIndex = getUniqueIndex(
             lastIndex !== null ? lastIndex : -1
           );
