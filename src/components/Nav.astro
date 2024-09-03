@@ -3,14 +3,14 @@ import ThemeToggle from "./ThemeToggle";
 ---
 
 <nav
-  class="text-skin-text flex h-[240px] flex-grow flex-col items-center justify-center md:text-sm"
+  class="flex h-[240px] flex-grow flex-col items-center justify-center text-skin-text md:text-sm"
 >
   <div class="h-full flex-grow"></div>
 
   <div
     class="flex w-full flex-row items-center justify-between md:max-w-[812px]"
   >
-    <ThemeToggle client:idle />
+    <ThemeToggle client:only="react" />
 
     <div class="flex gap-8">
       <a href="/" class="hover:text-skin-text-sub">Featured</a>
@@ -19,4 +19,3 @@ import ThemeToggle from "./ThemeToggle";
     </div>
   </div>
 </nav>
-

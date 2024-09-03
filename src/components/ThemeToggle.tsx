@@ -1,45 +1,47 @@
-// src/components/ThemeToggle.jsx
+import { useEffect, useState } from "react";
 
-import { useEffect } from "react";
-
-// Define the list of themes
-const themes = [
-  "theme-base",
-  "theme-dark"
-];
+// Define the themes
+const themes = {
+  light: "theme-base",
+  dark: "theme-dark"
+};
 
 const ThemeToggle = () => {
-  useEffect(() => {
-    // Get the saved theme or default to the first theme in the list
-    const savedTheme = localStorage.getItem("theme") || themes[0];
-    document.documentElement.classList.add(savedTheme);
-  }, []);
-
-  const toggleTheme = () => {
-    // Get the current theme from the class list
-    const currentTheme = themes.find((theme) =>
-      document.documentElement.classList.contains(theme),
-    );
-
-    // Remove the current theme if found
-    if (currentTheme) {
-      document.documentElement.classList.remove(currentTheme);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined" && window.sessionStorage) {
+      // Check for saved theme in sessionStorage
+      const savedTheme = sessionStorage.getItem("theme");
+      if (savedTheme) return savedTheme;
     }
 
-    // Find the next theme
-    const currentIndex = currentTheme ? themes.indexOf(currentTheme) : -1;
-    const nextIndex = (currentIndex + 1) % themes.length;
-    const nextTheme = themes[nextIndex];
+    // Otherwise, default to the user's system preference
+    const userPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return userPrefersDark ? themes.dark : themes.light;
+  });
 
-    // Apply the next theme
-    document.documentElement.classList.add(nextTheme);
-    localStorage.setItem("theme", nextTheme);
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.sessionStorage) {
+      // Apply the current theme
+      document.documentElement.classList.add(theme);
+
+      // Clean up any other theme
+      const otherTheme = theme === themes.light ? themes.dark : themes.light;
+      document.documentElement.classList.remove(otherTheme);
+
+      // Save the current theme to sessionStorage
+      sessionStorage.setItem("theme", theme);
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    // Toggle between light and dark themes
+    setTheme((prevTheme) => (prevTheme === themes.light ? themes.dark : themes.light));
   };
 
   return (
     <div
       onClick={toggleTheme}
-      className="size-5 cursor-pointer rounded-full bg-skin-accent   transition-all
+      className="size-5 cursor-pointer rounded-full bg-skin-accent transition-all
              duration-300 ease-in-out hover:scale-110"
     ></div>
   );
