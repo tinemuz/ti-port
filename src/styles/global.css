@@ -7,7 +7,14 @@
     @apply text-3xl font-light md:text-[2.986rem] md:leading-[3rem];
   }
 
-  
+  body {
+    font-family: "DM Sans Variable", sans-serif;
+  }
+
+  h1 {
+    font-family: "DM Mono", monospace;
+  }
+
   .theme-base {
     --color-text: 34, 34, 34;
     --color-text-sub: 241, 78, 58;

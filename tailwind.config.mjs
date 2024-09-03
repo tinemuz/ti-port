@@ -1,15 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import defaultTheme from "tailwindcss/defaultTheme";
 
-function withOpacity(variableName) {
-  return ({opacityValue}) => {
-    if (opacityValue != undefined) {
-      return `rgba(var(${variableName}), ${opacityValue})`
-    }
-    return `rgba(var(${variableName}))`;
-  }
-}
-
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
