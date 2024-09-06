@@ -38,10 +38,13 @@ const { Content } = await entry.render();
     <div
       class="w-full border-b border-b-skin-bg-sub pb-8 pt-6 md:max-w-[812px]"
     >
-      <h1>{entry.data.title}</h1>
+      <h1 class="pb-4">{entry.data.title}</h1>
       <p>{entry.data.description}</p>
-      <div class="py-2"><Tags tags={entry.data.tags} /></div>
-      <p class="leading-3">Last updated on ~ <span class="font-mono">{formatDate(entry.data.pubDate)}</span></p>
+      <div class="py-3"><Tags tags={entry.data.tags} /></div>
+      <p class="leading-3 text-xs opacity-60">
+        Last updated on ~ <span class="font-mono"
+          >{formatDate(entry.data.pubDate)}</span>
+      </p>
     </div>
     <div class="py-6 md:max-w-[812px]">
       <div class="flex flex-wrap gap-3 pt-2">
