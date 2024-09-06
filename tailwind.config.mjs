@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
+        mono: ["DM Mono"]
       },
       aspectRatio: {
         "2/1": "2 / 1",

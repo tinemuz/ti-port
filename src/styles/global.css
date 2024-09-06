@@ -5,7 +5,10 @@
 @layer base {
   h1 {
     @apply text-3xl font-light md:text-[2.986rem] md:leading-[3rem];
+    font-weight: 600;
+    font-family: monospace;
   }
+  
 
   .theme-base {
     --color-text: 34, 34, 34;
