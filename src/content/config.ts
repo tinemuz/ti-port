@@ -7,12 +7,11 @@ const writingCollection = defineCollection({
       description: z.string(),
       pubDate: z.date(),
       author: z.string(),
-      images: z.array(
-        z.object({
+      cover: z.object({
           path: image(),
           alt: z.string(),
         }),
-      ),
+      
       tags: z.array(z.string()),
     }),
 });

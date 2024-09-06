@@ -1,18 +1,18 @@
 ---
-title: 'Deploying a Static Website Using S3, CloudFront, and Cloudflare DNS'
-description: 'How to use your cloudflare domains in your AWS environment'
+title: "Deploying a Static Website Using S3, CloudFront, and Cloudflare DNS"
+description: "How to use your cloudflare domains in your AWS environment"
 pubDate: 2024-08-01T22:21:00
-author: 'Tinetariro Muzunzandare'
-images:
-    - path: '../../../src/assets/deploying-a-static-website-using-s3-cloudfront-and-cloudflare-dns/bucket-paint.jpg'
-      alt: 'A bucket of white paint.'
+author: "Tinetariro Muzunzandare"
+cover:
+  path: "../../../src/assets/deploying-a-static-website-using-s3-cloudfront-and-cloudflare-dns/bucket-paint.jpg"
+  alt: "A bucket of white paint."
 tags: ["aws", "couldflare", "featured"]
 slug: deploying-a-static-website-using-s3-cloudfront-and-cloudflare-dns
 ---
 
 ### Leveraging AWS S3 for Static Web Hosting with Cloudflare
 
-Having already set up my domains with Cloudflare, I decided to **leverage AWS S3's robust static web hosting capabilities** while minimizing costs. Instead of transferring my domain to Route53, which would have cost *$14*, I opted for a cheaper solution by sticking with **Cloudflare**, where I have my domain for **$9**.
+Having already set up my domains with Cloudflare, I decided to **leverage AWS S3's robust static web hosting capabilities** while minimizing costs. Instead of transferring my domain to Route53, which would have cost _$14_, I opted for a cheaper solution by sticking with **Cloudflare**, where I have my domain for **$9**.
 
 ### Steps to Achieve This Setup
 
@@ -40,7 +40,7 @@ Having already set up my domains with Cloudflare, I decided to **leverage AWS S3
    Name: _abcd.example.com
    Value: _xyz.cloudfront.net
    ```
-   
+
    > _Important:_ Update your DNS records on Cloudflare to ensure SSL validation. This setup allows secure communication between Cloudflare and users accessing your website.
 
 4. **CloudFront Alternative Domain Name Setup:**

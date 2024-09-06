@@ -49,10 +49,10 @@ function getUniqueIndex(previousIndex: number): number {
                         <div class=" h-[79%] overflow-hidden rounded-[0.55rem] sm:rounded-[0.85rem]">
                           <a href={"/writing/" + writing.slug}>
                             <Image
-                              transition:name={writing.data.images[0].path.src}
+                              transition:name={writing.data.cover.path.src}
                               class="h-full w-full rounded-[0.55rem] object-cover transition-transform duration-200 ease-in-out hover:scale-105 sm:rounded-[0.85rem]"
-                              src={writing.data.images[0].path}
-                              alt={writing.data.images[0].alt}
+                              src={writing.data.cover.path}
+                              alt={writing.data.cover.alt}
                               loading="eager"
                             />
                           </a>
