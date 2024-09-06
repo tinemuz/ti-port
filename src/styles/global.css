@@ -21,7 +21,7 @@
   pre,
   pre code,
   code {
-    @apply text-sm !important;
+    @apply text-xs md:text-sm !important;
   }
 
   .theme-base {
