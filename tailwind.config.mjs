@@ -6,8 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
-        mono: ["DM Mono"],
+        sans: ["Necto Mono", ...defaultTheme.fontFamily.mono],
       },
       aspectRatio: {
         "2/1": "2 / 1",
@@ -56,6 +55,7 @@ export default {
             "--tw-prose-td-borders": theme("colors.skin.accent.DEFAULT"),
           },
         },
+      
       }),
     },
   },

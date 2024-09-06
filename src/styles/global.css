@@ -3,12 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Necto Mono';
+    src: url('../assets/fonts/NectoMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
   h1 {
     @apply text-3xl font-light md:text-[2.986rem] md:leading-[3rem];
     font-weight: 600;
-    font-family: monospace;
   }
 
+  :root {
+    font-variant-ligatures: none;
+  }
 
   .theme-base {
     --color-text: 34, 34, 34;
@@ -37,4 +45,3 @@
 
   /* Apply dark theme by default when the user prefers dark mode */
 }
-
