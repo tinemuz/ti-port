@@ -10,7 +10,11 @@ export default defineConfig({
   integrations: [react(), tailwind(), mdx(), sitemap(), compress()],
   markdown: {
     shikiConfig: {
-      theme: 'aurora-x',
+      themes: {
+        light: "catppuccin-latte",
+        dark: "tokyo-night",
+      },
+      defaultColor: false, // <--
     },
   },
 });

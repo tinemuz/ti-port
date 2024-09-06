@@ -18,15 +18,22 @@
     font-variant-ligatures: none;
   }
 
-  pre, pre code, code {
+  pre,
+  pre code,
+  code {
     @apply text-sm !important;
   }
 
-  code {
-    font-size: 16px; /* Inline code size */
-  }
-
   .theme-base {
+    .astro-code {
+      background-color: rgba(225, 225, 225, 1) !important;
+      color: var(--shiki-light) !important;
+
+      & span {
+        color: var(--shiki-light) !important;
+      }
+    };
+
     --color-text: 34, 34, 34;
     --color-text-sub: 241, 78, 58;
     --color-accent: 241, 78, 58;
@@ -40,6 +47,15 @@
 
   /* Dark Two */
   .theme-dark {
+    .astro-code {
+      background-color: var(--shiki-dark-bg) !important;
+      color: var(--shiki-dark) !important;
+
+      & span {
+        color: var(--shiki-dark) !important;
+      }
+    };
+
     --color-text: 190, 190, 190;
     --color-text-sub: 219, 254, 1;
     --color-accent: 219, 254, 1;
