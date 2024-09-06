@@ -31,14 +31,12 @@ if (entry === undefined) {
 }
 
 const { Content } = await entry.render();
-
-
 ---
 
 <MainLayout title={entry.data.title}>
-  <div class="text-skin-text flex flex-grow flex-col items-center">
+  <div class="flex flex-grow flex-col items-center text-skin-text">
     <div
-      class="border-b-skin-bg-sub w-full border-b pb-8 pt-6 md:max-w-[812px]"
+      class="w-full border-b border-b-skin-bg-sub pb-8 pt-6 md:max-w-[812px]"
     >
       <h1 class="pb-4">{entry.data.title}</h1>
       <p class="">{entry.data.description}</p>
@@ -63,30 +61,10 @@ const { Content } = await entry.render();
         }
       </div>
     </div>
-    <div class="md:max-w-[812px]">
-      <Content />
-    </div>
+    
+      <div class="prose prose-sm md:max-w-[812px] max-w-full ">
+        <Content />
+      </div>
+    
   </div>
 </MainLayout>
-
-<style is:global>
-  ol {
-    padding: 15px 0px 15px 25px;
-    list-style-type: decimal;
-  }
-
-  li {
-    padding-left: 5px;
-  }
-
-  @media (min-width: 768px) {
-    ol {
-      padding: 25px 0px 25px 45px;
-    }
-
-    li {
-      margin-top: 12px;
-      padding-left: 18px;
-    }
-  }
-</style>

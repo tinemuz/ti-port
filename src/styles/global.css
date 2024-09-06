@@ -8,7 +8,7 @@
     font-weight: 600;
     font-family: monospace;
   }
-  
+
 
   .theme-base {
     --color-text: 34, 34, 34;
@@ -37,3 +37,4 @@
 
   /* Apply dark theme by default when the user prefers dark mode */
 }
+

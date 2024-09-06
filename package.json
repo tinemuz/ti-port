@@ -17,6 +17,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/dm-sans": "^5.0.7",
     "@fontsource/dm-mono": "^5.0.20",
+    "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "astro": "^4.6.3",

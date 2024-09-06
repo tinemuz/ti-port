@@ -7,7 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
-        mono: ["DM Mono"]
+        mono: ["DM Mono"],
       },
       aspectRatio: {
         "2/1": "2 / 1",
@@ -16,25 +16,49 @@ export default {
       colors: {
         skin: {
           text: {
-            DEFAULT: "rgba(var(--color-text), <alpha-value>)",
-            sub: "rgba(var(--color-text-sub), <alpha-value>)",
+            DEFAULT: "rgb(var(--color-text))",
+            sub: "rgb(var(--color-text-sub))",
           },
           accent: {
-            DEFAULT: "rgba(var(--color-accent), <alpha-value>)",
-            sub: "rgba(var(--color-accent-sub), <alpha-value>)",
+            DEFAULT: "rgb(var(--color-accent))",
+            sub: "rgb(var(--color-accent-sub))",
           },
           bg: {
-            DEFAULT: "rgba(var(--color-bg), <alpha-value>)",
-            sub: "rgba(var(--color-bg-sub), <alpha-value>)",
-            sub2: "rgba(var(--color-bg-sub2), <alpha-value>)",
-            sub3: "rgba(var(--color-bg-sub3), <alpha-value>)",
+            DEFAULT: "rgb(var(--color-bg))",
+            sub: "rgb(var(--color-bg-sub))",
+            sub2: "rgb(var(--color-bg-sub2))",
+            sub3: "rgb(var(--color-bg-sub3))",
           },
           border: {
-            DEFAULT: "rgba(var(--color-border), <alpha-value>)",
+            DEFAULT: "rgb(var(--color-border))",
           },
         },
       },
+
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            "--tw-prose-body": theme('colors.skin.text.DEFAULT'),
+            "--tw-prose-headings": theme("colors.skin.text.DEFAULT"),
+            "--tw-prose-lead": theme("colors.skin.text.DEFAULT"),
+            "--tw-prose-links": theme("colors.skin.text.DEFAULT"),
+            "--tw-prose-bold": theme("colors.skin.text.DEFAULT"),
+            "--tw-prose-counters": theme("colors.skin.accent.sub"),
+            "--tw-prose-bullets": theme("colors.skin.text.DEFAULT"),
+            "--tw-prose-hr": theme("colors.skin.text.DEFAULT"),
+            "--tw-prose-quotes": theme("colors.skin.accent.DEFAULT"),
+            "--tw-prose-quote-borders": theme("colors.skin.accent.DEFAULT"),
+            "--tw-prose-captions": theme("colors.skin.accent.DEFAULT"),
+            "--tw-prose-code": theme("colors.skin.text.DEFAULT"),
+            "--tw-prose-pre-code": theme("colors.skin.accent.DEFAULT"),
+            "--tw-prose-pre-bg": theme("colors.skin.accent.DEFAULT"),
+            "--tw-prose-th-borders": theme("colors.skin.accent.DEFAULT"),
+            "--tw-prose-td-borders": theme("colors.skin.accent.DEFAULT"),
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+
+  plugins: [require("@tailwindcss/typography")],
 };
