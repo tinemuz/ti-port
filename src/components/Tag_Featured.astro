@@ -9,7 +9,7 @@ interface props {
 <div class="">
   {
     tags.map((tag: string) => (
-      <span class="rounded-full bg-skin-bg-sub3 px-2 py-[0.1rem] sm:py-[3px] text-[6px] sm:text-xs text-skin-accent-sub">
+      <span class="rounded-full bg-skin-bg-sub3 px-2 py-[0.1rem] sm:py-[3px] text-[6px] sm:text-xs text-skin-accent-sub font-mono">
         <a href={"/tag/" + tag}>#{tag}</a>
       </span>
     ))
