@@ -48,14 +48,11 @@ export default {
             "--tw-prose-quotes": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-quote-borders": theme("colors.skin.accent.DEFAULT"),
             "--tw-prose-captions": theme("colors.skin.accent.DEFAULT"),
-            "--tw-prose-code": theme("colors.skin.text.DEFAULT"),
-            "--tw-prose-pre-code": theme("colors.skin.accent.DEFAULT"),
-            "--tw-prose-pre-bg": theme("colors.skin.accent.DEFAULT"),
+
             "--tw-prose-th-borders": theme("colors.skin.accent.DEFAULT"),
             "--tw-prose-td-borders": theme("colors.skin.accent.DEFAULT"),
           },
         },
-      
       }),
     },
   },

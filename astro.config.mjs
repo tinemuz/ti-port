@@ -5,11 +5,12 @@ import mdx from "@astrojs/mdx";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://tine.muzunza.com",
   integrations: [react(), tailwind(), mdx(), sitemap(), compress()],
-  
-
-  
+  markdown: {
+    shikiConfig: {
+      theme: 'aurora-x',
+    },
+  },
 });

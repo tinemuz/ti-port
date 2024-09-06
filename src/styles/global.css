@@ -4,8 +4,8 @@
 
 @layer base {
   @font-face {
-    font-family: 'Necto Mono';
-    src: url('../assets/fonts/NectoMono-Regular.woff2') format('woff2');
+    font-family: "Necto Mono";
+    src: url("../assets/fonts/NectoMono-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
   }
@@ -16,6 +16,14 @@
 
   :root {
     font-variant-ligatures: none;
+  }
+
+  pre, pre code, code {
+    @apply text-sm !important;
+  }
+
+  code {
+    font-size: 16px; /* Inline code size */
   }
 
   .theme-base {
