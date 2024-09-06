@@ -10,7 +10,7 @@ const { writing } = Astro.props as { writing: Writing };
 
 <div class="grid grid-cols-[25%,70%] justify-between pb-7">
   <div>
-    <p>{formatDate(writing.data.pubDate)}</p>
+    <p class="font-mono text-xs">{formatDate(writing.data.pubDate)}</p>
   </div>
   <div>
     <a href={"/writing/" + writing.slug}>
