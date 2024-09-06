@@ -38,15 +38,15 @@ export default {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            "--tw-prose-body": theme('colors.skin.text.DEFAULT'),
+            "--tw-prose-body": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-headings": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-lead": theme("colors.skin.text.DEFAULT"),
-            "--tw-prose-links": theme("colors.skin.text.DEFAULT"),
+            "--tw-prose-links": theme("colors.skin.accent.DEFAULT"),
             "--tw-prose-bold": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-counters": theme("colors.skin.accent.sub"),
             "--tw-prose-bullets": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-hr": theme("colors.skin.text.DEFAULT"),
-            "--tw-prose-quotes": theme("colors.skin.accent.DEFAULT"),
+            "--tw-prose-quotes": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-quote-borders": theme("colors.skin.accent.DEFAULT"),
             "--tw-prose-captions": theme("colors.skin.accent.DEFAULT"),
             "--tw-prose-code": theme("colors.skin.text.DEFAULT"),
