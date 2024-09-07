@@ -43,7 +43,7 @@ function getUniqueIndex(previousIndex: number): number {
             <div class="border-mgray grid grid-cols-3">
               {[0, 1, 2].map((index) => (
                 <div class=" rounded-lg ">
-                  <div class="relative aspect-square w-full">
+                  <div class="relative w-full">
                     {index === currentIndex ? (
                       <div class="h-full flex-col rounded-[0.8rem] border border-skin-border border-opacity-50 bg-skin-bg-sub2 p-1 sm:rounded-[1.3rem] sm:p-2">
                         <div class=" h-[79%] overflow-hidden rounded-[0.55rem] sm:rounded-[0.85rem]">
@@ -58,7 +58,7 @@ function getUniqueIndex(previousIndex: number): number {
                           </a>
                         </div>
 
-                        <div class="mx-1 font-mono text-[0.35rem] leading-[0.1rem] sm:text-[0.7rem] md:text-sm">
+                        <div class="mx-1 font-mono text-[0.35rem] leading-3 sm:text-xs md:text-sm">
                           <div class="flex h-[1.2rem] items-center justify-between sm:h-8">
                             <p>{formatDate(writing.data.pubDate)}</p>
 
