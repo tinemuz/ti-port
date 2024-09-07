@@ -1,5 +1,4 @@
 ---
-
 import { ViewTransitions } from "astro:transitions";
 import "../../src/styles/global.css";
 import Footer from "../components/Footer.astro";
@@ -20,11 +19,11 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body
-    class="bg-skin-bg px-6 text-xs selection:bg-skin-bg-sub selection:bg-opacity-50 selection:text-skin-accent-sub md:text-sm"
+    class="bg-skin-bg px-6 text-sm selection:bg-skin-bg-sub selection:bg-opacity-50 selection:text-skin-accent-sub"
   >
     <main>
       <Nav />
-      <div class="min-h-[calc(100vh-559px)] md:min-h-[calc(100vh-459px)]">
+      <div class="min-h-[calc(100vh-559px)] sm:min-h-[calc(100vh-459px)]">
         <slot />
       </div>
       <Footer />

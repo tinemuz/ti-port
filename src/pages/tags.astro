@@ -18,7 +18,7 @@ const uniqueTags = [...new Set(allTags)];
   <div class="flex flex-col text-skin-text">
     <div class="flex flex-grow flex-col items-center justify-center">
       <div
-        class="w-full border-b border-b-skin-bg-sub pb-8 pt-6 md:max-w-[812px]"
+        class="w-full border-b border-b-skin-bg-sub pb-8 pt-6 sm:max-w-[812px]"
       >
         <h1 class="pb-4">Tags</h1>
         <p class="text-justify">
@@ -27,7 +27,7 @@ const uniqueTags = [...new Set(allTags)];
       </div>
       <div class="pt-8"></div>
 
-      <div class="w-full flex-grow md:max-w-[812px]">
+      <div class="w-full flex-grow sm:max-w-[812px]">
         <TagsList tags={uniqueTags} />
       </div>
     </div>

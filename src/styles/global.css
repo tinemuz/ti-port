@@ -10,7 +10,7 @@
     font-style: normal;
   }
   h1 {
-    @apply text-3xl font-light md:text-[2.986rem] md:leading-[3rem];
+    @apply text-3xl font-light sm:text-[2.986rem] sm:leading-[3rem];
     font-weight: 600;
   }
 
@@ -21,7 +21,7 @@
   pre,
   pre code,
   code {
-    @apply text-xs md:text-sm !important;
+    @apply text-xs sm:text-sm !important;
   }
 
   .theme-base {
@@ -32,7 +32,7 @@
       & span {
         color: var(--shiki-light) !important;
       }
-    };
+    }
 
     --color-text: 34, 34, 34;
     --color-text-sub: 241, 78, 58;
@@ -54,7 +54,7 @@
       & span {
         color: var(--shiki-dark) !important;
       }
-    };
+    }
 
     --color-text: 190, 190, 190;
     --color-text-sub: 219, 254, 1;

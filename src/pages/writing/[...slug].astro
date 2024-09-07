@@ -36,17 +36,18 @@ const { Content } = await entry.render();
 <MainLayout title={entry.data.title}>
   <div class="flex flex-grow flex-col items-center text-skin-text">
     <div
-      class="w-full border-b border-b-skin-bg-sub pb-8 pt-6 md:max-w-[812px]"
+      class="w-full border-b border-b-skin-bg-sub pb-8 pt-6 sm:max-w-[812px]"
     >
       <h1 class="pb-4">{entry.data.title}</h1>
       <p>{entry.data.description}</p>
       <div class="py-3"><Tags tags={entry.data.tags} /></div>
-      <p class="leading-3 text-xs opacity-60">
+      <p class="text-xs leading-3 opacity-60">
         Last updated on ~ <span class="font-mono"
-          >{formatDate(entry.data.pubDate)}</span>
+          >{formatDate(entry.data.pubDate)}</span
+        >
       </p>
     </div>
-    <div class="py-6 md:max-w-[812px]">
+    <div class="py-6 sm:max-w-[812px]">
       <div class="flex flex-wrap gap-3 pt-2">
         {
           (
@@ -61,7 +62,7 @@ const { Content } = await entry.render();
       </div>
     </div>
 
-    <div class="prose prose-sm max-w-full md:max-w-[812px]">
+    <div class="prose prose-sm w-full max-w-none sm:max-w-[812px]">
       <Content />
     </div>
   </div>
