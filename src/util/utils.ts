@@ -5,7 +5,7 @@ function formatDate(date: Date): string {
   return `${year}.${month}.${day}`;
 }
 
-function truncateTitle(str: string, length: number = 90): string {
+function truncateTitle(str: string, length: number = 34): string {
   if (str.length > length) {
     return str.slice(0, length) + "...";
   }
