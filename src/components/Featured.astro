@@ -45,12 +45,12 @@ function getUniqueIndex(previousIndex: number): number {
                 <div class=" rounded-lg ">
                   <div class="relative w-full">
                     {index === currentIndex ? (
-                      <div class="h-full flex-col rounded-[0.8rem] border border-skin-border border-opacity-50 bg-skin-bg-sub2 p-1 sm:rounded-[1.3rem] sm:p-2">
-                        <div class=" h-[79%] overflow-hidden rounded-[0.55rem] sm:rounded-[0.85rem]">
+                      <div class="flex-col rounded-[0.8rem] border border-skin-border border-opacity-50 bg-skin-bg-sub2 p-1 sm:rounded-[1.3rem] sm:p-2">
+                        <div class="overflow-hidden rounded-[0.55rem] sm:rounded-[0.85rem]">
                           <a href={"/writing/" + writing.slug}>
                             <Image
                               transition:name={writing.data.cover.path.src}
-                              class="h-full w-full rounded-[0.55rem] object-cover transition-transform duration-200 ease-in-out hover:scale-105 sm:rounded-[0.85rem]"
+                              class="w-full rounded-[0.55rem] object-cover transition-transform duration-200 ease-in-out hover:scale-105 sm:rounded-[0.85rem]"
                               src={writing.data.cover.path}
                               alt={writing.data.cover.alt}
                               loading="eager"
