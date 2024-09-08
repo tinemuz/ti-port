@@ -42,15 +42,15 @@ function getUniqueIndex(previousIndex: number): number {
           return (
             <div class="border-mgray grid grid-cols-3">
               {[0, 1, 2].map((index) => (
-                <div class=" rounded-lg ">
+                <div class="">
                   <div class="relative w-full">
                     {index === currentIndex ? (
-                      <div class="bg-skin-bg-card flex-col rounded-[0.8rem] border border-skin-border border-opacity-50 p-1 sm:rounded-[1.3rem] sm:p-2">
-                        <div class="overflow-hidden rounded-[0.55rem] sm:rounded-[0.85rem]">
+                      <div class="flex-col p-1 sm:p-2">
+                        <div class="overflow-hidden">
                           <a href={"/writing/" + writing.slug}>
                             <Image
                               transition:name={writing.data.cover.path.src}
-                              class="w-full rounded-[0.55rem] object-cover transition-transform duration-200 ease-in-out hover:scale-105 sm:rounded-[0.85rem]"
+                              class="w-full object-cover transition-transform duration-200 ease-in-out hover:scale-105"
                               src={writing.data.cover.path}
                               alt={writing.data.cover.alt}
                               loading="eager"
