@@ -50,7 +50,7 @@ function getUniqueIndex(previousIndex: number): number {
                           <a href={"/writing/" + writing.slug}>
                             <Image
                               transition:name={writing.data.cover.path.src}
-                              class="w-full object-cover transition-transform duration-200 ease-in-out hover:scale-105"
+                              class="w-full object-cover transition-transform duration-200 ease-in-out hover:scale-105 aspect-square"
                               src={writing.data.cover.path}
                               alt={writing.data.cover.alt}
                               loading="eager"
