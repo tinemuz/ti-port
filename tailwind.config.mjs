@@ -25,7 +25,7 @@ export default {
           bg: {
             DEFAULT: "rgb(var(--color-bg))",
             sub: "rgb(var(--color-bg-sub))",
-            sub2: "rgb(var(--color-bg-sub2))",
+            card: "rgb(var(--color-bg-card))",
             sub3: "rgb(var(--color-bg-sub3))",
           },
           border: {

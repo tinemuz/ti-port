@@ -40,7 +40,7 @@
     --color-accent-sub: 241, 78, 58;
     --color-bg: 234, 234, 234;
     --color-bg-sub: 221, 221, 221;
-    --color-bg-sub2: 221, 221, 221;
+    --color-bg-card: 221, 221, 221;
     --color-bg-sub3: 206, 206, 206;
     --color-border: 154, 147, 147;
   }
@@ -56,15 +56,15 @@
       }
     }
 
-    --color-text: 190, 190, 190;
+    --color-text: 255, 252, 225;
     --color-text-sub: 219, 254, 1;
     --color-accent: 219, 254, 1;
     --color-accent-sub: 219, 254, 1;
-    --color-bg: 18, 22, 24;
-    --color-bg-sub: 29, 32, 27;
-    --color-bg-sub2: 24, 26, 27;
+    --color-bg: 14, 16, 16;
+    --color-bg-sub: 27, 29, 29;
+    --color-bg-card: 20, 21, 21;
     --color-bg-sub3: 32, 35, 36;
-    --color-border: 49, 46, 46;
+    --color-border: 38, 37, 35;
   }
 
   /* Apply dark theme by default when the user prefers dark mode */
