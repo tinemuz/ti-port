@@ -9,8 +9,15 @@
     font-weight: normal;
     font-style: normal;
   }
+  @font-face {
+    font-family: "Eudoxus";
+    src: url("../assets/fonts/EudoxusSansGX.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   h1 {
-    @apply text-3xl font-light sm:text-[2.986rem] sm:leading-[3rem];
+    @apply font-mono text-3xl font-light sm:text-[2.986rem] sm:leading-[3rem];
     font-weight: 600;
   }
 
