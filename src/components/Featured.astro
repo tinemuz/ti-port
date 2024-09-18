@@ -50,7 +50,7 @@ function getUniqueIndex(previousIndex: number): number {
                           <a href={"/writing/" + writing.slug}>
                             <Image
                               transition:name={writing.data.cover.path.src}
-                              class="w-full object-cover transition-transform duration-200 ease-in-out hover:scale-105 aspect-square"
+                              class="aspect-square w-full object-cover transition-transform duration-200 ease-in-out hover:scale-105"
                               src={writing.data.cover.path}
                               alt={writing.data.cover.alt}
                               loading="eager"
@@ -58,19 +58,17 @@ function getUniqueIndex(previousIndex: number): number {
                           </a>
                         </div>
 
-                        <div class="mx-0.5 font-mono text-[0.45rem] leading-[0.6rem] sm:text-xs">
-                          <div class="flex h-[1.2rem] items-center justify-between sm:h-8">
+                        <div class="mx-0.5  text-[0.45rem] leading-[0.6rem] sm:text-xs">
+                          <div class="flex h-[1.2rem] items-center justify-between font-mono sm:h-8">
                             <p>{formatDate(writing.data.pubDate)}</p>
 
                             <Tag tags={writing.data.tags.slice(0, 1)} />
                           </div>
                           <p class="">
-                            {truncateTitle(
-                              writing.data.title.concat(
-                                " - ",
-                                writing.data.description
-                              )
-                            )}
+                            <span>{writing.data.title} ~ </span>
+                            <span class="italic">
+                              {writing.data.description}
+                            </span>
                           </p>
                         </div>
                       </div>
