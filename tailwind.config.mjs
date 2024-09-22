@@ -16,18 +16,18 @@ export default {
       colors: {
         skin: {
           text: {
-            DEFAULT: "rgb(var(--color-text))",
-            sub: "rgb(var(--color-text-sub))",
+            DEFAULT: "rgba(var(--color-text), 1)",
+            sub: "rgba(var(--color-text-sub), 1)",
           },
           accent: {
-            DEFAULT: "rgb(var(--color-accent))",
-            sub: "rgb(var(--color-accent-sub))",
+            DEFAULT: "rgba(var(--color-accent), 1)",
+            sub: "rgba(var(--color-accent-sub), 1)",
           },
           bg: {
-            DEFAULT: "rgb(var(--color-bg))",
-            sub: "rgb(var(--color-bg-sub))",
-            card: "rgb(var(--color-bg-card))",
-            sub3: "rgb(var(--color-bg-sub3))",
+            DEFAULT: "rgba(var(--color-bg), 1)",
+            sub: "rgba(var(--color-bg-sub), 1)",
+            card: "rgba(var(--color-bg-card), 1)",
+            sub3: "rgba(var(--color-bg-sub3), 1)",
           },
           border: {
             DEFAULT: "rgb(var(--color-border))",
