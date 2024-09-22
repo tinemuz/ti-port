@@ -1,26 +1,27 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
-interface NavLinkProps {
-  href: string;
-  children: React.ReactNode;
-}
-
-const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    if (window) {
-      setIsActive(window.location.pathname === href);
-    }
-  }, [href]);
+const NavLink: React.FC = () => {
+  
+  const links = [
+    { path: "/", label: "Featured" },
+    { path: "/writing", label: "Writing" },
+    { path: "/tags", label: "Tags" },
+  ];
 
   return (
-    <a
-      href={isActive ? undefined : href}
-      className={`hover:text-skin-text-sub ${isActive ? "cursor-default font-bold" : ""}`}
-    >
-      {children}
-    </a>
+    <div className="flex gap-8">
+      {links.map((link) => (
+        <span key={link.path}>
+          {location.pathname === link.path ? (
+            <span className="cursor-default font-bold">{link.label}</span>
+          ) : (
+            <a href={link.path} className="hover:text-skin-text-sub">
+              {link.label}
+            </a>
+          )}
+        </span>
+      ))}
+    </div>
   );
 };
 

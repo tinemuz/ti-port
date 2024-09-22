@@ -1,7 +1,7 @@
 ---
 import ThemeToggle from "./ThemeToggle";
+import NavLink from "./NavLink";
 const currentPath = Astro.url.pathname;
-
 ---
 
 <nav
@@ -13,23 +13,6 @@ const currentPath = Astro.url.pathname;
     class="flex w-full flex-row items-center justify-between sm:max-w-[812px]"
   >
     <ThemeToggle client:only="react" />
-
-    <div class="flex gap-8">
-      <a
-        href="/"
-        class={`hover:text-skin-text-sub ${currentPath === "/" ? "font-bold cursor-default" : ""}`}
-        >Featured</a
-      >
-      <a
-        href="/writing"
-        class={`hover:text-skin-text-sub ${currentPath === "/writing" ? "font-bold cursor-default" : ""}`}
-        >Writing</a
-      >
-      <a
-        href="/tags"
-        class={`hover:text-skin-text-sub ${currentPath === "/tags" ? "font-bold cursor-default" : ""}`}
-        >Tags</a
-      >
-    </div>
+    <NavLink client:only="react" />
   </div>
 </nav>
