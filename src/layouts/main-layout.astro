@@ -4,34 +4,6 @@ import "../../src/styles/global.css";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 const { title } = Astro.props;
-
-// Define global transition animations with subtle motion
-const globalTransition = {
-  forwards: {
-    old: {
-      name: "blurOutUp", // Animation for the outgoing page
-      duration: "0.2s",
-      easing: "ease-in",
-    },
-    new: {
-      name: "blurInUp", // Animation for the incoming page
-      duration: "0.5s",
-      easing: "ease-out",
-    },
-  },
-  backwards: {
-    old: {
-      name: "blurOutUp",
-      duration: "0.5s",
-      easing: "ease-in",
-    },
-    new: {
-      name: "blurInUp",
-      duration: "0.5s",
-      easing: "ease-out",
-    },
-  },
-};
 ---
 
 <html lang="en">
@@ -47,7 +19,6 @@ const globalTransition = {
     <ViewTransitions />
   </head>
   <body
-    transition:animate={globalTransition}
     class="bg-skin-bg px-6 text-sm selection:bg-skin-text selection:bg-opacity-50 selection:text-skin-bg"
   >
     <main>

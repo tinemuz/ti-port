@@ -16,32 +16,6 @@
     font-style: normal;
   }
 
-  /* Outgoing content blurs out */
-  @keyframes blurOutUp {
-    0% {
-      filter: blur(0);
-      opacity: 1;
-    }
-    100% {
-      filter: blur(1px);
-      opacity: 0;
-    }
-  }
-
-  /* Incoming content blurs in and moves up */
-  @keyframes blurInUp {
-    0% {
-      filter: blur(10px);
-      opacity: 0;
-      transform: translateY(10px); /* Start from below */
-    }
-    100% {
-      filter: blur(0);
-      opacity: 1;
-      transform: translateY(0); /* End in the final position */
-    }
-  }
-
   h1 {
     @apply font-mono text-3xl font-light sm:text-[2.986rem] sm:leading-[3rem];
   }
