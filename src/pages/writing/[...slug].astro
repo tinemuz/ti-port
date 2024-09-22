@@ -36,7 +36,7 @@ const { Content } = await entry.render();
 <MainLayout title={entry.data.title}>
   <div class="flex flex-grow flex-col items-center text-skin-text">
     <div
-      class="w-full border-b border-b-skin-bg-sub pb-8 pt-6 sm:max-w-[812px]"
+      class="w-full pb-8 pt-6 sm:max-w-[812px]"
     >
       <h1 class="pb-4">{entry.data.title}</h1>
       <p>{entry.data.description}</p>
@@ -47,7 +47,7 @@ const { Content } = await entry.render();
         >
       </p>
     </div>
-    <div class="py-6 sm:max-w-[812px]">
+    <div class="pb-6 sm:max-w-[812px]">
       <div class="flex flex-wrap gap-3 pt-2">
         {
           (
