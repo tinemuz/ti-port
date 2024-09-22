@@ -15,8 +15,8 @@ export default {
       },
       colors: {
         skin: {
-          text: { 
-            DEFAULT: "rgba(var(--color-text), 1)",
+          text: {
+            DEFAULT: "rgb(var(--color-text))",
             sub: "rgb(var(--color-text-sub))",
           },
           accent: {
