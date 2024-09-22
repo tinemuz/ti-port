@@ -1,9 +1,10 @@
 ---
 import ThemeToggle from "./ThemeToggle";
+const currentPath = Astro.url.pathname;
 ---
 
 <nav
-  class="flex h-[240px] flex-grow flex-col items-center justify-center  text-skin-text sm:text-sm"
+  class="flex h-[240px] flex-grow flex-col items-center justify-center text-skin-text/65 sm:text-sm"
 >
   <div class="h-full flex-grow"></div>
 
@@ -13,9 +14,36 @@ import ThemeToggle from "./ThemeToggle";
     <ThemeToggle client:only="react" />
 
     <div class="flex gap-8">
-      <a href="/" class="hover:text-skin-text-sub">Featured</a>
-      <a href="/writing" class="hover:text-skin-text-sub">Writing</a>
-      <a href="/tags" class="hover:text-skin-text-sub">Tags</a>
+      <a
+        href="/"
+        class={`hover:text-skin-text-sub ${
+          currentPath === "/"
+            ? "font-bold pointer-events-none cursor-default text-skin-text/100"
+            : ""
+        }`}
+      >
+        Featured
+      </a>
+      <a
+        href="/writing"
+        class={`hover:text-skin-text-sub ${
+          currentPath === "/writing"
+            ? "font-bold pointer-events-none cursor-default text-skin-text/100"
+            : ""
+        }`}
+      >
+        Writing
+      </a>
+      <a
+        href="/tags"
+        class={`hover:text-skin-text-sub ${
+          currentPath === "/tags"
+            ? "font-bold pointer-events-none cursor-default text-skin-text/100"
+            : ""
+        }`}
+      >
+        Tags
+      </a>
     </div>
   </div>
 </nav>
