@@ -1,5 +1,5 @@
 ---
-import { BSTTimeDisplay, BSTTimeZone } from "./TimeDisplay";
+
 ---
 
 <footer class="flex justify-center pb-4 text-skin-text">
@@ -8,7 +8,7 @@ import { BSTTimeDisplay, BSTTimeZone } from "./TimeDisplay";
     <div
       class="flex w-full flex-col border-t border-t-skin-bg-sub pt-10 text-xs"
     >
-      <div class="grid w-full grid-cols-2 gap-y-5 sm:grid-cols-3">
+      <div class="grid w-full grid-cols-2 gap-y-5">
         <div class="flex flex-col items-start space-y-2">
           <a href="mailto:tine@muzunza.com">tine@muzunza.com</a>
           <a
@@ -23,16 +23,10 @@ import { BSTTimeDisplay, BSTTimeZone } from "./TimeDisplay";
         </div>
         <div class="flex flex-col items-start space-y-2">
           <a href="/">Featured</a>
-          <a href="/writing">Writing</a>
+          <a href="https://github.com/tinemuz" target="_blank"> GitHub </a>
           <a href="/tags">Tags</a>
         </div>
-        <div class="flex flex-col items-start space-y-2">
-          <a href="https://github.com/tinemuz" target="_blank"> GitHub </a>
-          <div class="text-skin-text-sub font-mono"><BSTTimeDisplay client:load /></div>
-          <div><BSTTimeZone client:load /></div>
-        </div>
       </div>
-      <div class="h-full"></div>
     </div>
     <p class="pt-10 text-left text-xs text-skin-text-sub">
       © MMXXIV TINETARIRO MUZUNZANDARE
