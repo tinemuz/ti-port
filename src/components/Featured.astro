@@ -59,11 +59,11 @@ function getUniqueIndex(previousIndex: number): number {
                         </div>
 
                         <div class="mx-0.5  text-[0.45rem] leading-[0.6rem] sm:text-xs">
-                          <div class="flex h-[1.2rem] items-center justify-between font-mono sm:h-8">
+                          <div class="flex items-center justify-between font-mono pt-2 pb-1 sm:pt-3 sm:pb-2">
                             <p>{formatDate(writing.data.pubDate)}</p>
-
                             <Tag tags={writing.data.tags.slice(0, 1)} />
                           </div>
+
                           <p class="">
                             <span>{writing.data.title} ~ </span>
                             <span class="italic">
