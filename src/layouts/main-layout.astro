@@ -22,7 +22,7 @@ const { title } = Astro.props;
     class="bg-skin-bg px-6 text-sm selection:bg-skin-text selection:bg-opacity-50 selection:text-skin-bg"
   >
     <main>
-      <Nav client:load client:only="react"/>
+      <Nav client:only="react"/>
       <div class="min-h-[calc(100vh-559px)] sm:min-h-[calc(100vh-459px)]">
         <slot />
       </div>

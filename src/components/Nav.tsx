@@ -2,7 +2,7 @@ import { useState, type SetStateAction } from "react";
 import ThemeToggle from "./ThemeToggle";
 
 const Nav = () => {
-
+  console.log(window.location.pathname);
   return (
     <nav className="flex h-[240px] flex-grow flex-col items-center justify-center text-skin-text sm:text-sm">
       <div className="h-full flex-grow"></div>
