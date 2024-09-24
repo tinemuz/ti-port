@@ -1,0 +1,22 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { formatDate } from "../util/utils";
+import Tags from "./TagsList.astro";
+
+type WordEntry = CollectionEntry<"words">;
+const { words } = Astro.props as { words: WordEntry };
+
+
+---
+
+<div class="grid grid-cols-[25%,70%] justify-between pb-7">
+  <div>
+    <p class="font-mono text-xs">{formatDate(words.data.pubDate)}</p>
+  </div>
+  <div>
+    <a href={"/words/" + words.slug}>
+      {words.data.title} - {words.data.description}
+    </a>
+    <div class="pt-2"><Tags tags={words.data.tags} /></div>
+  </div>
+</div>

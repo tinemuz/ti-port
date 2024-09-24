@@ -2,12 +2,12 @@
 import MainLayout from "../../layouts/main-layout.astro";
 
 import { getCollection, type CollectionEntry } from "astro:content";
-import WritingGrid from "../../components/WritingGrid.astro";
+import WordsGrid from "../../components/wordsGrid.astro";
 
 const { tag } = Astro.props;
 
 export async function getAllTags() {
-  const collection = await getCollection("writing");
+  const collection = await getCollection("words");
   const allTags = new Set<string>();
 
   collection.forEach((item: { data: { tags: any[] } }) => {
@@ -26,28 +26,24 @@ export async function getStaticPaths() {
   }));
 }
 
-const allWriting: CollectionEntry<"writing">[] = (
-  await getCollection("writing")
+const allwords: CollectionEntry<"words">[] = (
+  await getCollection("words")
 ).sort(
-  (a: CollectionEntry<"writing">, b: CollectionEntry<"writing">) =>
+  (a: CollectionEntry<"words">, b: CollectionEntry<"words">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const tagWriting = allWriting.filter((writing) =>
-  writing.data.tags.includes(tag)
-);
+const tagwords = allwords.filter((words) => words.data.tags.includes(tag));
 ---
 
 <MainLayout title={`# ${tag}`}>
   <div class="flex flex-col text-skin-text">
     <div class="flex flex-grow flex-col items-center justify-center">
-      <div
-        class="w-full pt-6 sm:max-w-[812px]"
-      >
+      <div class="w-full pt-6 sm:max-w-[812px]">
         <h1 class="pb-8"># {tag}</h1>
       </div>
       <div class="w-full flex-grow sm:max-w-[812px]">
-        {tagWriting.map((writing) => <WritingGrid writing={writing} />)}
+        {tagwords.map((words) => <WordsGrid words={words} />)}
       </div>
     </div>
   </div>
