@@ -14,9 +14,8 @@ const ThemeToggle = () => {
       if (savedTheme) return savedTheme;
     }
 
-    // Otherwise, default to the user's system preference
-    const userPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return userPrefersDark ? themes.dark : themes.light;
+    // Deafult to light theme if no theme is stored ? 
+    return themes.light;
   });
 
   useEffect(() => {
