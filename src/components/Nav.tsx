@@ -14,7 +14,7 @@ const Nav = () => {
             href="/"
             className={`hover:text-skin-text-sub ${activeLink === "/" ? "font-bold text-skin-text/100" : ""}`}
           >
-            Featured
+            featured
           </a>
           <a
             href="/words"
@@ -26,7 +26,7 @@ const Nav = () => {
             href="/tags"
             className={`hover:text-skin-text-sub ${activeLink.includes("/tags") ? "font-bold text-skin-text/100" : ""}`}
           >
-            Tags
+            tags
           </a>
         </div>
       </div>
