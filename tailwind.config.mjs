@@ -8,7 +8,7 @@ export default {
       fontFamily: {
         sans: ["Eudoxus", ...defaultTheme.fontFamily.sans],
         mono: ["Necto Mono"],
-        serif: ["Fanwood Text"]
+        serif: ["Fanwood Text"],
       },
       aspectRatio: {
         "2/1": "2 / 1",
@@ -53,6 +53,24 @@ export default {
 
             "--tw-prose-th-borders": theme("colors.skin.accent.DEFAULT"),
             "--tw-prose-td-borders": theme("colors.skin.accent.DEFAULT"),
+          },
+        },
+        xs: {
+          css: {
+            fontSize: "0.75rem", // Base font size for xs
+            lineHeight: "1.25rem",
+            p: {
+              margin: "0.5em 0",
+            },
+            h1: {
+              fontSize: "1.25rem",
+            },
+            h2: {
+              fontSize: "1rem",
+            },
+            h3: {
+              fontSize: "0.875rem",
+            },
           },
         },
       }),
