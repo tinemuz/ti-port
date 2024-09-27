@@ -1,7 +1,6 @@
 ---
 import { type CollectionEntry } from "astro:content";
 import { formatDateMonthYear } from "../util/utils";
-import Tags from "./TagsList.astro";
 
 type WordEntry = CollectionEntry<"words">;
 const { words } = Astro.props as { words: WordEntry };
@@ -14,7 +13,7 @@ const { words } = Astro.props as { words: WordEntry };
         {words.data.title}
         <p class="text-skin-text/50">{words.data.description}</p>
       </div>
-      <div class="text-right min-w-20 text-skin-text/50">
+      <div class="min-w-20 text-right text-skin-text/50">
         {formatDateMonthYear(words.data.pubDate)}
       </div>
     </div>
