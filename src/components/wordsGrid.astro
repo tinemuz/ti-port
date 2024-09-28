@@ -10,7 +10,7 @@ const { words } = Astro.props as { words: WordEntry };
   <a class="" href={"/words/" + words.slug}>
     <div class="flex justify-between">
       <div class="pr-1">
-        {words.data.title}
+        <span class="hover:text-skin-accent">{words.data.title}</span>
         <p class="text-skin-text/50">{words.data.description}</p>
       </div>
       <div class="min-w-20 text-right text-skin-text/50">
