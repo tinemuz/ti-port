@@ -39,7 +39,13 @@
   pre,
   pre code,
   code {
-    @apply text-xs sm:text-sm !important;
+    @apply text-xs sm:text-sm rounded-lg !important;
+  }
+
+  blockquote {
+    @apply bg-skin-bg-sub rounded-lg p-4 py-1 italic text-skin-text/80 !important ;
+    /* to remove border from typography */
+    border-left: none;
   }
 
   .theme-base {

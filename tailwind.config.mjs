@@ -44,7 +44,7 @@ export default {
             "--tw-prose-lead": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-links": theme("colors.skin.accent.DEFAULT"),
             "--tw-prose-bold": theme("colors.skin.text.DEFAULT"),
-            "--tw-prose-counters": theme("colors.skin.accent.sub"),
+            "--tw-prose-counters": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-bullets": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-hr": theme("colors.skin.text.DEFAULT"),
             "--tw-prose-quotes": theme("colors.skin.text.DEFAULT"),
