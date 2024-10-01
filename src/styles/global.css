@@ -51,6 +51,7 @@
         color: var(--shiki-light) !important;
       }
     }
+    color-scheme: light;
 
     --color-text: 34, 34, 34;
     --color-text-sub: 241, 78, 58;
@@ -63,7 +64,6 @@
     --color-border: 154, 147, 147;
   }
 
-  /* Dark Two */
   .theme-dark {
     .astro-code {
       background-color: var(--shiki-dark-bg) !important;
@@ -73,6 +73,7 @@
         color: var(--shiki-dark) !important;
       }
     }
+    color-scheme: dark;
 
     --color-text: 255, 252, 225;
     --color-text-sub: 219, 254, 1;
