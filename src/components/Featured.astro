@@ -15,9 +15,14 @@ const tagWords = allwords.filter((words) =>
 );
 
 // Define a fixed order (array values are from 1 to 3)
-const displayOrder = [1, 3, 2];
+const displayOrder = [1, 3, 2, 2];
 
-
+// Throw an error if the lengths do not match
+if (displayOrder.length !== tagWords.length) {
+  throw new Error(
+    `Mismatch: displayOrder length (${displayOrder.length}) does not match the number of featured items (${tagWords.length}).`
+  );
+}
 ---
 
 <div class="w-full flex-grow sm:max-w-[812px]">
