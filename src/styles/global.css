@@ -85,6 +85,4 @@
     --color-bg-sub3: 32, 35, 36;
     --color-border: 38, 37, 35;
   }
-
-  /* Apply dark theme by default when the user prefers dark mode */
 }
