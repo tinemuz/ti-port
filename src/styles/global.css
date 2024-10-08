@@ -39,8 +39,13 @@
   pre,
   pre code,
   code {
-    @apply text-xs sm:text-sm rounded-lg !important;
+    @apply text-xs rounded-lg font-mono !important;
   }
+
+  pre {
+    @apply p-5 mb-9 !important;
+  }
+  
 
   blockquote {
     @apply bg-skin-bg-sub rounded-lg p-4 py-1 italic text-skin-text/80 !important ;
@@ -50,7 +55,7 @@
 
   .theme-base {
     .astro-code {
-      background-color: rgba(225, 225, 225, 1) !important;
+      @apply bg-skin-bg-sub border-skin-text/10 border;
       color: var(--shiki-light) !important;
 
       & span {
@@ -72,7 +77,8 @@
 
   .theme-dark {
     .astro-code {
-      background-color: var(--shiki-dark-bg) !important;
+      @apply bg-skin-bg-sub border-skin-text/10 border;
+      /* background-color: var(--shiki-dark-bg) !important; */
       color: var(--shiki-dark) !important;
 
       & span {

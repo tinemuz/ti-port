@@ -7,7 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Eudoxus", ...defaultTheme.fontFamily.sans],
-        mono: ["Necto Mono"],
+        mono: ["JetBrains Mono"],
         serif: ["Fanwood Text"],
       },
       aspectRatio: {
