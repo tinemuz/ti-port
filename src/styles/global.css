@@ -3,12 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "Necto Mono";
-    src: url("../assets/fonts/NectoMono-Regular.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-  }
+
   @font-face {
     font-family: "Eudoxus";
     src: url("../assets/fonts/EudoxusSansGX.woff2") format("woff2");
