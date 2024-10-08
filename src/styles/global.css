@@ -47,8 +47,9 @@
   }
 
   blockquote {
-    @apply bg-skin-bg-sub border-l-0 rounded-lg p-4 py-1 italic text-skin-text/80 !important ;
+    @apply before:content-["📌"] before:text-lg bg-skin-bg-sub border-l-0 rounded-lg p-4 pb-1 italic text-skin-text/80 !important ;
   }
+
 
   .theme-base {
     .astro-code {
