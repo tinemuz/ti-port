@@ -14,6 +14,9 @@ export default {
         "2/1": "2 / 1",
         "3/1": "3 / 1",
       },
+      boxShadow: {
+        "innerBorder": "inset 0 0 0 1px", // custom shadow
+      },
       colors: {
         skin: {
           text: {

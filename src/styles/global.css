@@ -39,11 +39,11 @@
   pre,
   pre code,
   code {
-    @apply text-xs rounded-lg font-mono !important;
+    @apply text-xs font-mono !important;
   }
 
   pre {
-    @apply p-5 mb-9 !important;
+    @apply p-5 mb-9 shadow-innerBorder  rounded-lg shadow-skin-text/10 !important;
   }
   
 
@@ -77,7 +77,7 @@
 
   .theme-dark {
     .astro-code {
-      @apply bg-skin-bg-sub border-skin-text/10 border;
+      @apply bg-skin-bg-sub;
       /* background-color: var(--shiki-dark-bg) !important; */
       color: var(--shiki-dark) !important;
 
