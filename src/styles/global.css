@@ -47,9 +47,7 @@
   }
 
   blockquote {
-    @apply bg-skin-bg-sub rounded-lg p-4 py-1 italic text-skin-text/80 !important ;
-    /* to remove border from typography */
-    border-left: none;
+    @apply bg-skin-bg-sub border-l-0 rounded-lg p-4 py-1 italic text-skin-text/80 !important ;
   }
 
   .theme-base {
