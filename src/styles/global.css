@@ -49,7 +49,7 @@
 
   .theme-base {
     .astro-code {
-      @apply bg-skin-bg-sub border-skin-text/10 border;
+      @apply bg-skin-bg-sub;
       color: var(--shiki-light) !important;
 
       & span {
