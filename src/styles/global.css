@@ -42,12 +42,8 @@
     @apply p-5 mb-9 shadow-innerBorder  rounded-lg shadow-skin-text/10 !important;
   }
   
-  hr {
+  hr, blockquote {
     @apply border-skin-text/20 !important;
-  }
-
-  blockquote {
-    @apply before:content-["📌"] before:text-lg bg-skin-bg-sub border-l-0 rounded-lg p-4 pb-1 italic text-skin-text/80 !important ;
   }
 
 
