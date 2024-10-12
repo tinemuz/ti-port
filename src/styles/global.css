@@ -28,6 +28,10 @@
     @apply font-serif italic text-3xl font-light sm:text-[2.986rem] sm:leading-[3rem];
   }
 
+  h3, strong {
+    @apply font-normal !important;
+  }
+
   :root {
     font-variant-ligatures: none;
   }
