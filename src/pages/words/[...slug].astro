@@ -42,21 +42,7 @@ const { Content } = await entry.render();
         Last updated on ~ {formatDateMonthYear(entry.data.pubDate)}
       </p>
     </div>
-    <div class="pb-6 sm:max-w-[812px]">
-      <div class="flex flex-wrap gap-3 pt-2">
-        {
-          (
-            <Image
-              transition:name={entry.data.cover.path.src}
-              src={entry.data.cover.path}
-              alt={entry.data.cover.alt}
-            />
-          )
-        }
-      </div>
-    </div>
-
-    <div class="prose prose-xs sm:prose-sm w-full max-w-none sm:max-w-[812px]">
+    <div class="prose prose-xs w-full max-w-none sm:prose-sm sm:max-w-[812px]">
       <Content />
     </div>
   </div>
