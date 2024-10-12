@@ -41,7 +41,6 @@ if (displayOrder.length !== tagWords.length) {
                     <div class="overflow-hidden">
                       <a href={"/words/" + words.slug}>
                         <Image
-                          transition:name={words.data.cover.path.src}
                           class="aspect-square w-full object-cover transition-transform duration-200 ease-in-out hover:scale-105"
                           src={words.data.cover.path}
                           alt={words.data.cover.alt}
