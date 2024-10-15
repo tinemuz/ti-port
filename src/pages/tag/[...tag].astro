@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   const tags = await getAllTags();
   return tags.map((tag) => ({
     params: { tag },
-    props: { tag },
+    props: { tag }
   }));
 }
 
@@ -43,7 +43,8 @@ const tagwords = allwords.filter((words) => words.data.tags.includes(tag));
         <h1 class="pb-8"># {tag}</h1>
       </div>
       <div class="w-full flex-grow sm:max-w-[812px]">
-        {tagwords.map((words) => <WordsGrid words={words} />)}
+        {tagwords.map((words) =>
+          <WordsGrid words={words} />)}
       </div>
     </div>
   </div>

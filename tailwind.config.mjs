@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
@@ -8,35 +8,35 @@ export default {
       fontFamily: {
         sans: ["Eudoxus", ...defaultTheme.fontFamily.sans],
         mono: ["JetBrains Mono Variable"],
-        serif: ["Fanwood Text"],
+        serif: ["Fanwood Text"]
       },
       aspectRatio: {
         "2/1": "2 / 1",
-        "3/1": "3 / 1",
+        "3/1": "3 / 1"
       },
       boxShadow: {
-        "innerBorder": "inset 0 0 0 2px", // custom shadow
+        "innerBorder": "inset 0 0 0 2px" // custom shadow
       },
       colors: {
         skin: {
           text: {
             DEFAULT: "rgba(var(--color-text), 1)",
-            sub: "rgba(var(--color-text-sub), 1)",
+            sub: "rgba(var(--color-text-sub), 1)"
           },
           accent: {
             DEFAULT: "rgba(var(--color-accent), 1)",
-            sub: "rgba(var(--color-accent-sub), 1)",
+            sub: "rgba(var(--color-accent-sub), 1)"
           },
           bg: {
             DEFAULT: "rgba(var(--color-bg), 1)",
             sub: "rgba(var(--color-bg-sub), 1)",
             card: "rgba(var(--color-bg-card), 1)",
-            sub3: "rgba(var(--color-bg-sub3), 1)",
+            sub3: "rgba(var(--color-bg-sub3), 1)"
           },
           border: {
-            DEFAULT: "rgba(var(--color-border), 1)",
-          },
-        },
+            DEFAULT: "rgba(var(--color-border), 1)"
+          }
+        }
       },
 
       typography: (theme) => ({
@@ -54,30 +54,30 @@ export default {
             "--tw-prose-quote-borders": theme("colors.skin.accent.DEFAULT"),
             "--tw-prose-captions": theme("colors.skin.accent.DEFAULT"),
             "--tw-prose-th-borders": theme("colors.skin.accent.DEFAULT"),
-            "--tw-prose-td-borders": theme("colors.skin.accent.DEFAULT"),
-          },
+            "--tw-prose-td-borders": theme("colors.skin.accent.DEFAULT")
+          }
         },
         xs: {
           css: {
             fontSize: "0.75rem", // Base font size for xs
             lineHeight: "1.25rem",
             p: {
-              margin: "0.5em 0",
+              margin: "0.5em 0"
             },
             h1: {
-              fontSize: "1.25rem",
+              fontSize: "1.25rem"
             },
             h2: {
-              fontSize: "1rem",
+              fontSize: "1rem"
             },
             h3: {
-              fontSize: "0.875rem",
-            },
-          },
-        },
-      }),
-    },
+              fontSize: "0.875rem"
+            }
+          }
+        }
+      })
+    }
   },
 
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography")]
 };

@@ -23,7 +23,8 @@ const allwords: CollectionEntry<"words">[] = (
         </p>
       </div>
       <div class="w-full flex-grow sm:max-w-[812px]">
-        {allwords.map((words) => <WordsGrid words={words} />)}
+        {allwords.map((words) =>
+          <WordsGrid words={words} />)}
       </div>
     </div>
   </div>

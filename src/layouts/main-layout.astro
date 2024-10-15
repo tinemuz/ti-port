@@ -7,27 +7,27 @@ const { title } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="Tinetariro Muzunzandare"
-      content="Portfolio, software developer"
-    />
-    <title>{title}</title>
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" href="/favicon.svg" />
-    <ViewTransitions />
-  </head>
-  <body
-    class="bg-skin-bg px-6 text-xs transition-all duration-200 ease-in-out selection:bg-skin-text selection:bg-opacity-50 selection:text-skin-bg sm:text-sm"
-  >
-    <main>
-      <Nav client:only="react" />
-      <div class="min-h-[calc(100vh-700px)] sm:min-h-[calc(100vh-900px)]">
-        <slot />
-      </div>
-      <Footer />
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="Tinetariro Muzunzandare"
+    content="Portfolio, software developer"
+  />
+  <title>{title}</title>
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="icon" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body
+  class="bg-skin-bg px-6 text-xs transition-all duration-200 ease-in-out selection:bg-skin-text selection:bg-opacity-50 selection:text-skin-bg sm:text-sm"
+>
+<main>
+  <Nav client:only="react" />
+  <div class="min-h-[calc(100vh-700px)] sm:min-h-[calc(100vh-900px)]">
+    <slot />
+  </div>
+  <Footer />
+</main>
+</body>
 </html>

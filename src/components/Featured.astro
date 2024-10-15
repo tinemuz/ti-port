@@ -30,6 +30,7 @@ if (displayOrder.length !== tagWords.length) {
   {
     tagWords.map((words, index) => {
       // No wrapping: Just use the corresponding displayOrder index
+
       const currentIndex = displayOrder[index] - 1;
 
       return (
@@ -40,7 +41,8 @@ if (displayOrder.length !== tagWords.length) {
                 {i === currentIndex ? (
                   <div class="flex-col p-0.5 sm:p-1">
                     <a href={"/words/" + words.slug}>
-                      <div class="rounded-lg border-2 border-skin-border bg-skin-bg-sub p-1 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-xl sm:rounded-[1.1rem] sm:p-2">
+                      <div
+                        class="rounded-lg border-2 border-skin-border bg-skin-bg-sub p-1 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-xl sm:rounded-[1.1rem] sm:p-2">
                         <div class="overflow-hidden rounded-[0.25rem] border border-skin-border sm:rounded-[0.6rem]">
                           <Image
                             class="aspect-square w-full object-cover"

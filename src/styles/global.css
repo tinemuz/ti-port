@@ -5,94 +5,96 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "Eudoxus";
-    src: url("../assets/fonts/EudoxusSansGX.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Fanwood Text";
-    src: url("../assets/fonts/fanwood_text-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Fanwood Text";
-    src: url("../assets/fonts/fanwood_text_italic-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: italic;
-  }
-
-  h1 {
-    @apply font-serif italic text-3xl font-light sm:text-[2.986rem] sm:leading-[3rem];
-  }
-
-  h3, strong {
-    @apply font-normal !important;
-  }
-
-  :root {
-    font-variant-ligatures: none;
-  }
-
-  pre,
-  pre code,
-  code {
-    @apply text-xs font-mono !important;
-  }
-
-  pre {
-    @apply p-5 mb-9 shadow-innerBorder  rounded-lg shadow-skin-text/10 !important;
-  }
-  
-  hr, blockquote {
-    @apply border-skin-text/20 !important;
-  }
-
-
-  .theme-base {
-    .astro-code {
-      @apply bg-skin-bg-sub;
-      color: var(--shiki-light) !important;
-
-      & span {
-        color: var(--shiki-light) !important;
-      }
+    @font-face {
+        font-family: "Eudoxus";
+        src: url("../assets/fonts/EudoxusSansGX.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
     }
-    color-scheme: light;
-
-    --color-text: 34, 34, 34;
-    --color-text-sub: 241, 78, 58;
-    --color-accent: 241, 78, 58;
-    --color-accent-sub: 241, 78, 58;
-    --color-bg: 234, 234, 234;
-    --color-bg-sub: 221, 221, 221;
-    --color-bg-card: 221, 221, 221;
-    --color-bg-sub3: 206, 206, 206;
-    --color-border: 206, 202, 202;
-  }
-
-  .theme-dark {
-    .astro-code {
-      @apply bg-skin-bg-sub;
-      /* background-color: var(--shiki-dark-bg) !important; */
-      color: var(--shiki-dark) !important;
-
-      & span {
-        color: var(--shiki-dark) !important;
-      }
+    @font-face {
+        font-family: "Fanwood Text";
+        src: url("../assets/fonts/fanwood_text-webfont.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
     }
-    color-scheme: dark;
+    @font-face {
+        font-family: "Fanwood Text";
+        src: url("../assets/fonts/fanwood_text_italic-webfont.woff") format("woff");
+        font-weight: normal;
+        font-style: italic;
+    }
 
-    --color-text: 255, 252, 225;
-    --color-text-sub: 241, 78, 58;
-    --color-accent: 241, 78, 58;
-    --color-accent-sub: 241, 78, 58;
-    --color-bg: 14, 16, 16;
-    --color-bg-sub: 27, 29, 29;
-    --color-bg-card: 20, 21, 21;
-    --color-bg-sub3: 32, 35, 36;
-    --color-border: 38, 37, 35;
-  }
+    h1 {
+        @apply font-serif italic text-3xl font-light sm:text-[2.986rem] sm:leading-[3rem];
+    }
+
+    h3, strong {
+        @apply font-normal !important;
+    }
+
+    :root {
+        font-variant-ligatures: none;
+    }
+
+    pre,
+    pre code,
+    code {
+        @apply text-xs font-mono !important;
+    }
+
+    pre {
+        @apply p-5 mb-9 shadow-innerBorder  rounded-lg shadow-skin-text/10 !important;
+    }
+
+    hr, blockquote {
+        @apply border-skin-text/20 !important;
+    }
+
+
+    .theme-base {
+        .astro-code {
+            @apply bg-skin-bg-sub;
+            color: var(--shiki-light) !important;
+
+            & span {
+                color: var(--shiki-light) !important;
+            }
+        }
+
+        color-scheme: light;
+
+        --color-text: 34, 34, 34;
+        --color-text-sub: 241, 78, 58;
+        --color-accent: 241, 78, 58;
+        --color-accent-sub: 241, 78, 58;
+        --color-bg: 234, 234, 234;
+        --color-bg-sub: 221, 221, 221;
+        --color-bg-card: 221, 221, 221;
+        --color-bg-sub3: 206, 206, 206;
+        --color-border: 206, 202, 202;
+    }
+
+    .theme-dark {
+        .astro-code {
+            @apply bg-skin-bg-sub;
+            /* background-color: var(--shiki-dark-bg) !important; */
+            color: var(--shiki-dark) !important;
+
+            & span {
+                color: var(--shiki-dark) !important;
+            }
+        }
+
+        color-scheme: dark;
+
+        --color-text: 255, 252, 225;
+        --color-text-sub: 241, 78, 58;
+        --color-accent: 241, 78, 58;
+        --color-accent-sub: 241, 78, 58;
+        --color-bg: 14, 16, 16;
+        --color-bg-sub: 27, 29, 29;
+        --color-bg-card: 20, 21, 21;
+        --color-bg-sub3: 32, 35, 36;
+        --color-border: 38, 37, 35;
+    }
 }

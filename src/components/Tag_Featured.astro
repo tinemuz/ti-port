@@ -9,7 +9,8 @@ interface props {
 <div class="flex flex-wrap gap-1 sm:gap-2">
   {
     tags.map((tag: string) => (
-      <span class="rounded-full text-skin-text/80 bg-skin-bg-sub3 px-1 sm:px-2 leading-3 sm:leading-normal font-mono text-[0.45rem] sm:py-[3px] sm:text-xs">
+      <span
+        class="rounded-full text-skin-text/80 bg-skin-bg-sub3 px-1 sm:px-2 leading-3 sm:leading-normal font-mono text-[0.45rem] sm:py-[3px] sm:text-xs">
         <a href={"/tag/" + tag}>#{tag}</a>
       </span>
     ))

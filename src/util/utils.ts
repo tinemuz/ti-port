@@ -19,7 +19,7 @@ function formatDateMonthYear(date: Date): string {
     "September",
     "October",
     "November",
-    "December",
+    "December"
   ];
   const month = monthNames[date.getMonth()];
   return `${month} • ${year}`;

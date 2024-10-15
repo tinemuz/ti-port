@@ -12,9 +12,9 @@ export default defineConfig({
     shikiConfig: {
       themes: {
         light: "vitesse-light",
-        dark: "andromeeda",
+        dark: "andromeeda"
       },
-      defaultColor: false, // <--
-    },
-  },
+      defaultColor: false // <--
+    }
+  }
 });
