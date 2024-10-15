@@ -1,4 +1,5 @@
 import { defineCollection, z } from "astro:content";
+
 const wordsCollection = defineCollection({
   type: "content",
   schema: ({ image }) =>
