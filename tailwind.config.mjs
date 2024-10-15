@@ -15,7 +15,7 @@ export default {
         "3/1": "3 / 1",
       },
       boxShadow: {
-        "innerBorder": "inset 0 0 0 1px", // custom shadow
+        "innerBorder": "inset 0 0 0 2px", // custom shadow
       },
       colors: {
         skin: {
@@ -34,7 +34,7 @@ export default {
             sub3: "rgba(var(--color-bg-sub3), 1)",
           },
           border: {
-            DEFAULT: "rgb(var(--color-border))",
+            DEFAULT: "rgba(var(--color-border), 1)",
           },
         },
       },
