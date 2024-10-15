@@ -1,0 +1,18 @@
+---
+const { tags } = Astro.props;
+
+interface props {
+  tags: string[];
+}
+---
+
+<div class="flex">
+  {
+    tags.map((tag: string) => (
+      <span class="rounded-full bg-skin-bg-sub3 px-1 font-mono text-[0.45rem] leading-3 text-skin-text/80 sm:px-2 sm:py-[3px] sm:text-xs sm:leading-normal items-center flex gap-1">
+        <div class="rounded-full bg-skin-accent size-1 sm:size-1.5" />
+        <a href={"/tag/" + tag}>#{tag}</a>
+      </span>
+    ))
+  }
+</div>
