@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // Define the themes
 const themes = {
   light: "theme-base",
-  dark: "theme-dark"
+  dark: "theme-dark",
 };
 
 const ThemeToggle = () => {
@@ -14,7 +14,7 @@ const ThemeToggle = () => {
       if (savedTheme) return savedTheme;
     }
 
-    // Deafult to light theme if no theme is stored ? 
+    // Deafult to light theme if no theme is stored ?
     return themes.light;
   });
 
@@ -34,7 +34,9 @@ const ThemeToggle = () => {
 
   const toggleTheme = () => {
     // Toggle between light and dark themes
-    setTheme((prevTheme) => (prevTheme === themes.light ? themes.dark : themes.light));
+    setTheme((prevTheme) =>
+      prevTheme === themes.light ? themes.dark : themes.light,
+    );
   };
 
   return (
