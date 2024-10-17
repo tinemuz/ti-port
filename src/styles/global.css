@@ -64,7 +64,7 @@
         color-scheme: light;
 
         --color-text: 34, 34, 34;
-        --color-text-sub: 241, 78, 58;
+        --color-text-sub: 24, 75, 242;
         --color-accent: 24, 75, 242;
         --color-accent-sub: 24, 75, 242;
         --color-bg: 234, 234, 234;
@@ -88,7 +88,7 @@
         color-scheme: dark;
 
         --color-text: 255, 252, 225;
-        --color-text-sub: 241, 78, 58;
+        --color-text-sub: 24, 242, 191;
         --color-accent: 24, 242, 191;
         --color-accent-sub: 24, 242, 191;
         --color-bg: 14, 16, 16;
