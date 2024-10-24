@@ -1,59 +1,48 @@
----
-
----
-
 <button
   id='theme-toggle'
   type='button'
   class="size-5 cursor-pointer rounded-full bg-skin-accent transition-all duration-300 ease-in-out hover:scale-110"
 ></button>
 
-
 <script is:inline>
-  // Inline: not bundled. It  will execute as soon as possible
-  const STORAGE_THEME_KEY = 'theme'
-  const DARK_THEME_CLASS = 'theme-dark'
-  const LIGHT_THEME_CLASS = 'theme-base'
-  const DARK = 'theme-dark'
-  const LIGHT = 'theme-base'
-  const root = document.documentElement
-  let isDark = true
-  let isLight = false
+  const STORAGE_THEME_KEY = 'theme';
+  const DARK_THEME_CLASS = 'theme-dark';
+  const LIGHT_THEME_CLASS = 'theme-base';
+  const root = document.documentElement;
 
-  const getUserPreferences = (localStorageKey) => {
-    if (localStorage && localStorage.getItem(localStorageKey))
-      return localStorage.getItem(localStorageKey)
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return DARK
-    return LIGHT
-  }
+  const getUserPreference = () => {
+    const storedTheme = localStorage.getItem(STORAGE_THEME_KEY);
+    if (storedTheme) return storedTheme;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK_THEME_CLASS : LIGHT_THEME_CLASS;
+  };
 
-  function initTheme() {
-    const theme = getUserPreferences(STORAGE_THEME_KEY)
-    isDark = theme === DARK
-    isLight = theme === LIGHT
-    root.classList.toggle(DARK_THEME_CLASS, isDark)
-    root.classList.toggle(LIGHT_THEME_CLASS, isLight)
-  }
+  const applyTheme = (theme) => {
+    root.classList.toggle(DARK_THEME_CLASS, theme === DARK_THEME_CLASS);
+    root.classList.toggle(LIGHT_THEME_CLASS, theme === LIGHT_THEME_CLASS);
+    localStorage.setItem(STORAGE_THEME_KEY, theme);
+  };
 
-  function handleClick() {
-    isDark = !isDark
+  const initTheme = () => applyTheme(getUserPreference());
 
-    root.classList.toggle(DARK_THEME_CLASS, isDark)
-    localStorage.setItem(STORAGE_THEME_KEY, isDark ? DARK : LIGHT)
-  }
+  const toggleTheme = () => {
+    const newTheme = root.classList.contains(DARK_THEME_CLASS) ? LIGHT_THEME_CLASS : DARK_THEME_CLASS;
+    applyTheme(newTheme);
+  };
 
-  function setButtonHandler() {
-    const button = document.getElementById('theme-toggle')
-    button?.addEventListener('click', () => handleClick())
-  }
+  const setButtonHandler = () => {
+    const button = document.getElementById('theme-toggle');
+    button?.addEventListener('click', toggleTheme);
+  };
 
-  // Initial navigation
-  initTheme()
-  setButtonHandler()
+  // Ensure the DOM is fully loaded before attaching the event listener
+  document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    setButtonHandler();
+  });
 
-  // On view transitions navigation
+  // Re-apply theme and set button on navigation with View Transitions
   document.addEventListener('astro:after-swap', () => {
-    initTheme()
-    setButtonHandler()
-  })
+    initTheme();
+    setButtonHandler();
+  });
 </script>
