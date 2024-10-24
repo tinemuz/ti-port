@@ -1,0 +1,12 @@
+---
+import ThemeToggle from "./ThemeToggle";
+import NavLinks from "./NavLinks";
+---
+
+<nav class="flex h-[240px] flex-grow flex-col items-center justify-center text-skin-text/65 sm:text-sm">
+  <div class="h-full flex-grow"></div>
+  <div class="flex w-full flex-row items-center justify-between sm:max-w-[812px]">
+    <ThemeToggle client:only="react" />
+    <NavLinks client:only="react" />
+  </div>
+</nav>
