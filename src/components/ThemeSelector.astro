@@ -1,0 +1,59 @@
+---
+
+---
+
+<button
+  id='theme-toggle'
+  type='button'
+  class="size-5 cursor-pointer rounded-full bg-skin-accent transition-all duration-300 ease-in-out hover:scale-110"
+></button>
+
+
+<script is:inline>
+  // Inline: not bundled. It  will execute as soon as possible
+  const STORAGE_THEME_KEY = 'theme'
+  const DARK_THEME_CLASS = 'theme-dark'
+  const LIGHT_THEME_CLASS = 'theme-base'
+  const DARK = 'theme-dark'
+  const LIGHT = 'theme-base'
+  const root = document.documentElement
+  let isDark = true
+  let isLight = false
+
+  const getUserPreferences = (localStorageKey) => {
+    if (localStorage && localStorage.getItem(localStorageKey))
+      return localStorage.getItem(localStorageKey)
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return DARK
+    return LIGHT
+  }
+
+  function initTheme() {
+    const theme = getUserPreferences(STORAGE_THEME_KEY)
+    isDark = theme === DARK
+    isLight = theme === LIGHT
+    root.classList.toggle(DARK_THEME_CLASS, isDark)
+    root.classList.toggle(LIGHT_THEME_CLASS, isLight)
+  }
+
+  function handleClick() {
+    isDark = !isDark
+
+    root.classList.toggle(DARK_THEME_CLASS, isDark)
+    localStorage.setItem(STORAGE_THEME_KEY, isDark ? DARK : LIGHT)
+  }
+
+  function setButtonHandler() {
+    const button = document.getElementById('theme-toggle')
+    button?.addEventListener('click', () => handleClick())
+  }
+
+  // Initial navigation
+  initTheme()
+  setButtonHandler()
+
+  // On view transitions navigation
+  document.addEventListener('astro:after-swap', () => {
+    initTheme()
+    setButtonHandler()
+  })
+</script>
