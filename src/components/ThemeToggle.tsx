@@ -14,8 +14,11 @@ const ThemeToggle = () => {
       if (savedTheme) return savedTheme;
     }
 
-    // Deafult to light theme if no theme is stored ?
-    return themes.light;
+    // Otherwise, default to the user's system preference
+    const userPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    return userPrefersDark ? themes.dark : themes.light;
   });
 
   useEffect(() => {
@@ -42,8 +45,7 @@ const ThemeToggle = () => {
   return (
     <div
       onClick={toggleTheme}
-      className="size-5 cursor-pointer rounded-full bg-skin-accent transition-all
-             duration-300 ease-in-out hover:scale-110"
+      className="size-5 cursor-pointer rounded-full bg-skin-accent transition-all duration-300 ease-in-out hover:scale-110"
     ></div>
   );
 };
