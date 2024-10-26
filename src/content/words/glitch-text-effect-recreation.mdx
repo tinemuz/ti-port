@@ -3,40 +3,9 @@ title: "Glitch text effect recreation"
 description: "Recreating a glitch text effect."
 pubDate: 2024-10-26T22:21:00
 author: "Tinetariro Muzunzandare"
-cover:
-  path: "../../../src/assets/deploying-a-static-website-using-s3-cloudfront-and-cloudflare-dns/bucket-paint.jpg"
-  alt: "A bucket of white paint."
-tags: ["animation"]
+tags: ["animation", "web design", "web development"]
 slug: glitch-text-effect-recreation
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -46,7 +15,8 @@ import FlickeringText from "../../components/FlickeringText.js";
 
 To recreate the hover animation shown below, the text string should be split to animate each character separately. After the string is seperated, each char will be rendered in a span.
 
-<div className=" mt-8 font-mono text-2xl sm:text-[2.986rem] hover-trigger bg-skin-bg-sub rounded-full px-10 py-10 sm:px-20 sm:py-20 flex justify-between hover:text-skin-accent-sub">
+<div
+  className=" mt-8 font-mono text-2xl sm:text-[2.986rem] hover-trigger bg-skin-bg-sub rounded-full px-10 py-10 sm:px-20 sm:py-20 flex justify-between hover:text-skin-accent-sub">
   <FlickeringText text="_exe" client:load />
   <FlickeringText text="Hover_/.HERE" client:load />
 </div>
@@ -55,6 +25,8 @@ To recreate the hover animation shown below, the text string should be split to 
 
 ```html file=thisPost.mdx
 <!--html, where ever you want to parse some text to use the effect-->
+<!--disregard client:load if you are not using this in an astro project-->
+
 <div className="hover-trigger flex justify-between">
   <FlickeringText text="_exe" client:load />
   <FlickeringText text="Hover_/.HERE" client:load />
@@ -65,6 +37,7 @@ To recreate the hover animation shown below, the text string should be split to 
 
 ```tsx file=FlickeringText.tsx
 //FlickeringText.tsx or just use javascript in a script tag
+
 import React from "react";
 
 interface FlickeringTextProps {
@@ -93,8 +66,10 @@ export default FlickeringText;
 ```
 
 This is the flicker animation that is applied to each character which in this case, is a span with the class name char.
+
 ```css file=global.css
 /*global.css*/
+
 .flickering-text {
         display: inline-block;
     }
