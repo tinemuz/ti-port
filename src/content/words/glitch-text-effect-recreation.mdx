@@ -1,0 +1,94 @@
+---
+title: "Glitch text effect recreation"
+description: "Recreating a glitch text effect."
+pubDate: 2024-10-26T22:21:00
+author: "Tinetariro Muzunzandare"
+cover:
+  path: "../../../src/assets/deploying-a-static-website-using-s3-cloudfront-and-cloudflare-dns/bucket-paint.jpg"
+  alt: "A bucket of white paint."
+tags: ["animation"]
+slug: glitch-text-effect-recreation
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import FlickeringText from "../../components/FlickeringText.js";
+
+### This is an approach to recreate the cool sci-fi glitch animation as seen on [Jonas Emmertsen's portfolio](https://jonasemmertsen.com/) when you hover over the cards.
+
+To recreate the hover animation shown below, the text string should be split to animate each character separately. After the string is seperated, each `char` will be rendered in a span.
+
+<div className=" mt-8 font-mono text-2xl sm:text-[2.986rem] hover-trigger bg-skin-bg-sub rounded-full px-10 py-10 sm:px-20 sm:py-20 flex justify-between hover:text-skin-accent-sub">
+  <FlickeringText text="_exe" client:load />
+  <FlickeringText text="Hover_/.HERE" client:load />
+</div>
+
+### Here is the code for the demo above.
+
+```html file=thisPost.mdx
+<!--html, where ever you want to parse some text to use the effect-->
+<div className="hover-trigger flex justify-between">
+  <FlickeringText text="_exe" client:load />
+  <FlickeringText text="Hover_/.HERE" client:load />
+</div>
+```
+
+> _Important:_ Have a look at the end of this post in the reference section to see how other people get a similar effect
+
+```tsx file=FlickeringText.tsx
+//FlickeringText.tsx or just use javascript in a script tag
+import React from "react";
+
+interface FlickeringTextProps {
+  text: string;
+}
+
+const FlickeringText: React.FC<FlickeringTextProps> = ({ text }) => {
+  const getRandomDelay = () => `${Math.random() * 0.6}s`;
+
+  return (
+    <span className="flickering-text">
+      {text.split("").map((char, index) => (
+        <span
+          key={index}
+          className="char"
+          style={{ animationDelay: getRandomDelay() }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </span>
+  );
+};
+
+export default FlickeringText;
+```
+
+### References
+- Jonas' portfolio (the inspiration for this) - https://jonasemmertsen.com/
+- Vlad's code pen (created a similar effect) - https://codepen.io/vladsolomon/pen/RwzyBMZ
