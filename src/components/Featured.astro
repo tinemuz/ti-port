@@ -43,12 +43,14 @@ if (displayOrder.length !== tagWords.length) {
                       <div
                         class="rounded-lg border sm:border-2 border-skin-border bg-skin-bg-sub p-1 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-xl sm:rounded-[1.1rem] sm:p-2">
                         <div class="overflow-hidden rounded-[0.25rem] border border-skin-border sm:rounded-[0.6rem]">
-                          <Image
-                            class="aspect-square w-full object-cover"
-                            src={words.data.cover.path}
-                            alt={words.data.cover.alt}
-                            loading="eager"
-                          />
+                          {words.data.cover ? (
+                            <Image
+                              class="aspect-square w-full object-cover"
+                              src={words.data.cover.path}
+                              alt={words.data.cover.alt}
+                              loading="eager"
+                            />
+                          ) : null}
                         </div>
 
                         <div class="mx-0.5 pb-2 text-[0.45rem] leading-[0.6rem] sm:text-xs">
