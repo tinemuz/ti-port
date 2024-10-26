@@ -6,7 +6,14 @@ import ThemeSelector from "./ThemeSelector.astro";
 <nav class="flex h-[240px] flex-grow flex-col items-center justify-center text-skin-text/65 sm:text-sm">
   <div class="h-full flex-grow"></div>
   <div class="flex w-full flex-row items-center justify-between sm:max-w-[812px]">
-    <ThemeSelector />
+    <div class="flex items-center space-x-1">
+      <ThemeSelector />
+      <div
+        class="rounded-full bg-skin-bg-sub3 px-1 font-mono leading-3 text-skin-text/80 sm:px-2 sm:py-[3px] text-xs sm:leading-normal items-center flex gap-1">
+        <div>beta</div>
+        <div class="rounded-full bg-amber-600 size-1 sm:size-1.5" />
+      </div>
+    </div>
     <NavLinks client:only="react" />
   </div>
 </nav>
