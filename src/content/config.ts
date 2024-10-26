@@ -8,10 +8,12 @@ const wordsCollection = defineCollection({
       description: z.string(),
       pubDate: z.date(),
       author: z.string(),
-      cover: z.object({
-        path: image(),
-        alt: z.string(),
-      }),
+      cover: z
+        .object({
+          path: image(),
+          alt: z.string(),
+        })
+        .optional(),
 
       tags: z.array(z.string()),
     }),
