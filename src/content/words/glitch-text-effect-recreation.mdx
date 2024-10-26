@@ -37,11 +37,14 @@ slug: glitch-text-effect-recreation
 
 
 
+
+
+
 import FlickeringText from "../../components/FlickeringText.js";
 
 ### This is an approach to recreate the cool sci-fi glitch animation as seen on [Jonas Emmertsen's portfolio](https://jonasemmertsen.com/) when you hover over the cards.
 
-To recreate the hover animation shown below, the text string should be split to animate each character separately. After the string is seperated, each `char` will be rendered in a span.
+To recreate the hover animation shown below, the text string should be split to animate each character separately. After the string is seperated, each char will be rendered in a span.
 
 <div className=" mt-8 font-mono text-2xl sm:text-[2.986rem] hover-trigger bg-skin-bg-sub rounded-full px-10 py-10 sm:px-20 sm:py-20 flex justify-between hover:text-skin-accent-sub">
   <FlickeringText text="_exe" client:load />
@@ -87,6 +90,27 @@ const FlickeringText: React.FC<FlickeringTextProps> = ({ text }) => {
 };
 
 export default FlickeringText;
+```
+
+This is the flicker animation that is applied to each character which in this case, is a span with the class name char.
+```css file=global.css
+/*global.css*/
+.flickering-text {
+        display: inline-block;
+    }
+
+    .hover-trigger:hover .flickering-text .char {
+        animation: flicker 0.1s ease-in-out;
+    }
+    .flickering-text:hover .char {
+        animation: flicker 0.1s ease-in-out;
+    }
+
+    @keyframes flicker {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
 ```
 
 ### References

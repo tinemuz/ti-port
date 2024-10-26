@@ -58,7 +58,6 @@
         animation: flicker 0.1s ease-in-out;
     }
     .flickering-text:hover .char {
-
         animation: flicker 0.1s ease-in-out;
     }
 
