@@ -9,6 +9,8 @@ slug: glitch-text-effect-recreation
 
 
 
+
+
 import FlickeringText from "../../components/FlickeringText.tsx";
 
 ### This is an approach to recreate the cool sci-fi glitch animation as seen on [Jonas Emmertsen's portfolio](https://jonasemmertsen.com/) when you hover over the cards.
@@ -33,7 +35,7 @@ To recreate the hover animation shown below, the text string should be split to 
 </div>
 ```
 
-> _Important:_ Have a look at the end of this post to see the references.
+> Have a look at the end of this post to see the references.
 
 ```tsx file=FlickeringText.tsx
 //FlickeringText.tsx or just use javascript in a script tag
@@ -72,20 +74,20 @@ This is the flicker animation that is applied to each character which in this ca
 
 .flickering-text {
         display: inline-block;
-    }
+}
 
-    .hover-trigger:hover .flickering-text .char {
-        animation: flicker 0.1s ease-in-out;
-    }
-    .flickering-text:hover .char {
-        animation: flicker 0.1s ease-in-out;
-    }
+.hover-trigger:hover .flickering-text .char {
+    animation: flicker 0.1s ease-in-out;
+}
+.flickering-text:hover .char {
+    animation: flicker 0.1s ease-in-out;
+}
 
-    @keyframes flicker {
-        0% { opacity: 1; }
-        50% { opacity: 0; }
-        100% { opacity: 1; }
-    }
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
 ```
 
 ### References
