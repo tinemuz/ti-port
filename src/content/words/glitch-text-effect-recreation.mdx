@@ -8,11 +8,12 @@ slug: glitch-text-effect-recreation
 ---
 
 
+
 import FlickeringText from "../../components/FlickeringText.tsx";
 
 ### This is an approach to recreate the cool sci-fi glitch animation as seen on [Jonas Emmertsen's portfolio](https://jonasemmertsen.com/) when you hover over the cards.
 
-To recreate the hover animation shown below, the text string should be split to animate each character separately. After the string is seperated, each char will be rendered in a span.
+To recreate the hover animation shown below, the text string should be split to animate each character separately. An animation with a random delay is applied to each character.
 
 <div
   className=" mt-8 font-mono text-2xl sm:text-[2.986rem] hover-trigger bg-skin-bg-sub rounded-full px-10 py-10 sm:px-20 sm:py-20 flex justify-between hover:text-skin-accent-sub">
@@ -32,7 +33,7 @@ To recreate the hover animation shown below, the text string should be split to 
 </div>
 ```
 
-> _Important:_ Have a look at the end of this post in the reference section to see how other people get a similar effect
+> _Important:_ Have a look at the end of this post to see the references.
 
 ```tsx file=FlickeringText.tsx
 //FlickeringText.tsx or just use javascript in a script tag
