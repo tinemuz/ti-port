@@ -50,6 +50,24 @@
         @apply border-skin-text/20 !important;
     }
 
+    .flickering-text {
+        display: inline-block;
+    }
+
+    .hover-trigger:hover .flickering-text .char {
+        animation: flicker 0.1s ease-in-out;
+    }
+    .flickering-text:hover .char {
+
+        animation: flicker 0.1s ease-in-out;
+    }
+
+    @keyframes flicker {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
 
     .theme-base {
         .astro-code {
