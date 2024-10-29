@@ -7,20 +7,13 @@ tags: ["animation", "web design", "web development"]
 slug: glitch-text-effect-recreation
 ---
 
-
-
-
-
-
-
 import FlickeringText from "../../components/FlickeringText.tsx";
 
 ### This is an approach to recreate the cool sci-fi glitch animation as seen on [Jonas Emmertsen's portfolio](https://jonasemmertsen.com/) when you hover over the cards.
 
 To recreate the hover animation shown below, the text string should be split to animate each character separately. An animation with a random delay is applied to each character.
 
-<div
-  className=" mt-8 font-mono text-2xl sm:text-[2.986rem] hover-trigger bg-skin-bg-sub rounded-full px-10 py-10 sm:px-20 sm:py-20 flex justify-between hover:text-skin-accent-sub">
+<div className=" hover-trigger mt-8 flex justify-between rounded-full bg-skin-bg-sub px-10 py-10 font-mono text-2xl hover:text-skin-accent-sub sm:px-20 sm:py-20 sm:text-[2.986rem]">
   <FlickeringText text="_exe" client:load />
   <FlickeringText text="Hover_/.HERE" client:load />
 </div>
@@ -75,20 +68,27 @@ This is the flicker animation that is applied to each character which in this ca
 /*global.css*/
 
 .flickering-text {
-    display: inline-block;
+  display: inline-block;
 }
 
 .hover-trigger:hover .flickering-text .char {
-    animation: flicker 0.1s ease-in-out;
+  animation: flicker 0.1s ease-in-out;
 }
 
 @keyframes flicker {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 ```
 
 ### References
+
 - Jonas' portfolio (the inspiration for this) - https://jonasemmertsen.com/
 - Vlad's code pen (created a similar effect) - https://codepen.io/vladsolomon/pen/RwzyBMZ
