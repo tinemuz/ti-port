@@ -1,0 +1,13 @@
+---
+// src/components/WordsImage.astro
+import { Image, type ImageMetadata } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata | string | Promise<{ default: ImageMetadata }>;
+  alt?: string;
+}
+
+const { src, alt = "" } = Astro.props;
+---
+
+<Image src={src} alt={alt} class="rounded-lg border-2 border-skin-border/50" />
