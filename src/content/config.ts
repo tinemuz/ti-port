@@ -1,6 +1,8 @@
 import { defineCollection, z } from "astro:content";
 
-const wordsCollection = defineCollection({
+const PostType = z.enum(["project", "post", "archive"]);
+
+const postsCollection = defineCollection({
   type: "content",
   schema: ({ image }) =>
     z.object({
@@ -8,17 +10,19 @@ const wordsCollection = defineCollection({
       description: z.string(),
       pubDate: z.date(),
       author: z.string(),
-      cover: z
-        .object({
-          path: image(),
-          alt: z.string(),
-        })
+      images: z
+        .array(
+          z.object({
+            path: image(),
+            alt: z.string(),
+          }),
+        )
         .optional(),
-
       tags: z.array(z.string()),
+      type: PostType.optional().default("post"),
     }),
 });
 
 export const collections = {
-  words: wordsCollection,
+  posts: postsCollection,
 };

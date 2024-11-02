@@ -1,0 +1,30 @@
+---
+import { formatDateMonthYear } from "../util/utils";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+---
+
+<div class="flex-col p-0.5 sm:p-1">
+  <a href={"/posts/" + post.slug}>
+    <div
+      class="aspect-square rounded-lg border sm:border-2 border-skin-border bg-skin-bg-sub p-3 transition-all duration-200 ease-in-out hover:bg-skin-bg-sub3 sm:rounded-[1.1rem]">
+      <div class="flex sm:text-xs leading-3 text-[0.65rem] flex-col h-full justify-between">
+        <p class="text-skin-text/50">
+          {post.data.type.charAt(0).toUpperCase() + post.data.type.slice(1)}
+        </p>
+        <div class="space-y-1 sm:space-y-2">
+          <p class="sm:text-sm">{post.data.title}</p>
+          <p class="hidden sm:block">{post.data.description}</p>
+          <p class="text-skin-text/50">
+            Last updated ~ {formatDateMonthYear(post.data.pubDate)}
+          </p>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

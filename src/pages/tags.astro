@@ -3,10 +3,10 @@ import { getCollection } from "astro:content";
 import TagsList from "../components/TagsList.astro";
 import MainLayout from "../layouts/main-layout.astro";
 
-const allwords = await getCollection("words");
+const allposts = await getCollection("posts");
 
 // Extract all tags from all posts
-const allTags = allwords.flatMap(
+const allTags = allposts.flatMap(
   (post: { data: { tags: any } }) => post.data.tags
 );
 
@@ -17,14 +17,14 @@ const uniqueTags = [...new Set(allTags)];
 <MainLayout title="Tags | Browse based on a topic">
   <div class="flex flex-col text-skin-text">
     <div class="flex flex-grow flex-col items-center justify-center">
-      <div class="w-full pb-16 pt-6 sm:max-w-[812px]">
+      <div class="w-full pb-16 pt-6 sm:max-w-[920px]">
         <h1 class="pb-4">browse based on a topic</h1>
         <p class="text-justify">
           A list of all the tags across projects and written content site wide.
         </p>
       </div>
 
-      <div class="w-full flex-grow sm:max-w-[812px]">
+      <div class="w-full flex-grow sm:max-w-[920px]">
         <TagsList tags={uniqueTags} />
       </div>
     </div>

@@ -14,7 +14,7 @@ export default defineConfig({
         light: "vitesse-light",
         dark: "andromeeda",
       },
-      defaultColor: false, // <--
+      defaultColor: false,
     },
   },
 });
