@@ -1,7 +1,6 @@
-<!--ImageGrid.astro-->
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import ArchiveCardImage from "./ArchiveCardImage.astro";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -11,50 +10,106 @@ const { post } = Astro.props;
 
 // Validate number of images
 if (!post.data.images?.length || post.data.images.length < 2 || post.data.images.length > 4) {
-  throw new Error("Posts must contain 2, 3, or 4 images");
+  throw new Error('Posts must contain 2, 3, or 4 images');
 }
-
-const layoutClasses = {
-  2: "grid grid-rows-2 h-full gap-1 sm:gap-2",
-  3: "grid grid-rows-2 h-full gap-1 sm:gap-2",
-  4: "grid grid-cols-2 grid-rows-2 h-full gap-1 sm:gap-2"
-};
 ---
 
 <div class="flex-col p-0.5 sm:p-1">
   <a href={`/posts/${post.slug}`}>
     <div
-      class="rounded-lg p-1 sm:p-2 relative aspect-square text-xs border sm:border-2 border-skin-border bg-skin-bg-sub sm:rounded-[1.1rem] transition-all duration-200 ease-in-out hover:bg-skin-bg-sub3"
-    >
-      {post.data.images?.length === 2 && (
-        <div class={layoutClasses[2]}>
-          {post.data.images.map(img => (
-            <ArchiveCardImage src={img.path} alt={img.alt} />
-          ))}
-        </div>
-      )}
+      class="rounded-lg p-1 sm:p-2 relative aspect-square text-xs border sm:border-2 border-skin-border bg-skin-bg-sub sm:rounded-[1.1rem] transition-all duration-200 ease-in-out hover:bg-skin-bg-sub3">
 
-      {post.data.images?.length === 3 && (
-        <div class="aspect-square relative">
-          <div class={layoutClasses[3]}>
-            <div class="grid grid-cols-2 gap-2">
-              {post.data.images.slice(0, 2).map(img => (
-                <ArchiveCardImage src={img.path} alt={img.alt} />
-              ))}
-            </div>
-            <ArchiveCardImage
-              src={post.data.images[2].path}
-              alt={post.data.images[2].alt}
+      {/* Two Images Layout - Now Vertical */}
+      {post.data.images?.length === 2 && (
+        <div class="grid grid-rows-2 h-full gap-2">
+          <div class="relative h-full">
+            <Image
+              class="absolute inset-0 w-full h-full object-cover border border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              src={post.data.images[0].path}
+              alt={post.data.images[0].alt}
+              loading="eager"
+            />
+          </div>
+          <div class="relative h-full">
+            <Image
+              class="absolute inset-0 w-full h-full object-cover border border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              src={post.data.images[1].path}
+              alt={post.data.images[1].alt}
+              loading="eager"
             />
           </div>
         </div>
       )}
 
+      {/* Three Images Layout */}
+      {post.data.images?.length === 3 && (
+        <div class="aspect-square relative">
+          <div class="grid grid-rows-2 h-full gap-2">
+            <div class="grid grid-cols-2 gap-2">
+              <div class="relative h-full">
+                <Image
+                  class="absolute inset-0 w-full h-full object-cover border border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+                  src={post.data.images[0].path}
+                  alt={post.data.images[0].alt}
+                  loading="eager"
+                />
+              </div>
+              <div class="relative h-full">
+                <Image
+                  class="absolute inset-0 w-full h-full object-cover border border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+                  src={post.data.images[1].path}
+                  alt={post.data.images[1].alt}
+                  loading="eager"
+                />
+              </div>
+            </div>
+            <div class="relative h-full">
+              <Image
+                class="absolute inset-0 w-full h-full object-cover border border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+                src={post.data.images[2].path}
+                alt={post.data.images[2].alt}
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Four Images Layout */}
       {post.data.images?.length === 4 && (
-        <div class={layoutClasses[4]}>
-          {post.data.images.map(img => (
-            <ArchiveCardImage src={img.path} alt={img.alt} />
-          ))}
+        <div class="grid grid-cols-2 grid-rows-2 h-full gap-2">
+          <div class="relative h-full">
+            <Image
+              class="absolute inset-0 w-full h-full object-cover border border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              src={post.data.images[0].path}
+              alt={post.data.images[0].alt}
+              loading="eager"
+            />
+          </div>
+          <div class="relative h-full">
+            <Image
+              class="absolute inset-0 w-full h-full object-cover border border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              src={post.data.images[1].path}
+              alt={post.data.images[1].alt}
+              loading="eager"
+            />
+          </div>
+          <div class="relative h-full">
+            <Image
+              class="absolute inset-0 w-full h-full object-cover border border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              src={post.data.images[2].path}
+              alt={post.data.images[2].alt}
+              loading="eager"
+            />
+          </div>
+          <div class="relative h-full">
+            <Image
+              class="absolute inset-0 w-full h-full object-cover border border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              src={post.data.images[3].path}
+              alt={post.data.images[3].alt}
+              loading="eager"
+            />
+          </div>
         </div>
       )}
     </div>

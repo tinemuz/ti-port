@@ -17,19 +17,16 @@ const tagposts = allposts.filter((post) =>
 ---
 
 <div class="w-full flex-grow sm:max-w-[920px]">
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-1 sm:gap-2">
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-1 sm:gap-2">
     {
       tagposts.map((post) => {
         switch (post.data.type) {
-          case "project":
-            return;
-            <ProjectCard post={post} />;
-          case "archive":
-            return;
-            <ArchiveCard post={post} />;
+          case 'project':
+            return <ProjectCard post={post} />;
+          case 'archive':
+            return <ArchiveCard post={post} />;
           default:
-            return;
-            <PostCard post={post} />;
+            return <PostCard post={post} />;
         }
       })
     }
