@@ -10,10 +10,10 @@ const NavLinks = () => {
         featured
       </a>
       <a
-        href="/posts"
-        className={`hover:text-skin-text-sub ${activeLink.includes("/posts") ? "font-bold text-skin-text/100" : ""}`}
+        href="/words"
+        className={`hover:text-skin-text-sub ${activeLink.includes("/words") ? "font-bold text-skin-text/100" : ""}`}
       >
-        posts
+        words
       </a>
       <a
         href="/tags"

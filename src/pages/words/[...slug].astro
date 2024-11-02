@@ -12,9 +12,9 @@ if (slug === undefined) {
 }
 
 export async function getStaticPaths() {
-  const allposts: CollectionEntry<"posts">[] = await getCollection("posts");
+  const allwords: CollectionEntry<"words">[] = await getCollection("words");
 
-  return allposts.map((entry) => ({
+  return allwords.map((entry) => ({
     params: {
       slug: entry.slug
     },
@@ -33,7 +33,7 @@ const { Content } = await entry.render();
 
 <MainLayout title={entry.data.title}>
   <div class="flex flex-grow flex-col items-center text-skin-text">
-    <div class="w-full pb-16 pt-6 sm:max-w-[920px]">
+    <div class="w-full pb-16 pt-6 sm:max-w-[812px]">
       <h1 class="pb-4">{entry.data.title}</h1>
       <p>{entry.data.description}</p>
       <div class="pt-5 pb-3">
@@ -43,7 +43,7 @@ const { Content } = await entry.render();
         Last updated ~ {formatDateMonthYear(entry.data.pubDate)}
       </p>
     </div>
-    <div class="prose prose-xs w-full max-w-none sm:prose-sm sm:max-w-[920px]">
+    <div class="prose prose-xs w-full max-w-none sm:prose-sm sm:max-w-[812px]">
       <Content />
     </div>
   </div>
