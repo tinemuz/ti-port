@@ -17,14 +17,14 @@ if (!post.data.images?.length || post.data.images.length < 2 || post.data.images
 <div class="flex-col p-0.5 sm:p-1">
   <a href={`/posts/${post.slug}`}>
     <div
-      class="rounded-lg p-1 sm:p-2 relative aspect-square text-xs border sm:border-2 border-skin-border bg-skin-bg-sub sm:rounded-[1.1rem] transition-all duration-200 ease-in-out hover:bg-skin-bg-sub3">
+      class="rounded-lg sm:rounded-[0.65rem] p-1 relative aspect-square text-xs border sm:border-2 border-skin-border bg-skin-bg-sub transition-all duration-200 ease-in-out hover:bg-skin-bg-sub3">
 
       {/* Two Images Layout - Now Vertical */}
       {post.data.images?.length === 2 && (
-        <div class="grid grid-rows-2 h-full gap-1 sm:gap-2">
+        <div class="grid grid-rows-2 h-full gap-1 ">
           <div class="relative h-full">
             <Image
-              class="absolute inset-0 w-full h-full object-cover border-2 border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              class="absolute inset-0 w-full h-full object-cover border  border-skin-border rounded-[0.25rem] sm:rounded-[0.4rem]"
               src={post.data.images[0].path}
               alt={post.data.images[0].alt}
               loading="eager"
@@ -32,7 +32,7 @@ if (!post.data.images?.length || post.data.images.length < 2 || post.data.images
           </div>
           <div class="relative h-full">
             <Image
-              class="absolute inset-0 w-full h-full object-cover border-2 border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              class="absolute inset-0 w-full h-full object-cover border  border-skin-border rounded-[0.25rem] sm:rounded-[0.4rem]"
               src={post.data.images[1].path}
               alt={post.data.images[1].alt}
               loading="eager"
@@ -44,11 +44,11 @@ if (!post.data.images?.length || post.data.images.length < 2 || post.data.images
       {/* Three Images Layout */}
       {post.data.images?.length === 3 && (
         <div class="aspect-square relative">
-          <div class="grid grid-rows-2 h-full gap-1 sm:gap-2">
-            <div class="grid grid-cols-2 gap-1 sm:gap-2">
+          <div class="grid grid-rows-2 h-full gap-1 ">
+            <div class="grid grid-cols-2 gap-1 ">
               <div class="relative h-full">
                 <Image
-                  class="absolute inset-0 w-full h-full object-cover border-2 border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+                  class="absolute inset-0 w-full h-full object-cover border  border-skin-border rounded-[0.25rem] sm:rounded-[0.4rem]"
                   src={post.data.images[0].path}
                   alt={post.data.images[0].alt}
                   loading="eager"
@@ -56,7 +56,7 @@ if (!post.data.images?.length || post.data.images.length < 2 || post.data.images
               </div>
               <div class="relative h-full">
                 <Image
-                  class="absolute inset-0 w-full h-full object-cover border-2 border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+                  class="absolute inset-0 w-full h-full object-cover border  border-skin-border rounded-[0.25rem] sm:rounded-[0.4rem]"
                   src={post.data.images[1].path}
                   alt={post.data.images[1].alt}
                   loading="eager"
@@ -65,7 +65,7 @@ if (!post.data.images?.length || post.data.images.length < 2 || post.data.images
             </div>
             <div class="relative h-full">
               <Image
-                class="absolute inset-0 w-full h-full object-cover border-2 border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+                class="absolute inset-0 w-full h-full object-cover border  border-skin-border rounded-[0.25rem] sm:rounded-[0.4rem]"
                 src={post.data.images[2].path}
                 alt={post.data.images[2].alt}
                 loading="eager"
@@ -77,10 +77,10 @@ if (!post.data.images?.length || post.data.images.length < 2 || post.data.images
 
       {/* Four Images Layout */}
       {post.data.images?.length === 4 && (
-        <div class="grid grid-cols-2 grid-rows-2 h-full gap-1 sm:gap-2">
+        <div class="grid grid-cols-2 grid-rows-2 h-full gap-1 ">
           <div class="relative h-full">
             <Image
-              class="absolute inset-0 w-full h-full object-cover border-2 border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              class="absolute inset-0 w-full h-full object-cover border  border-skin-border rounded-[0.25rem] sm:rounded-[0.4rem]"
               src={post.data.images[0].path}
               alt={post.data.images[0].alt}
               loading="eager"
@@ -88,7 +88,7 @@ if (!post.data.images?.length || post.data.images.length < 2 || post.data.images
           </div>
           <div class="relative h-full">
             <Image
-              class="absolute inset-0 w-full h-full object-cover border-2 border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              class="absolute inset-0 w-full h-full object-cover border  border-skin-border rounded-[0.25rem] sm:rounded-[0.4rem]"
               src={post.data.images[1].path}
               alt={post.data.images[1].alt}
               loading="eager"
@@ -96,7 +96,7 @@ if (!post.data.images?.length || post.data.images.length < 2 || post.data.images
           </div>
           <div class="relative h-full">
             <Image
-              class="absolute inset-0 w-full h-full object-cover border-2 border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              class="absolute inset-0 w-full h-full object-cover border  border-skin-border rounded-[0.25rem] sm:rounded-[0.4rem]"
               src={post.data.images[2].path}
               alt={post.data.images[2].alt}
               loading="eager"
@@ -104,7 +104,7 @@ if (!post.data.images?.length || post.data.images.length < 2 || post.data.images
           </div>
           <div class="relative h-full">
             <Image
-              class="absolute inset-0 w-full h-full object-cover border-2 border-skin-border rounded-[0.25rem] sm:rounded-[0.6rem]"
+              class="absolute inset-0 w-full h-full object-cover border  border-skin-border rounded-[0.25rem] sm:rounded-[0.4rem]"
               src={post.data.images[3].path}
               alt={post.data.images[3].alt}
               loading="eager"

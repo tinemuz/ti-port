@@ -12,7 +12,7 @@ const { post } = Astro.props;
 <div class="flex-col p-0.5 sm:p-1">
   <a href={"/posts/" + post.slug}>
     <div
-      class="relative rounded-lg aspect-square text-xs border overflow-hidden sm:border-2 border-skin-border bg-skin-bg-sub sm:rounded-[1.1rem]">
+      class="relative rounded-lg aspect-square text-xs border overflow-hidden sm:border-2 border-skin-border bg-skin-bg-sub">
       {/* Single Image Layout */}
       {post.data.images?.length === 1 && (
         <p class="absolute z-10 p-3 text-white/50">
