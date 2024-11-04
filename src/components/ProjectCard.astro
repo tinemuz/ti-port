@@ -15,7 +15,7 @@ const { post } = Astro.props;
       class="relative rounded-lg aspect-square text-xs border overflow-hidden border-skin-border bg-skin-bg-sub">
       {/* Single Image Layout */}
       {post.data.images?.length === 1 && (
-        <p class="absolute z-10 p-3 text-white/50">
+        <p class="absolute z-10 p-3 text-[0.65rem] sm:text-xs text-white/50">
           {post.data.type.charAt(0).toUpperCase() + post.data.type.slice(1)}
         </p>
 
