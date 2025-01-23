@@ -57,6 +57,9 @@
     .hover-trigger:hover .flickering-text .char {
         animation: flicker 0.1s ease-in-out;
     }
+    img {
+        @apply m-0 !important;
+    }
 
     @keyframes flicker {
         0% { opacity: 1; }

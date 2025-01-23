@@ -10,8 +10,14 @@ interface Props {
 const { src, alt } = Astro.props;
 ---
 
-<Image
-  src={src}
-  alt={alt}
-  class="rounded-lg border border-skin-border/50"
-/>
+<div class="pb-6">
+  <div class="relative overflow-hidden rounded-lg">
+    <!-- Blurred Background -->
+    <div class="absolute inset-0 bg-cover blur-lg filter" style={{ backgroundImage: `url(${src.src})` }}></div>
+
+    <!-- Main Content -->
+    <div class="relative p-0.5 lg:p-1">
+      <Image src={src} alt={alt} class="rounded-[0.375rem] lg:rounded-[0.25rem]" />
+    </div>
+  </div>
+</div>
