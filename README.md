@@ -1,3 +1,3 @@
-# Portfolio Built in Astro (WIP)
+# Portfolio Built in Astro
 
-by Tine Muzunza
+Running on S3 and Cloudfront
