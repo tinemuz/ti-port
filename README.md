@@ -1,3 +1,3 @@
-# Portfolio Built in Astro
+# Portfolio Built in Astro (WIP)
 
 by Tine Muzunza
