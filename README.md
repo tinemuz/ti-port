@@ -1,3 +1,5 @@
-# Portfolio Built with Astro
+# Portfolio
 
-Running on S3 and Cloudfront
+- Built with Astro
+- Running on S3 and Cloudfront
+- Tailwind v3
