@@ -2,19 +2,14 @@
 
 @import 'tailwindcss';
 
-/*@config '../../tailwind.config.mjs';*/
-
 @plugin "@tailwindcss/typography";
 
 @theme {
     /* Font Families */
 
-
-
     --font-sans: "Eudoxus", sans-serif;
     --font-mono: "JetBrains Mono Variable", monospace;
     --font-serif: "Fanwood Text", serif;
-
 
     /* Aspect Ratios */
     --aspect-2-1: 2 / 1;
@@ -51,27 +46,6 @@
     --tw-prose-th-borders: rgba(var(--color-skin-border), 1);
     --tw-prose-td-borders: rgba(var(--color-skin-border), 1);
     --tw-prose-pre-bg: rgba(var(--color-bg-sub), 1);
-}
-
-.prose-xs {
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-}
-
-.prose-xs p {
-    margin: 0.5em 0;
-}
-
-.prose-xs h1 {
-    font-size: 1.25rem;
-}
-
-.prose-xs h2 {
-    font-size: 1rem;
-}
-
-.prose-xs h3 {
-    font-size: 0.875rem;
 }
 
 /*
