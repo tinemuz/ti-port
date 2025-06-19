@@ -130,7 +130,7 @@
         100% { opacity: 1; }
     }
 
-    .theme-light {
+    .theme-base {
         .astro-code, .astro-code span{
             color: var(--shiki-light) !important;
         }
