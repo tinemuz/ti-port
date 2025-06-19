@@ -2,4 +2,4 @@
 
 - Built with Astro
 - Running on S3 and Cloudfront
-- Tailwind v3
+- Tailwind CSS
