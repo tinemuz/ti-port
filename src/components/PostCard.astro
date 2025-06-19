@@ -18,8 +18,8 @@ const { post } = Astro.props;
           {post.data.type.charAt(0).toUpperCase() + post.data.type.slice(1)}
         </p>
         <div class="space-y-1 sm:space-y-2">
-          <p class="sm:text-sm font-medium">{post.data.title}</p>
-          <p class="hidden sm:block pt-0.5 sm:text-xs">{post.data.description}</p>
+          <p class="sm:text-base">{post.data.title}</p>
+          <p class="hidden sm:block pt-0.5 sm:text-sm text-skin-text/70">{post.data.description}</p>
           <p class="text-skin-text/50 sm:text-xs">
             Last updated ~ {formatDateMonthYear(post.data.pubDate)}
           </p>

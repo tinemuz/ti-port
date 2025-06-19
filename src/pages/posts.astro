@@ -15,14 +15,10 @@ const allposts: CollectionEntry<"posts">[] = (
 <MainLayout title="Tine Muzunza | Articles and Project Content">
   <div class="flex flex-col text-skin-text">
     <div class="flex flex-grow flex-col items-center justify-center">
-      <div class="w-full pb-16 pt-6 sm:max-w-[920px]">
-        <h1 class="pb-4">here are some posts</h1>
-        <p class="text-justify">
-          I write about projects I have worked on or anything I find
-          interesting.
-        </p>
+      <div class="w-full pb-16 pt-6 sm:max-w-[740px]">
+        <h1 class="pb-4">post repository</h1>
       </div>
-      <div class="w-full flex-grow sm:max-w-[920px]">
+      <div class="w-full flex-grow sm:max-w-[740px]">
         {allposts.map((posts) =>
           <PostsGrid posts={posts} />)}
       </div>
