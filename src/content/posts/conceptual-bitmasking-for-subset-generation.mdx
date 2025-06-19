@@ -37,13 +37,14 @@ class Solution {
         int sum = 0;
         int n = nums.length;
 
-        // The number of possible subsets is 2^n.
-        // We can represent this with a left shift: 1 << n.
+        // The number of possible subsets is 2^n - 1.
+        // We can represent this with a left shift: 1 << n == 2^n.
         // The loop will iterate from 0 to (2^n - 1), representing each possible subset.
         for (int i = 0; i < (1 << n); i++) {
 
+            // We can initialize as 0 because 0 xor n yeilds n
             int xorSum = 0;
-            // Now, we build the subset corresponding to the mask 'i'.
+            // Now, we build the subset corresponding to the mask 'i' and compute the xorsum.
             for (int j = 0; j < n; j++) {
 
                 // Check if the j-th bit is set in our mask 'i'.
