@@ -103,7 +103,19 @@
     pre,
     pre code,
     code {
-        @apply text-xs! font-mono!;
+        @apply text-xs! font-mono! text-skin-text!;
+    }
+
+    code {
+        @apply text-skin-text/80! bg-skin-bg-sub rounded-md font-mono px-1.5 py-[3px];
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            display: none;
+        }
     }
 
     pre {

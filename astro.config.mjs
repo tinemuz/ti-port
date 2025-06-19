@@ -4,6 +4,9 @@ import mdx from "@astrojs/mdx";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 
+import remarkMath from "remark-math"
+import rehypeKatex from "rehype-katex";
+
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
@@ -18,6 +21,8 @@ export default defineConfig({
       },
       defaultColor: false,
     },
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
   },
 
   vite: {
