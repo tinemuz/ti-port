@@ -1,4 +1,5 @@
 @import '@fontsource-variable/jetbrains-mono' layer(base);
+@import '@fontsource-variable/inconsolata' layer(base);
 
 @import 'tailwindcss';
 
@@ -7,7 +8,7 @@
 @theme {
     /* Font Families */
 
-    --font-sans: "Eudoxus", sans-serif;
+    --font-sans: "Inconsolata Variable", sans-serif;
     --font-mono: "JetBrains Mono Variable", monospace;
     --font-serif: "Fanwood Text", serif;
 
