@@ -107,7 +107,7 @@
     }
 
     code {
-        @apply text-skin-accent! saturate-60! bg-skin-bg-sub rounded-md font-mono px-1.5 py-[3px];
+        @apply text-skin-accent! saturate-40! bg-skin-bg-sub rounded-md font-mono px-1.5 py-[3px];
 
         &::before {
             display: none;
@@ -124,6 +124,36 @@
 
     hr, blockquote {
         @apply border-skin-text/20!;
+    }
+
+    /*General table styling*/
+
+    table {
+        @apply w-full mb-9! shadow-inner-border! rounded-lg! shadow-skin-text/10! border-collapse!;
+    }
+
+    thead th {
+        @apply p-3! text-left! font-semibold! text-skin-text! bg-skin-bg-sub!;
+    }
+
+    tbody td {
+        @apply p-3! border-t! border-skin-text/10!;
+    }
+
+    thead th:first-child {
+        @apply rounded-tl-lg!;
+    }
+
+    thead th:last-child {
+        @apply rounded-tr-lg!;
+    }
+
+    tbody tr:last-child td:first-child {
+        @apply rounded-bl-lg!;
+    }
+
+    tbody tr:last-child td:last-child {
+        @apply rounded-br-lg!;
     }
 
     .flickering-text {
