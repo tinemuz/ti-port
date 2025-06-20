@@ -103,7 +103,7 @@
     pre,
     pre code,
     code {
-        @apply text-xs! font-mono! text-skin-text!;
+        @apply text-xs! font-mono! text-skin-text! saturate-100!;
     }
 
     code {
