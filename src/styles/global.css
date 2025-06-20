@@ -92,8 +92,8 @@
         @apply font-serif italic text-3xl font-light sm:text-[2.986rem] sm:leading-12;
     }
 
-    h3, strong {
-        @apply font-normal!;
+    strong {
+        @apply font-extrabold!;
     }
 
     :root {
@@ -107,7 +107,7 @@
     }
 
     code {
-        @apply text-skin-text/80! bg-skin-bg-sub rounded-md font-mono px-1.5 py-[3px];
+        @apply text-skin-accent! saturate-60! bg-skin-bg-sub rounded-md font-mono px-1.5 py-[3px];
 
         &::before {
             display: none;
