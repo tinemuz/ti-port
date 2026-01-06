@@ -31,6 +31,4 @@ jobs:
         id: deploy
         uses: superfly/fly-pr-review-apps@1.2.1
         with:
-          config: |
-            [http_service]
-              min_machines_running = 0
+          config: fly.review.toml
