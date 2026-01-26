@@ -25,7 +25,7 @@
     "framer-motion": "^12.23.28",
     "npm": "^11.7.0",
     "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "react-dom": "^19.2.4",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "tailwindcss": "^4.1.18",
