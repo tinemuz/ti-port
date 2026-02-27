@@ -18,9 +18,19 @@ const { title } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" href="/favicon.svg" />
     <ClientRouter />
+    <script is:inline>
+      const theme = localStorage.getItem("theme");
+      if (theme === "theme-dark") {
+        document.documentElement.classList.add("theme-dark");
+        document.documentElement.classList.remove("theme-base");
+      } else {
+        document.documentElement.classList.add("theme-base");
+        document.documentElement.classList.remove("theme-dark");
+      }
+    </script>
   </head>
   <body
-    class="bg-skin-bg selection:bg-skin-bg-sub3/80 selection:text-skin-text/60 px-6 text-sm transition-all duration-200 ease-in-out sm:text-base"
+    class="bg-skin-bg selection:bg-skin-bg-sub3/80 selection:text-skin-text/60 px-6 text-sm sm:text-base"
   >
     <main>
       <Nav />
