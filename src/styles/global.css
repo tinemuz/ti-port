@@ -1,52 +1,52 @@
-@import '@fontsource-variable/jetbrains-mono' layer(base);
-@import '@fontsource-variable/inconsolata' layer(base);
+@import "@fontsource-variable/jetbrains-mono" layer(base);
+@import "@fontsource-variable/inconsolata" layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin "@tailwindcss/typography";
 
 @theme {
-    /* Font Families */
+  /* Font Families */
 
-    --font-sans: "Inconsolata Variable", sans-serif;
-    --font-mono: "JetBrains Mono Variable", monospace;
-    --font-serif: "Fanwood Text", serif;
+  --font-sans: "Inconsolata Variable", sans-serif;
+  --font-mono: "JetBrains Mono Variable", monospace;
+  --font-serif: "Fanwood Text", serif;
 
-    /* Aspect Ratios */
-    --aspect-2-1: 2 / 1;
-    --aspect-3-1: 3 / 1;
+  /* Aspect Ratios */
+  --aspect-2-1: 2 / 1;
+  --aspect-3-1: 3 / 1;
 
-    /* Box Shadows */
-    --shadow-inner-border: inset 0 0 0 1px;
+  /* Box Shadows */
+  --shadow-inner-border: inset 0 0 0 1px;
 
-    /* Colors */
-    --color-skin-text: rgba(var(--color-text), 1);
-    --color-skin-text-sub: rgba(var(--color-text-sub), 1);
-    --color-skin-accent: rgba(var(--color-accent), 1);
-    --color-skin-accent-sub: rgba(var(--color-accent-sub), 1);
-    --color-skin-bg: rgba(var(--color-bg), 1);
-    --color-skin-bg-sub: rgba(var(--color-bg-sub), 1);
-    --color-skin-bg-card: rgba(var(--color-bg-card), 1);
-    --color-skin-bg-sub3: rgba(var(--color-bg-sub3), 1);
-    --color-skin-border: rgba(var(--color-border), 1);
+  /* Colors */
+  --color-skin-text: rgba(var(--color-text), 1);
+  --color-skin-text-sub: rgba(var(--color-text-sub), 1);
+  --color-skin-accent: rgba(var(--color-accent), 1);
+  --color-skin-accent-sub: rgba(var(--color-accent-sub), 1);
+  --color-skin-bg: rgba(var(--color-bg), 1);
+  --color-skin-bg-sub: rgba(var(--color-bg-sub), 1);
+  --color-skin-bg-card: rgba(var(--color-bg-card), 1);
+  --color-skin-bg-sub3: rgba(var(--color-bg-sub3), 1);
+  --color-skin-border: rgba(var(--color-border), 1);
 }
 
 /* Typography Overrides */
 .prose {
-    --tw-prose-body: rgba(var(--color-skin-text), 1);
-    --tw-prose-headings: rgba(var(--color-skin-text), 1);
-    --tw-prose-lead: rgba(var(--color-skin-text), 1);
-    --tw-prose-links: rgba(var(--color-skin-accent), 1);
-    --tw-prose-bold: rgba(var(--color-skin-text), 1);
-    --tw-prose-counters: rgba(var(--color-skin-text), 1);
-    --tw-prose-bullets: rgba(var(--color-skin-text), 1);
-    --tw-prose-hr: rgba(var(--color-skin-border), 1);
-    --tw-prose-quotes: rgba(var(--color-skin-text), 1);
-    --tw-prose-quote-borders: rgba(var(--color-skin-accent), 1);
-    --tw-prose-captions: rgba(var(--color-skin-text-sub), 1);
-    --tw-prose-th-borders: rgba(var(--color-skin-border), 1);
-    --tw-prose-td-borders: rgba(var(--color-skin-border), 1);
-    --tw-prose-pre-bg: rgba(var(--color-bg-sub), 1);
+  --tw-prose-body: rgba(var(--color-skin-text), 1);
+  --tw-prose-headings: rgba(var(--color-skin-text), 1);
+  --tw-prose-lead: rgba(var(--color-skin-text), 1);
+  --tw-prose-links: rgba(var(--color-skin-accent), 1);
+  --tw-prose-bold: rgba(var(--color-skin-text), 1);
+  --tw-prose-counters: rgba(var(--color-skin-text), 1);
+  --tw-prose-bullets: rgba(var(--color-skin-text), 1);
+  --tw-prose-hr: rgba(var(--color-skin-border), 1);
+  --tw-prose-quotes: rgba(var(--color-skin-text), 1);
+  --tw-prose-quote-borders: rgba(var(--color-skin-accent), 1);
+  --tw-prose-captions: rgba(var(--color-skin-text-sub), 1);
+  --tw-prose-th-borders: rgba(var(--color-skin-border), 1);
+  --tw-prose-td-borders: rgba(var(--color-skin-border), 1);
+  --tw-prose-pre-bg: rgba(var(--color-bg-sub), 1);
 }
 
 /*
@@ -68,144 +68,152 @@
 }
 
 @layer base {
+  @font-face {
+    font-family: "Eudoxus";
+    src: url("../assets/fonts/EudoxusSansGX.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Fanwood Text";
+    src: url("../assets/fonts/fanwood_text-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Fanwood Text";
+    src: url("../assets/fonts/fanwood_text_italic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+  }
 
-    @font-face {
-        font-family: "Eudoxus";
-        src: url("../assets/fonts/EudoxusSansGX.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: "Fanwood Text";
-        src: url("../assets/fonts/fanwood_text-webfont.woff") format("woff");
-        font-weight: normal;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: "Fanwood Text";
-        src: url("../assets/fonts/fanwood_text_italic-webfont.woff") format("woff");
-        font-weight: normal;
-        font-style: italic;
-    }
+  h1 {
+    @apply font-serif text-3xl font-light italic sm:text-[2.986rem] sm:leading-12;
+  }
 
-    h1 {
-        @apply font-serif italic text-3xl font-light sm:text-[2.986rem] sm:leading-12;
-    }
+  strong {
+    @apply font-extrabold!;
+  }
 
-    strong {
-        @apply font-extrabold!;
-    }
+  :root {
+    font-variant-ligatures: none;
+  }
 
-    :root {
-        font-variant-ligatures: none;
-    }
+  pre,
+  pre code,
+  code {
+    @apply text-skin-text! font-mono! text-xs! saturate-100!;
+  }
 
-    pre,
-    pre code,
-    code {
-        @apply text-xs! font-mono! text-skin-text! saturate-100!;
-    }
+  code {
+    @apply text-skin-accent! bg-skin-bg-sub rounded-md px-1.5 py-[3px] font-mono saturate-40!;
 
-    code {
-        @apply text-skin-accent! saturate-40! bg-skin-bg-sub rounded-md font-mono px-1.5 py-[3px];
-
-        &::before {
-            display: none;
-        }
-
-        &::after {
-            display: none;
-        }
+    &::before {
+      display: none;
     }
 
-    pre {
-        @apply p-5! mb-9! shadow-inner-border! rounded-lg! shadow-skin-text/10!;
+    &::after {
+      display: none;
+    }
+  }
+
+  pre {
+    @apply shadow-inner-border! shadow-skin-text/10! mb-9! rounded-lg! p-5!;
+  }
+
+  hr,
+  blockquote {
+    @apply border-skin-text/20!;
+  }
+
+  /*General table styling*/
+
+  table {
+    @apply shadow-inner-border! shadow-skin-text/10! mb-9! w-full border-collapse! rounded-lg!;
+  }
+
+  thead th {
+    @apply text-skin-text! bg-skin-bg-sub! p-3! text-left! font-semibold!;
+  }
+
+  tbody td {
+    @apply border-skin-text/10! border-t! p-3!;
+  }
+
+  thead th:first-child {
+    @apply rounded-tl-lg!;
+  }
+
+  thead th:last-child {
+    @apply rounded-tr-lg!;
+  }
+
+  tbody tr:last-child td:first-child {
+    @apply rounded-bl-lg!;
+  }
+
+  tbody tr:last-child td:last-child {
+    @apply rounded-br-lg!;
+  }
+
+  .flickering-text {
+    display: inline-block;
+  }
+
+  .hover-trigger:hover .flickering-text .char {
+    animation: flicker 0.1s ease-in-out;
+  }
+  img {
+    @apply m-0!;
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .theme-base {
+    .astro-code,
+    .astro-code span {
+      color: var(--shiki-light) !important;
     }
 
-    hr, blockquote {
-        @apply border-skin-text/20!;
+    color-scheme: light;
+
+    --color-text: 34, 34, 34;
+    --color-text-sub: 24, 75, 242;
+    --color-accent: 24, 75, 242;
+    --color-accent-sub: 24, 75, 242;
+    --color-bg: 234, 234, 234;
+    --color-bg-sub: 221, 221, 221;
+    --color-bg-card: 221, 221, 221;
+    --color-bg-sub3: 206, 206, 206;
+    --color-border: 206, 202, 202;
+  }
+
+  .theme-dark {
+    .astro-code,
+    .astro-code span {
+      color: var(--shiki-dark) !important;
     }
 
-    /*General table styling*/
+    color-scheme: dark;
 
-    table {
-        @apply w-full mb-9! shadow-inner-border! rounded-lg! shadow-skin-text/10! border-collapse!;
-    }
-
-    thead th {
-        @apply p-3! text-left! font-semibold! text-skin-text! bg-skin-bg-sub!;
-    }
-
-    tbody td {
-        @apply p-3! border-t! border-skin-text/10!;
-    }
-
-    thead th:first-child {
-        @apply rounded-tl-lg!;
-    }
-
-    thead th:last-child {
-        @apply rounded-tr-lg!;
-    }
-
-    tbody tr:last-child td:first-child {
-        @apply rounded-bl-lg!;
-    }
-
-    tbody tr:last-child td:last-child {
-        @apply rounded-br-lg!;
-    }
-
-    .flickering-text {
-        display: inline-block;
-    }
-
-    .hover-trigger:hover .flickering-text .char {
-        animation: flicker 0.1s ease-in-out;
-    }
-    img {
-        @apply m-0!;
-    }
-
-    @keyframes flicker {
-        0% { opacity: 1; }
-        50% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-
-    .theme-base {
-        .astro-code, .astro-code span{
-            color: var(--shiki-light) !important;
-        }
-
-        color-scheme: light;
-
-        --color-text: 34, 34, 34;
-        --color-text-sub: 24, 75, 242;
-        --color-accent: 24, 75, 242;
-        --color-accent-sub: 24, 75, 242;
-        --color-bg: 234, 234, 234;
-        --color-bg-sub: 221, 221, 221;
-        --color-bg-card: 221, 221, 221;
-        --color-bg-sub3: 206, 206, 206;
-        --color-border: 206, 202, 202;
-    }
-
-    .theme-dark {
-        .astro-code, .astro-code span{
-            color: var(--shiki-dark) !important;
-        }
-
-        color-scheme: dark;
-
-        --color-text: 255, 252, 225;
-        --color-text-sub: 24, 242, 191;
-        --color-accent: 24, 242, 191;
-        --color-accent-sub: 24, 242, 191;
-        --color-bg: 14, 16, 16;
-        --color-bg-sub: 27, 29, 29;
-        --color-bg-card: 20, 21, 21;
-        --color-bg-sub3: 32, 35, 36;
-        --color-border: 38, 37, 35;
-    }
+    --color-text: 255, 252, 225;
+    --color-text-sub: 24, 242, 191;
+    --color-accent: 24, 242, 191;
+    --color-accent-sub: 24, 242, 191;
+    --color-bg: 14, 16, 16;
+    --color-bg-sub: 27, 29, 29;
+    --color-bg-card: 20, 21, 21;
+    --color-bg-sub3: 32, 35, 36;
+    --color-border: 38, 37, 35;
+  }
 }

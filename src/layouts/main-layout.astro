@@ -9,7 +9,7 @@ const { title } = Astro.props;
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="Tinetariro Muzunzandare"
     content="Tinetariro Muzunzandare | Portfolio"
@@ -22,7 +22,7 @@ const { title } = Astro.props;
 <body
   class="bg-skin-bg px-6 text-sm transition-all duration-200 ease-in-out selection:bg-skin-bg-sub3/80 selection:text-skin-text/60 sm:text-base"
 >
-<main>
+  <main>
   <Nav />
   <div class="min-h-[calc(100vh-700px)] sm:min-h-[calc(100vh-700px)]">
     <slot />
@@ -32,4 +32,27 @@ const { title } = Astro.props;
 </body>
 </html>
 
+<script>
+  import Lenis from "lenis";
 
+  function initLenis() {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return lenis;
+  }
+
+  initLenis();
+
+  document.addEventListener("astro:page-load", initLenis);
+</script>
