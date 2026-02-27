@@ -44,8 +44,8 @@ const { src, alt } = Astro.props;
         container.dataset.faded = "true";
       } else {
         const handler = () => {
-        container.classList.remove("opacity-0");
-        container.dataset.faded = "true";
+          container.classList.remove("opacity-0");
+          container.dataset.faded = "true";
         };
         img.removeEventListener("load", handler);
         img.addEventListener("load", handler);

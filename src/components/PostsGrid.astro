@@ -13,7 +13,7 @@ const { posts } = Astro.props as { posts: PostEntry };
         <span class="hover:text-skin-accent">{posts.data.title}</span>
         <p class="text-skin-text/50 text-sm">{posts.data.description}</p>
       </div>
-      <div class="min-w-20 text-right text-skin-text/50">
+      <div class="text-skin-text/50 min-w-20 text-right">
         {formatDateMonthYear(posts.data.pubDate)}
       </div>
     </div>

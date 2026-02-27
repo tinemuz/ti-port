@@ -8,12 +8,10 @@ const allposts: CollectionEntry<"posts">[] = (
   await getCollection("posts")
 ).sort(
   (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const tagposts = allposts.filter((post) =>
-  post.data.tags.includes("featured")
-);
+const tagposts = allposts.filter((post) => post.data.tags.includes("featured"));
 ---
 
 <div class="w-full flex-grow sm:max-w-[740px]">
@@ -21,9 +19,9 @@ const tagposts = allposts.filter((post) =>
     {
       tagposts.map((post) => {
         switch (post.data.type) {
-          case 'project':
+          case "project":
             return <ProjectCard post={post} />;
-          case 'archive':
+          case "archive":
             return <ArchiveCard post={post} />;
           default:
             return <PostCard post={post} />;

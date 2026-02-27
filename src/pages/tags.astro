@@ -7,7 +7,7 @@ const allposts = await getCollection("posts");
 
 // Extract all tags from all posts
 const allTags = allposts.flatMap(
-  (post: { data: { tags: any } }) => post.data.tags
+  (post: { data: { tags: any } }) => post.data.tags,
 );
 
 // Create a Set to get unique tags, then convert back to an array
@@ -15,9 +15,9 @@ const uniqueTags = [...new Set(allTags)];
 ---
 
 <MainLayout title="Tags | Browse based on a topic">
-  <div class="flex flex-col text-skin-text">
+  <div class="text-skin-text flex flex-col">
     <div class="flex flex-grow flex-col items-center justify-center">
-      <div class="w-full pb-16 pt-6 sm:max-w-[740px]">
+      <div class="w-full pt-6 pb-16 sm:max-w-[740px]">
         <h1 class="pb-4">browse based on a topic</h1>
       </div>
 

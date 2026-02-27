@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   const tags = await getAllTags();
   return tags.map((tag) => ({
     params: { tag },
-    props: { tag }
+    props: { tag },
   }));
 }
 
@@ -30,21 +30,20 @@ const allposts: CollectionEntry<"posts">[] = (
   await getCollection("posts")
 ).sort(
   (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const tagposts = allposts.filter((posts) => posts.data.tags.includes(tag));
 ---
 
 <MainLayout title={`# ${tag}`}>
-  <div class="flex flex-col text-skin-text">
+  <div class="text-skin-text flex flex-col">
     <div class="flex flex-grow flex-col items-center justify-center">
       <div class="w-full pt-6 sm:max-w-[740px]">
         <h1 class="pb-16"># {tag}</h1>
       </div>
       <div class="w-full flex-grow sm:max-w-[740px]">
-        {tagposts.map((posts) =>
-          <PostsGrid posts={posts} />)}
+        {tagposts.map((posts) => <PostsGrid posts={posts} />)}
       </div>
     </div>
   </div>

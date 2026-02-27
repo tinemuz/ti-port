@@ -5,7 +5,7 @@ const { tags } = Astro.props;
 <div class="flex flex-wrap gap-3">
   {
     tags.map((tag: string) => (
-      <span class="bg-skin-bg-sub rounded-full text-xs  font-mono px-3 py-[3px] hover:text-skin-accent-sub">
+      <span class="bg-skin-bg-sub hover:text-skin-accent-sub rounded-full px-3 py-[3px] font-mono text-xs">
         <a href={"/tag/" + tag}>#{tag}</a>
       </span>
     ))

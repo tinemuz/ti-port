@@ -8,19 +8,18 @@ const allposts: CollectionEntry<"posts">[] = (
   await getCollection("posts")
 ).sort(
   (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
 <MainLayout title="Tine Muzunza | Articles and Project Content">
-  <div class="flex flex-col text-skin-text">
+  <div class="text-skin-text flex flex-col">
     <div class="flex flex-grow flex-col items-center justify-center">
-      <div class="w-full pb-16 pt-6 sm:max-w-[740px]">
+      <div class="w-full pt-6 pb-16 sm:max-w-[740px]">
         <h1 class="pb-4">post repository</h1>
       </div>
       <div class="w-full flex-grow sm:max-w-[740px]">
-        {allposts.map((posts) =>
-          <PostsGrid posts={posts} />)}
+        {allposts.map((posts) => <PostsGrid posts={posts} />)}
       </div>
     </div>
   </div>

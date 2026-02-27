@@ -16,9 +16,9 @@ export async function getStaticPaths() {
 
   return allposts.map((entry) => ({
     params: {
-      slug: entry.slug
+      slug: entry.slug,
     },
-    props: { entry }
+    props: { entry },
   }));
 }
 
@@ -32,18 +32,20 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout title={entry.data.title}>
-  <div class="flex flex-grow flex-col items-center text-skin-text">
-    <div class="w-full pb-16 pt-6 sm:max-w-[740px]">
+  <div class="text-skin-text flex flex-grow flex-col items-center">
+    <div class="w-full pt-6 pb-16 sm:max-w-[740px]">
       <h1 class="pb-4">{entry.data.title}</h1>
       <p>{entry.data.description}</p>
       <div class="pt-5 pb-3">
         <Tags tags={entry.data.tags} />
       </div>
       <p class="text-skin-text/50">
-        Last updated ~ {formatDateMonthYear(entry.data.pubDate)}
+        {formatDateMonthYear(entry.data.pubDate)}
       </p>
     </div>
-    <div class="prose prose-sm w-full max-w-none sm:prose-base sm:max-w-[740px]">
+    <div
+      class="prose prose-sm sm:prose-base w-full max-w-none sm:max-w-[740px]"
+    >
       <Content />
     </div>
   </div>
