@@ -3,17 +3,43 @@ import NavLinks from "./NavLinks";
 import ThemeSelector from "./ThemeSelector.astro";
 ---
 
-<nav class="flex h-[240px] flex-grow flex-col items-center justify-center text-skin-text/65 sm:text-base">
+<nav
+  class="text-skin-text/65 flex h-[240px] flex-grow flex-col items-center justify-center sm:text-base"
+>
   <div class="h-full flex-grow"></div>
-  <div class="flex w-full flex-row items-center justify-between sm:max-w-[740px]">
+  <div
+    class="flex w-full flex-row items-center justify-between sm:max-w-[740px]"
+  >
     <div class="flex items-center space-x-1.5">
       <ThemeSelector />
       <div
-        class="rounded-full bg-skin-bg-sub font-mono text-skin-text/80 px-2 py-[3px] text-xs items-center flex gap-1">
-        <div>v1.5</div>
-        <div class="rounded-full bg-amber-600 size-1.5" />
+        class="bg-skin-bg-sub text-skin-text/80 flex items-center gap-1 rounded-full px-2 py-[3px] font-mono text-xs"
+      >
+        <div id="london-time">--:--</div>
+        <div class="size-1.5 rounded-full bg-green-400"></div>
       </div>
     </div>
     <NavLinks client:only="react" />
   </div>
 </nav>
+
+<script>
+  function updateLondonTime() {
+    const timeEl = document.getElementById("london-time");
+    if (!timeEl) return;
+
+    const now = new Date();
+    const londonTime = now.toLocaleTimeString("en-GB", {
+      timeZone: "Europe/London",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+    timeEl.textContent = londonTime;
+  }
+
+  updateLondonTime();
+  setInterval(updateLondonTime, 1000);
+
+  document.addEventListener("astro:page-load", updateLondonTime);
+</script>

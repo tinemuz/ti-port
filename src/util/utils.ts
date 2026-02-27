@@ -7,6 +7,7 @@ function formatDate(date: Date): string {
 
 function formatDateMonthYear(date: Date): string {
   const year = date.getFullYear();
+  const day = date.getDate();
   const monthNames = [
     "January",
     "February",
@@ -19,10 +20,10 @@ function formatDateMonthYear(date: Date): string {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
   const month = monthNames[date.getMonth()];
-  return `${month} • ${year}`;
+  return `${day} ${month} ${year}`;
 }
 
 function truncateTitle(str: string, length: number = 34): string {

@@ -10,14 +10,50 @@ interface Props {
 const { src, alt } = Astro.props;
 ---
 
-<div class="pb-6">
-  <div class="relative overflow-hidden rounded-lg">
-    <!-- Blurred Background -->
-    <div class="absolute inset-0 bg-cover blur-lg filter" style={{ backgroundImage: `url(${src.src})` }}></div>
+<div class="post-image-container opacity-0 transition-opacity duration-500">
+  <div class="pb-6">
+    <div class="relative overflow-hidden rounded-lg">
+      <!-- Blurred Background -->
+      <div
+        class="absolute inset-0 bg-cover blur-lg filter"
+        style={{ backgroundImage: `url(${src.src})` }}
+      >
+      </div>
 
-    <!-- Main Content -->
-    <div class="relative p-0.5 lg:p-1">
-      <Image src={src} alt={alt} class="rounded-[0.375rem] lg:rounded-[0.25rem]" />
+      <!-- Main Content -->
+      <div class="relative p-0.5 lg:p-1">
+        <Image
+          src={src}
+          alt={alt}
+          class="rounded-[0.375rem] lg:rounded-[0.25rem]"
+        />
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  function fadeInWhenLoaded() {
+    document.querySelectorAll(".post-image-container").forEach((el) => {
+      const container = el as HTMLElement;
+      const img = container.querySelector("img") as HTMLImageElement;
+      if (!img) return;
+
+      if (img.complete && container.dataset.faded !== "true") {
+        container.classList.remove("opacity-0");
+        container.dataset.faded = "true";
+      } else {
+        const handler = () => {
+          container.classList.remove("opacity-0");
+          container.dataset.faded = "true";
+        };
+        img.removeEventListener("load", handler);
+        img.addEventListener("load", handler);
+      }
+    });
+  }
+
+  fadeInWhenLoaded();
+
+  document.addEventListener("astro:page-load", fadeInWhenLoaded);
+</script>

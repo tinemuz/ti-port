@@ -12,20 +12,25 @@ const { post } = Astro.props;
 <div class="flex-col p-0.5 sm:p-1">
   <a href={"/posts/" + post.slug}>
     <div
-      class="relative rounded-lg aspect-square text-xs border overflow-hidden border-skin-border bg-skin-bg-sub">
+      class="border-skin-border bg-skin-bg-sub relative aspect-square overflow-hidden rounded-lg border text-xs"
+    >
       {/* Single Image Layout */}
-      {post.data.images?.length === 1 && (
-        <p class="absolute z-10 p-3 text-[0.65rem] sm:text-sm text-white/50">
-          {post.data.type.charAt(0).toUpperCase() + post.data.type.slice(1)}
-        </p>
+      {
+        post.data.images?.length === 1 && (
+          <Fragment>
+            <p class="absolute z-10 p-3 text-[0.65rem] text-white/50 sm:text-sm">
+              {post.data.type.charAt(0).toUpperCase() + post.data.type.slice(1)}
+            </p>
 
-        <Image
-          class="size-full object-cover hover:grayscale hover:scale-105 transition-all duration-300 ease-in-out"
-          src={post.data.images[0].path}
-          alt={post.data.images[0].alt}
-          loading="eager"
-        />
-      )}
+            <Image
+              class="size-full object-cover transition-all duration-300 ease-in-out hover:scale-105 hover:grayscale"
+              src={post.data.images[0].path}
+              alt={post.data.images[0].alt}
+              loading="eager"
+            />
+          </Fragment>
+        )
+      }
     </div>
   </a>
 </div>
