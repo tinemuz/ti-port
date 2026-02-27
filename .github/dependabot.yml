@@ -17,6 +17,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      npm-dependencies:
+        patterns:
+          - "*"
     ignore:
       # ignore all GitHub linguist patch updates
       - dependency-name: "*"
