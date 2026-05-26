@@ -7,7 +7,7 @@ const { posts } = Astro.props as { posts: PostEntry };
 ---
 
 <div class="pb-7">
-  <a class="" href={"/posts/" + posts.slug}>
+  <a class="" href={"/posts/" + posts.id}>
     <div class="flex justify-between">
       <div class="pr-1">
         <span class="hover:text-skin-accent">{posts.data.title}</span>
