@@ -4,6 +4,7 @@ import mdx from "@astrojs/mdx";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 
+import { unified } from "@astrojs/markdown-remark";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
@@ -11,7 +12,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://tine.muzunza.com",
-  integrations: [react(), mdx(), sitemap(), compress()],
+  integrations: [react(), mdx(), sitemap(), compress({ CSS: false })],
 
   markdown: {
     shikiConfig: {
@@ -21,8 +22,10 @@ export default defineConfig({
       },
       defaultColor: false,
     },
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    processor: unified({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex],
+    }),
   },
 
   vite: {
