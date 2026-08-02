@@ -12,7 +12,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://tine.muzunza.com",
-  integrations: [react(), mdx(), sitemap(), compress()],
+  integrations: [react(), mdx(), sitemap(), compress({ CSS: false })],
 
   markdown: {
     shikiConfig: {
