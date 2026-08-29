@@ -19,7 +19,7 @@ const postsCollection = defineCollection({
           }),
         )
         .optional(),
-      tags: z.array(z.string()),
+      featured: z.boolean().optional().default(false),
       type: PostType.optional(),
     }),
 });

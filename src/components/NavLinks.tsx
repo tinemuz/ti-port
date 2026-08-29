@@ -15,12 +15,6 @@ const NavLinks = () => {
       >
         posts
       </a>
-      <a
-        href="/tags"
-        className={`hover:text-skin-text-sub ${activeLink.includes("/tags") ? "text-skin-text/100 font-bold" : ""}`}
-      >
-        tags
-      </a>
     </div>
   );
 };

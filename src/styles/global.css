@@ -196,9 +196,9 @@
     color-scheme: light;
 
     --color-text: 34, 34, 34;
-    --color-text-sub: 24, 75, 242;
-    --color-accent: 24, 75, 242;
-    --color-accent-sub: 24, 75, 242;
+    --color-text-sub: 24, 127, 226;
+    --color-accent: 24, 127, 226;
+    --color-accent-sub: 24, 127, 226;
     --color-bg: 234, 234, 234;
     --color-bg-sub: 221, 221, 221;
     --color-bg-card: 221, 221, 221;
@@ -215,9 +215,9 @@
     color-scheme: dark;
 
     --color-text: 255, 252, 225;
-    --color-text-sub: 24, 242, 191;
-    --color-accent: 24, 242, 191;
-    --color-accent-sub: 24, 242, 191;
+    --color-text-sub: 24, 127, 226;
+    --color-accent: 24, 127, 226;
+    --color-accent-sub: 24, 127, 226;
     --color-bg: 14, 16, 16;
     --color-bg-sub: 27, 29, 29;
     --color-bg-card: 20, 21, 21;
