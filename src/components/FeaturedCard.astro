@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { formatDateMonthYear } from "../util/utils";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const images = post.data.images ?? [];
+const typeLabel = post.data.type
+  ? post.data.type.charAt(0).toUpperCase() + post.data.type.slice(1)
+  : undefined;
+---
+
+<div class="flex-col p-0.5 sm:p-1">
+  <a href={`/posts/${post.id}`}>
+    {
+      images.length === 0 ? (
+        <div
+          class="border-skin-border bg-skin-bg-sub hover:bg-skin-bg-sub3 aspect-square rounded-lg border p-3 transition-all duration-200 ease-in-out"
+        >
+          <div
+            class="flex h-full flex-col justify-between text-[0.65rem] leading-3 sm:text-sm"
+          >
+            {typeLabel && <p class="text-skin-text/50">{typeLabel}</p>}
+            <div class="space-y-1 sm:space-y-2">
+              <p class="sm:text-base">{post.data.title}</p>
+              <p class="text-skin-text/70 hidden pt-0.5 sm:block sm:text-sm">
+                {post.data.description}
+              </p>
+              <p class="text-skin-text/50 sm:text-xs">
+                {formatDateMonthYear(post.data.pubDate)}
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div
+          class:list={[
+            "border-skin-border bg-skin-bg-sub relative aspect-square overflow-hidden rounded-lg border text-xs",
+            images.length === 1 ? "p-0" : "p-1",
+          ]}
+        >
+          {
+            typeLabel && (
+              <p class="absolute z-10 p-2 text-[0.65rem] text-white/50 sm:p-3 sm:text-sm">
+                {typeLabel}
+              </p>
+            )
+          }
+
+          {
+            images.length === 1 ? (
+              <Image
+                class="size-full rounded-[0.25rem] object-cover transition-all duration-300 ease-in-out hover:scale-105 hover:grayscale sm:rounded-[0.4rem]"
+                src={images[0].path}
+                alt={images[0].alt}
+                loading="eager"
+              />
+            ) : images.length === 2 ? (
+              <div class="grid h-full grid-rows-2 gap-1">
+                {images.map((image) => (
+                  <div class="relative h-full">
+                    <Image
+                      class="border-skin-border absolute inset-0 h-full w-full rounded-[0.25rem] border object-cover sm:rounded-[0.4rem]"
+                      src={image.path}
+                      alt={image.alt}
+                      loading="eager"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : images.length === 3 ? (
+              <div class="grid h-full grid-rows-2 gap-1">
+                <div class="grid grid-cols-2 gap-1">
+                  {images.slice(0, 2).map((image) => (
+                    <div class="relative h-full">
+                      <Image
+                        class="border-skin-border absolute inset-0 h-full w-full rounded-[0.25rem] border object-cover sm:rounded-[0.4rem]"
+                        src={image.path}
+                        alt={image.alt}
+                        loading="eager"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div class="relative h-full">
+                  <Image
+                    class="border-skin-border absolute inset-0 h-full w-full rounded-[0.25rem] border object-cover sm:rounded-[0.4rem]"
+                    src={images[2].path}
+                    alt={images[2].alt}
+                    loading="eager"
+                  />
+                </div>
+              </div>
+            ) : (
+              <div class="grid h-full grid-cols-2 grid-rows-2 gap-1">
+                {images.slice(0, 4).map((image) => (
+                  <div class="relative h-full">
+                    <Image
+                      class="border-skin-border absolute inset-0 h-full w-full rounded-[0.25rem] border object-cover sm:rounded-[0.4rem]"
+                      src={image.path}
+                      alt={image.alt}
+                      loading="eager"
+                    />
+                  </div>
+                ))}
+              </div>
+            )
+          }
+        </div>
+      )
+    }
+  </a>
+</div>

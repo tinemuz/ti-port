@@ -1,7 +1,7 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-const PostType = z.enum(["project", "post", "archive"]);
+const PostType = z.enum(["project", "post"]);
 
 const postsCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/posts" }),
@@ -20,7 +20,7 @@ const postsCollection = defineCollection({
         )
         .optional(),
       tags: z.array(z.string()),
-      type: PostType.optional().default("post"),
+      type: PostType.optional(),
     }),
 });
 

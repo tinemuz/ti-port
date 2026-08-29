@@ -1,8 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import ProjectCard from "./ProjectCard.astro";
-import PostCard from "./PostCard.astro";
-import ArchiveCard from "./ArchiveCard.astro";
+import FeaturedCard from "./FeaturedCard.astro";
 
 const allposts: CollectionEntry<"posts">[] = (
   await getCollection("posts")
@@ -18,14 +16,7 @@ const tagposts = allposts.filter((post) => post.data.tags.includes("featured"));
   <div class="grid grid-cols-2 gap-1">
     {
       tagposts.map((post) => {
-        switch (post.data.type) {
-          case "project":
-            return <ProjectCard post={post} />;
-          case "archive":
-            return <ArchiveCard post={post} />;
-          default:
-            return <PostCard post={post} />;
-        }
+        return <FeaturedCard post={post} />;
       })
     }
   </div>
