@@ -1,5 +1,4 @@
-@import "@fontsource-variable/jetbrains-mono" layer(base);
-@import "@fontsource-variable/inconsolata" layer(base);
+@import "@fontsource-variable/spline-sans-mono" layer(base);
 
 @import "tailwindcss";
 
@@ -8,9 +7,13 @@
 @theme {
   /* Font Families */
 
-  --font-sans: "Inconsolata Variable", sans-serif;
-  --font-mono: "JetBrains Mono Variable", monospace;
+  --font-sans: "Spline Sans Mono Variable", sans-serif;
+  --font-mono: "Spline Sans Mono Variable", monospace;
   --font-serif: "Fanwood Text", serif;
+
+  /* Layout */
+
+  --container-portfolio: 800px;
 
   /* Aspect Ratios */
   --aspect-2-1: 2 / 1;
@@ -106,7 +109,7 @@
   pre,
   pre code,
   code {
-    @apply text-skin-text! font-mono! text-xs! saturate-100!;
+    @apply text-skin-text! font-mono! text-sm! saturate-100!;
   }
 
   code {
@@ -192,9 +195,9 @@
     color-scheme: light;
 
     --color-text: 34, 34, 34;
-    --color-text-sub: 24, 75, 242;
-    --color-accent: 24, 75, 242;
-    --color-accent-sub: 24, 75, 242;
+    --color-text-sub: 24, 127, 226;
+    --color-accent: 24, 127, 226;
+    --color-accent-sub: 24, 127, 226;
     --color-bg: 234, 234, 234;
     --color-bg-sub: 221, 221, 221;
     --color-bg-card: 221, 221, 221;
@@ -211,9 +214,9 @@
     color-scheme: dark;
 
     --color-text: 255, 252, 225;
-    --color-text-sub: 24, 242, 191;
-    --color-accent: 24, 242, 191;
-    --color-accent-sub: 24, 242, 191;
+    --color-text-sub: 24, 127, 226;
+    --color-accent: 24, 127, 226;
+    --color-accent-sub: 24, 127, 226;
     --color-bg: 14, 16, 16;
     --color-bg-sub: 27, 29, 29;
     --color-bg-card: 20, 21, 21;

@@ -3,7 +3,6 @@ import MainLayout from "../../layouts/main-layout.astro";
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { formatDateMonthYear } from "../../util/utils";
-import Tags from "../../components/TagsList.astro";
 
 const { slug } = Astro.params;
 
@@ -32,19 +31,16 @@ const { Content } = await render(entry);
 ---
 
 <MainLayout title={entry.data.title}>
-  <div class="text-skin-text flex flex-grow flex-col items-center">
-    <div class="w-full pt-6 pb-16 sm:max-w-[740px]">
+  <div class="text-skin-text flex grow flex-col items-center">
+    <div class="w-full pt-6 pb-10 sm:max-w-portfolio">
       <h1 class="pb-4">{entry.data.title}</h1>
       <p>{entry.data.description}</p>
-      <div class="pt-5 pb-3">
-        <Tags tags={entry.data.tags} />
-      </div>
       <p class="text-skin-text/50">
         {formatDateMonthYear(entry.data.pubDate)}
       </p>
     </div>
     <div
-      class="prose prose-sm sm:prose-base w-full max-w-none sm:max-w-[740px]"
+      class="prose prose-sm sm:prose-base w-full max-w-none sm:max-w-portfolio"
     >
       <Content />
     </div>

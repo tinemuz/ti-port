@@ -30,7 +30,7 @@ const { title } = Astro.props;
     </script>
   </head>
   <body
-    class="bg-skin-bg selection:bg-skin-bg-sub3/80 selection:text-skin-text/60 px-6 text-sm sm:text-base"
+    class="bg-skin-bg selection:bg-skin-bg-sub3/80 selection:text-skin-text/60 px-6 font-sans text-sm sm:text-base"
   >
     <main>
       <Nav />
@@ -41,28 +41,3 @@ const { title } = Astro.props;
     </main>
   </body>
 </html>
-
-<script>
-  import Lenis from "lenis";
-
-  function initLenis() {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: "vertical",
-      smoothWheel: true,
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    return lenis;
-  }
-
-  initLenis();
-
-  document.addEventListener("astro:page-load", initLenis);
-</script>

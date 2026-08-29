@@ -1,8 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import ProjectCard from "./ProjectCard.astro";
-import PostCard from "./PostCard.astro";
-import ArchiveCard from "./ArchiveCard.astro";
+import FeaturedCard from "./FeaturedCard.astro";
 
 const allposts: CollectionEntry<"posts">[] = (
   await getCollection("posts")
@@ -11,21 +9,14 @@ const allposts: CollectionEntry<"posts">[] = (
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const tagposts = allposts.filter((post) => post.data.tags.includes("featured"));
+const featuredPosts = allposts.filter((post) => post.data.featured);
 ---
 
-<div class="w-full flex-grow sm:max-w-[740px]">
+<div class="w-full grow sm:max-w-portfolio">
   <div class="grid grid-cols-2 gap-1">
     {
-      tagposts.map((post) => {
-        switch (post.data.type) {
-          case "project":
-            return <ProjectCard post={post} />;
-          case "archive":
-            return <ArchiveCard post={post} />;
-          default:
-            return <PostCard post={post} />;
-        }
+      featuredPosts.map((post) => {
+        return <FeaturedCard post={post} />;
       })
     }
   </div>

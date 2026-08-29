@@ -25,3 +25,5 @@ updates:
       # ignore all GitHub linguist patch updates
       - dependency-name: "*"
         update-types: ["version-update:semver-minor"]
+      - dependency-name: "typescript"
+        versions: ["7.x"]
