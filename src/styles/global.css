@@ -1,5 +1,5 @@
 @import "@fontsource-variable/jetbrains-mono" layer(base);
-@import "@fontsource-variable/inconsolata" layer(base);
+@import "@fontsource-variable/spline-sans-mono" layer(base);
 
 @import "tailwindcss";
 
@@ -8,9 +8,13 @@
 @theme {
   /* Font Families */
 
-  --font-sans: "Inconsolata Variable", sans-serif;
+  --font-sans: "Spline Sans Mono Variable", sans-serif;
   --font-mono: "JetBrains Mono Variable", monospace;
   --font-serif: "Fanwood Text", serif;
+
+  /* Layout */
+
+  --container-portfolio: 800px;
 
   /* Aspect Ratios */
   --aspect-2-1: 2 / 1;

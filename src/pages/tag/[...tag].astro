@@ -39,10 +39,10 @@ const tagposts = allposts.filter((posts) => posts.data.tags.includes(tag));
 <MainLayout title={`# ${tag}`}>
   <div class="text-skin-text flex flex-col">
     <div class="flex flex-grow flex-col items-center justify-center">
-      <div class="w-full pt-6 sm:max-w-[740px]">
+      <div class="w-full pt-6 sm:max-w-portfolio">
         <h1 class="pb-16"># {tag}</h1>
       </div>
-      <div class="w-full flex-grow sm:max-w-[740px]">
+      <div class="w-full flex-grow sm:max-w-portfolio">
         {tagposts.map((posts) => <PostsGrid posts={posts} />)}
       </div>
     </div>

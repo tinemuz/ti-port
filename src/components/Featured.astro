@@ -14,7 +14,7 @@ const allposts: CollectionEntry<"posts">[] = (
 const tagposts = allposts.filter((post) => post.data.tags.includes("featured"));
 ---
 
-<div class="w-full flex-grow sm:max-w-[740px]">
+<div class="w-full flex-grow sm:max-w-portfolio">
   <div class="grid grid-cols-2 gap-1">
     {
       tagposts.map((post) => {
