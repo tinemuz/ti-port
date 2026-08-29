@@ -1,4 +1,3 @@
-@import "@fontsource-variable/jetbrains-mono" layer(base);
 @import "@fontsource-variable/spline-sans-mono" layer(base);
 
 @import "tailwindcss";
@@ -9,7 +8,7 @@
   /* Font Families */
 
   --font-sans: "Spline Sans Mono Variable", sans-serif;
-  --font-mono: "JetBrains Mono Variable", monospace;
+  --font-mono: "Spline Sans Mono Variable", monospace;
   --font-serif: "Fanwood Text", serif;
 
   /* Layout */
@@ -110,7 +109,7 @@
   pre,
   pre code,
   code {
-    @apply text-skin-text! font-mono! text-xs! saturate-100!;
+    @apply text-skin-text! font-mono! text-sm! saturate-100!;
   }
 
   code {
