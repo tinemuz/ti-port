@@ -15,7 +15,8 @@ type: "project"
 slug: charger-daytona
 ---
 
-import PostImage from "../../components/PostImage.astro";
+import Gallery from "../../components/Gallery.astro";
+import GalleryImage from "../../components/GalleryImage.astro";
 import car0 from "../../../src/assets/charger-daytona/tmzna-final-2.jpg";
 import car from "../../../src/assets/charger-daytona/tmzna-final-1.jpg";
 import car1 from "../../../src/assets/charger-daytona/tmzna-final-3.jpg";
@@ -36,21 +37,20 @@ This project was brought to life using Blender for the detailed modeling and Key
 
 I hope you enjoy this modern take on a timeless classic!
 
-## Final renders
+## Renders
 
-<PostImage src={car0} alt="car" />
-<PostImage src={car} alt="car" />
-<PostImage src={car1} alt="car" />
-<PostImage src={car2} alt="car" />
-<PostImage src={car3} alt="car" />
-<PostImage src={car4} alt="car" />
-<PostImage src={car5} alt="car" />
-<PostImage src={car6} alt="car" />
-
-## Clay renders
-
-<PostImage src={car7} alt="car" />
-<PostImage src={car8} alt="car" />
-<PostImage src={car9} alt="car" />
-<PostImage src={car10} alt="car" />
-<PostImage src={car11} alt="car" />
+<Gallery label="Renders">
+  <GalleryImage src={car0} alt="Final render 1" group="final-renders" />
+  <GalleryImage src={car} alt="Final render 2" group="final-renders" />
+  <GalleryImage src={car1} alt="Final render 3" group="final-renders" />
+  <GalleryImage src={car2} alt="Final render 4" group="final-renders" />
+  <GalleryImage src={car3} alt="Final render 5" group="final-renders" />
+  <GalleryImage src={car4} alt="Final render 6" group="final-renders" />
+  <GalleryImage src={car5} alt="Final render 7" group="final-renders" />
+  <GalleryImage src={car6} alt="Final render 8" group="final-renders" />
+  <GalleryImage src={car7} alt="Clay render 1" group="clay-renders" />
+  <GalleryImage src={car8} alt="Clay render 2" group="clay-renders" />
+  <GalleryImage src={car9} alt="Clay render 3" group="clay-renders" />
+  <GalleryImage src={car10} alt="Clay render 4" group="clay-renders" />
+  <GalleryImage src={car11} alt="Clay render 5" group="clay-renders" />
+</Gallery>

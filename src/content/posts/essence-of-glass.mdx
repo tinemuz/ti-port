@@ -9,7 +9,8 @@ type: "project"
 slug: essence-of-glass
 ---
 
-import PostImage from "../../components/PostImage.astro";
+import Gallery from "../../components/Gallery.astro";
+import GalleryImage from "../../components/GalleryImage.astro";
 import jug0 from "../../../src/assets/holo-jug/jug09.jpg";
 import jug from "../../../src/assets/holo-jug/jug02.jpg";
 import jug2 from "../../../src/assets/holo-jug/jug03.jpg";
@@ -29,14 +30,15 @@ To achieve this, an understanding of the material's properties within Blender wa
 - Volumetric Light & Shadow: Mastering the interplay of light and shadow within the volume of the glass itself to create a sense of depth and realism.
 - Advanced Caustics: Harnessing Blender's powerful Cycles engine to generate the intricate, focused patterns of light that concentrate on surrounding surfaces
 
-<PostImage src={jug6} alt="jug" />
-<PostImage src={jug0} alt="jug0" />
-<PostImage src={jug} alt="jug" />
-<PostImage src={jug2} alt="jug" />
-<PostImage src={jug3} alt="jug" />
-<PostImage src={jug4} alt="jug" />
-<PostImage src={jug5} alt="jug" />
-
-<PostImage src={jug7} alt="jug" />
-<PostImage src={jug8} alt="jug" />
-<PostImage src={jug9} alt="jug" />
+<Gallery label="Glass studies">
+  <GalleryImage src={jug6} alt="Glass study 1" />
+  <GalleryImage src={jug0} alt="Glass study 2" />
+  <GalleryImage src={jug} alt="Glass study 3" />
+  <GalleryImage src={jug2} alt="Glass study 4" />
+  <GalleryImage src={jug3} alt="Glass study 5" />
+  <GalleryImage src={jug4} alt="Glass study 6" />
+  <GalleryImage src={jug5} alt="Glass study 7" />
+  <GalleryImage src={jug7} alt="Glass study 8" />
+  <GalleryImage src={jug8} alt="Glass study 9" />
+  <GalleryImage src={jug9} alt="Glass study 10" />
+</Gallery>

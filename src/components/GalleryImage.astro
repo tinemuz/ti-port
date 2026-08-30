@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  group?: string;
+}
+
+const { src, alt, group = "post-gallery" } = Astro.props;
+---
+
+<a
+  class="gallery-image"
+  style={`--width: ${src.width}; --height: ${src.height};`}
+  href={src.src}
+  target="_blank"
+  data-fancybox={group}
+  aria-label={`Open image: ${alt}`}
+>
+  <Image format="webp" src={src} alt={alt} height={400} loading="lazy" />
+</a>

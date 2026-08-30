@@ -32,7 +32,7 @@ const { Content } = await render(entry);
 
 <MainLayout title={entry.data.title}>
   <div class="text-skin-text flex grow flex-col items-center">
-    <div class="w-full pt-6 pb-10 sm:max-w-portfolio">
+    <div class="sm:max-w-portfolio w-full pt-6 pb-10">
       <h1 class="pb-4">{entry.data.title}</h1>
       <p>{entry.data.description}</p>
       <p class="text-skin-text/50">
@@ -40,7 +40,7 @@ const { Content } = await render(entry);
       </p>
     </div>
     <div
-      class="prose prose-sm sm:prose-base w-full max-w-none sm:max-w-portfolio"
+      class="prose prose-sm sm:prose-base sm:max-w-portfolio w-full max-w-none"
     >
       <Content />
     </div>
