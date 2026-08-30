@@ -18,7 +18,8 @@ featured: true
 slug: my-pencil-drawings
 ---
 
-import PostImage from "../../components/PostImage.astro";
+import Gallery from "../../components/Gallery.astro";
+import GalleryImage from "../../components/GalleryImage.astro";
 import art_0 from "../../../src/assets/pencil-drawing-archive/art_21.jpg";
 import art_1 from "../../../src/assets/pencil-drawing-archive/art_1.jpg";
 import art_2 from "../../../src/assets/pencil-drawing-archive/art_2.jpg";
@@ -41,24 +42,26 @@ import art_18 from "../../../src/assets/pencil-drawing-archive/art_18.jpg";
 import art_19 from "../../../src/assets/pencil-drawing-archive/art_19.jpg";
 import art_20 from "../../../src/assets/pencil-drawing-archive/art_20.jpg";
 
-<PostImage src={art_0} alt="art 0" />
-<PostImage src={art_1} alt="art 1" />
-<PostImage src={art_2} alt="art 2" />
-<PostImage src={art_3} alt="art 3" />
-<PostImage src={art_4} alt="art 4" />
-<PostImage src={art_5} alt="art 5" />
-<PostImage src={art_6} alt="art 6" />
-<PostImage src={art_7} alt="art 7" />
-<PostImage src={art_8} alt="art 8" />
-<PostImage src={art_9} alt="art 9" />
-<PostImage src={art_10} alt="art 10" />
-<PostImage src={art_11} alt="art 11" />
-<PostImage src={art_12} alt="art 12" />
-<PostImage src={art_13} alt="art 13" />
-<PostImage src={art_14} alt="art 14" />
-<PostImage src={art_15} alt="art 15" />
-<PostImage src={art_16} alt="art 16" />
-<PostImage src={art_17} alt="art 17" />
-<PostImage src={art_18} alt="art 18" />
-<PostImage src={art_19} alt="art 19" />
-<PostImage src={art_20} alt="art 20" />
+<Gallery label="Pencil drawing archive">
+  <GalleryImage src={art_0} alt="Pencil drawing 1" />
+  <GalleryImage src={art_1} alt="Pencil drawing 2" />
+  <GalleryImage src={art_2} alt="Pencil drawing 3" />
+  <GalleryImage src={art_3} alt="Pencil drawing 4" />
+  <GalleryImage src={art_4} alt="Pencil drawing 5" />
+  <GalleryImage src={art_5} alt="Pencil drawing 6" />
+  <GalleryImage src={art_6} alt="Pencil drawing 7" />
+  <GalleryImage src={art_7} alt="Pencil drawing 8" />
+  <GalleryImage src={art_8} alt="Pencil drawing 9" />
+  <GalleryImage src={art_9} alt="Pencil drawing 10" />
+  <GalleryImage src={art_10} alt="Pencil drawing 11" />
+  <GalleryImage src={art_11} alt="Pencil drawing 12" />
+  <GalleryImage src={art_12} alt="Pencil drawing 13" />
+  <GalleryImage src={art_13} alt="Pencil drawing 14" />
+  <GalleryImage src={art_14} alt="Pencil drawing 15" />
+  <GalleryImage src={art_15} alt="Pencil drawing 16" />
+  <GalleryImage src={art_16} alt="Pencil drawing 17" />
+  <GalleryImage src={art_17} alt="Pencil drawing 18" />
+  <GalleryImage src={art_18} alt="Pencil drawing 19" />
+  <GalleryImage src={art_19} alt="Pencil drawing 20" />
+  <GalleryImage src={art_20} alt="Pencil drawing 21" />
+</Gallery>
