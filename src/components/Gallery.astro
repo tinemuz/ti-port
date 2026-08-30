@@ -8,7 +8,7 @@ interface Props {
 const { label = "Image gallery" } = Astro.props;
 ---
 
-<section class="justified-gallery post-gallery not-prose" aria-label={label}>
+<section class="post-gallery not-prose" aria-label={label}>
   <slot />
 </section>
 
@@ -49,29 +49,23 @@ const { label = "Image gallery" } = Astro.props;
 
 <style>
   .post-gallery {
-    --min-height: clamp(200px, 20vw, 400px);
-
-    position: relative;
-    box-sizing: border-box;
     width: 75vw;
-    margin: 0;
     margin-left: calc((100% - 75vw) / 2);
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    padding: 0;
   }
 
   .post-gallery :global(.gallery-image) {
     flex-grow: calc(var(--width) * (100000 / var(--height)));
-    flex-basis: calc(var(--min-height) * (var(--width) / var(--height)));
+    flex-basis: calc(
+      clamp(200px, 20vw, 400px) * (var(--width) / var(--height))
+    );
     aspect-ratio: var(--width) / var(--height);
-    position: relative;
     display: block;
     overflow: hidden;
     border-radius: 0.5rem;
     border: 1px solid var(--color-skin-border);
-    transition: none;
   }
 
   .post-gallery :global(.gallery-image:focus-visible) {
